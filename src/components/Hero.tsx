@@ -5,6 +5,7 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import Image from 'next/image';
 import success from "../images/successfulahmer.png"
 import styles from "../styles/hero.module.scss";
+import ArrowButton from './Button';
 
 const Hero: React.FC = () => {
   return (
@@ -14,7 +15,7 @@ const Hero: React.FC = () => {
         <Typography variant="h4">Hello, I'm</Typography>
         <Typography variant="h2">Ahmer Malik</Typography>
         <Typography component="p">I'm a developer living in Texas</Typography>
-        <Button variant="contained" color="primary" className={styles.button}>Lets code</Button>
+        <ArrowButton variant="contained" color="primary" className={styles.button}>Lets code</ArrowButton>
     </div>
     <div>
         <IconButton color="primary">
