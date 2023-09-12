@@ -6,11 +6,12 @@ import Image from 'next/image';
 import success from "../images/successfulahmer.png"
 import styles from "../styles/hero.module.scss";
 import ArrowButton from './Button';
+import Box from '@mui/material/Box';
 
 const Hero: React.FC = () => {
   return (
     <Grid container spacing={0} className={styles.mainGrid} >
-   <Grid item xs={12} md={4.35} display="flex" flexDirection="column" justifyContent="space-between">
+   <Grid item xs={12} sm={6} md={6} lg={4.35} display="flex" flexDirection="column" justifyContent="space-between">
     <div>
         <Typography variant="h4">Hello, I'm</Typography>
         <Typography variant="h2">Ahmer Malik</Typography>
@@ -26,10 +27,11 @@ const Hero: React.FC = () => {
         </IconButton>
     </div>
 </Grid>
-<Grid item xs={12} md={2.15}  className={styles.orangeBackground}>
-    <Image src={success} alt="Your image description" width={500} height={650}  className={styles.spilloverImage} />
+
+<Grid item xs={12}  sm={6}  md={6} lg={2.15}  className={styles.orangeBackground}>
+    <Image src={success} alt="Your image description" className={styles.spilloverImage} />
 </Grid>
-<Grid item xs={12} md={4.35} display="flex" flexDirection="column" justifyContent="space-between">
+<Grid item xs={12}  lg={4.35} display="flex" flexDirection="column" justifyContent="space-between">
     <div className={styles.gridthree}>
         <Typography component="p" className={styles.subhead}>"Exploring the cosmos of code"</Typography>
         <Typography component="p" className={styles.subpar}> A passionate developer with a futuristic mindset. When I'm not busy coding, you can find me gazing at the stars, diving into the world of cryptocurrencies, or analyzing charts. I love turning ideas into reality through lines of code, and I'm excited to share my journey with you.</Typography>
@@ -42,3 +44,9 @@ const Hero: React.FC = () => {
 }
 
 export default Hero;
+
+// xs: 0px and up (extra-small devices, phones)
+// sm: 600px and up (small devices, tablets in portrait mode)
+// md: 900px and up (medium devices, tablets in landscape mode and some small laptop screens)
+// lg: 1200px and up (large devices, most laptops, and desktops)
+// xl: 1536px and up (extra-large devices, large desktops)

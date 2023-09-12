@@ -16,7 +16,7 @@
     width: auto; 
     height: 650px; 
     overflow: visible;
-  }
+ 
 
   .spilloverImage {
     // position: absolute;
@@ -24,7 +24,22 @@
     left: -13%; 
     right: -10%; 
     width: 150%; 
+    height: 650px;
+
+    // Using media queries to change the image size or other properties based on screen size
+    @media (max-width: 1540px) { 
+      width: 140%; 
+      // styles for screens smaller than 600px (or use your preferred breakpoint)
+    }
+  
+
   }
+  @media (min-width: 100px) and (max-width: 1000px) { 
+    display: none;
+    // styles for screens between 601px and 900px
+  }
+
+}
 
   .gridthree {
     display: flex;
