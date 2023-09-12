@@ -1,0 +1,53 @@
+.mainGrid {
+  & .MuiGrid-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+  }
+
+  .orangeBackground {
+    position: relative;
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    background-color: orange; 
+    width: auto; 
+    height: 650px; 
+    overflow: visible;
+  }
+
+  .spilloverImage {
+    // position: absolute;
+    top: 0;
+    left: -13%; 
+    right: -10%; 
+    width: 150%; 
+  }
+
+  .gridthree {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    .subhead {
+      color: #ff9b50;
+      font-size: 26px;
+      font-weight: 600;
+      margin-top: 60px;
+      margin-left: 50px;
+    }
+
+    .subpar {
+      color: #787878;
+      font-size: 22px;
+    }
+
+    .resbutton {
+      color: #ff9b50;
+      text-align: right;
+      font-size: 26px;
+    }
+  }
+}
