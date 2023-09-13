@@ -36,7 +36,7 @@ const Navbar: React.FC<Props> = ({ section, setSection, modeSwitch, window }) =>
   };
 
   const drawer = (
-    <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
+    <Box onClick={handleDrawerToggle} sx={{ textAlign: "center"}}>
       <Typography variant="h6" sx={{ my: 2 }} className="flex justify-center items-center h-[desiredHeight]">
         <Image src={logo} alt="Description" width={150} height={100} />
       </Typography>

@@ -107,7 +107,7 @@ export default function Home() {
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <main>
-        <Navbar
+        {/* <Navbar
           section={section}
           setSection={setSection}
           modeSwitch={
@@ -121,7 +121,7 @@ export default function Home() {
               />
             </FormGroup>
           }
-        />
+        /> */}
         <section>
           <Hero />
         </section>
