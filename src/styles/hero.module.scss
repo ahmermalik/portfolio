@@ -1,3 +1,19 @@
+@font-face {
+  font-family: 'All-Round-Gothic-Bold';
+  src: url('../../public/fonts/All-Round-Gothic-W01-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'All-Round-Gothic-Book';
+  src: url('../../public/fonts/All-Round-Gothic-W01-Book.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 .mainGrid {
   & .MuiGrid-item {
     display: flex;
@@ -8,6 +24,19 @@
   }
   .gridOne{
     padding-top: 110px;
+    padding-left: 50px;
+    padding-bottom: 50px;
+
+    .intro{
+      font-family: 'All-Round-Gothic-Book';
+    }
+    .name{
+      font-family: 'All-Round-Gothic-Bold';
+    }
+    .loc{ 
+      margin-top: 20px;
+      margin-bottom: 40px;
+    }
 
   }
 

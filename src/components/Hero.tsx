@@ -5,7 +5,7 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import Image from "next/image";
 import success from "../images/successfulahmer.png";
 import styles from "../styles/hero.module.scss";
-import ArrowButton from "./Button";
+import ArrowButton from "./ArrowButton";
 import Box from "@mui/material/Box";
 import Navbar from "./Navbar";
 import FormGroup from "@mui/material/FormGroup";
@@ -46,25 +46,50 @@ const Hero: React.FC = () => {
         className={styles.gridOne}
       >
         <div>
-          <Typography variant="h4">Hello, I'm</Typography>
-          <Typography variant="h2">Ahmer Malik</Typography>
-          <Typography component="p">I'm a developer living in Texas</Typography>
+          <Typography variant="h4" className={styles.intro}>
+            Hello, I'm
+          </Typography>
+          <Typography variant="h2" className={styles.name}>
+            Ahmer Malik
+          </Typography>
+          <Typography component="p" className={styles.loc}>
+            I'm a developer living in Texas
+          </Typography>
           <ArrowButton
             variant="contained"
             color="primary"
-            className={styles.button}
           >
             Lets code
           </ArrowButton>
         </div>
-        <div>
-          <IconButton color="primary">
-            <GitHubIcon />
-          </IconButton>
-          <IconButton color="primary">
-            <LinkedInIcon />
-          </IconButton>
-        </div>
+        <span>
+          <a
+            href="https://github.com/ahmermalik/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <IconButton
+              color="primary"
+              sx={{ color: "#FF9B50", marginTop: "40px" }}
+            >
+              <GitHubIcon />
+            </IconButton>
+          </a>
+
+          <a
+            href="https://www.linkedin.com/in/ahmermalikm/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <IconButton
+              size="large"
+              color="primary"
+              sx={{ color: "#FF9B50", marginTop: "40px" }}
+            >
+              <LinkedInIcon />
+            </IconButton>
+          </a>
+        </span>
       </Grid>
 
       <Grid item xs={12} sm={6} md={6} lg={2.15} className={styles.gridTwo}>

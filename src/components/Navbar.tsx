@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Image from 'next/image';
+import Image from "next/image";
 import AppBar from "@mui/material/AppBar";
 import { Link } from "react-scroll";
 import Box from "@mui/material/Box";
@@ -15,20 +15,32 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
-import logo from  "../images/logo.png"
+import logo from "../images/logo.png";
 
 interface Props {
   section: string;
   setSection: React.Dispatch<React.SetStateAction<string>>; // we can always import it up top from React, but instead we're just going to call it as React.NameYourImport for now
   window?: () => Window;
-  modeSwitch: React.ReactElement; 
+  modeSwitch: React.ReactElement;
 }
 
 // { section, setSection, children }: any
 const drawerWidth = 240;
-const navItems = ["Home", "Technologies", "Portfolio", "Work", "Testimonials", "Contact"];
+const navItems = [
+  "Home",
+  "Technologies",
+  "Portfolio",
+  "Work",
+  "Testimonials",
+  "Contact",
+];
 
-const Navbar: React.FC<Props> = ({ section, setSection, modeSwitch, window }) =>{
+const Navbar: React.FC<Props> = ({
+  section,
+  setSection,
+  modeSwitch,
+  window,
+}) => {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   const handleDrawerToggle = () => {
@@ -36,8 +48,12 @@ const Navbar: React.FC<Props> = ({ section, setSection, modeSwitch, window }) =>
   };
 
   const drawer = (
-    <Box onClick={handleDrawerToggle} sx={{ textAlign: "center"}}>
-      <Typography variant="h6" sx={{ my: 2 }} className="flex justify-center items-center h-[desiredHeight]">
+    <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
+      <Typography
+        variant="h6"
+        sx={{ my: 2 }}
+        className="flex justify-center items-center h-[desiredHeight]"
+      >
         <Image src={logo} alt="Description" width={150} height={100} />
       </Typography>
 
@@ -47,10 +63,7 @@ const Navbar: React.FC<Props> = ({ section, setSection, modeSwitch, window }) =>
           <ListItem key={item} disablePadding>
             <Link to={item.toLowerCase()} smooth={true} key={item}>
               <ListItemButton sx={{ textAlign: "center" }}>
-                <ListItemText
-                  primary={item}
-                  onClick={() => setSection(item)}
-                />
+                <ListItemText primary={item} onClick={() => setSection(item)} />
               </ListItemButton>
             </Link>
           </ListItem>
@@ -63,7 +76,7 @@ const Navbar: React.FC<Props> = ({ section, setSection, modeSwitch, window }) =>
     window !== undefined ? () => window().document.body : undefined;
 
   return (
-    <Box sx={{ display: "flex" }}>
+    <Box sx={{ display: "flex"}}>
       <CssBaseline />
       <AppBar
         component="nav"
@@ -111,15 +124,15 @@ const Navbar: React.FC<Props> = ({ section, setSection, modeSwitch, window }) =>
           >
             <MenuIcon />
           </IconButton>
-
-<Image src={logo} alt="Description" width={150} height={100} />
-
-          <Box sx={{ display: { xs: "block", sm: "block", md: "block", lg: "block" } }}>
-             {modeSwitch}
+          <Image src={logo} alt="Description" width={150} height={100}  />
+          <Box
+            sx={{
+              display: { xs: "block", sm: "block", md: "block", lg: "block" },
+            }}
+          >
+            {modeSwitch}
           </Box>
-       
         </Toolbar>
-
       </AppBar>
       <Box component="nav">
         <Drawer
@@ -142,8 +155,7 @@ const Navbar: React.FC<Props> = ({ section, setSection, modeSwitch, window }) =>
         </Drawer>
       </Box>
     </Box>
-
   );
-}
+};
 
 export default Navbar;

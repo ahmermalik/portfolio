@@ -1,22 +1,26 @@
-import React from 'react';
-import Button from '@mui/material/Button';
+import React from "react";
+import Button from "@mui/material/Button";
 
 const ArrowButton: React.FC = () => {
   return (
     <Button
       style={{
-        boxShadow: '0px 20px 12px rgba(0, 0, 0, 0.1)',
-        width: '232px',
-        height: '56px',
+        boxShadow: "0px 20px 12px rgba(0, 0, 0, 0.1)",
+        width: "232px",
+        height: "56px",
         flexShrink: 0,
-        borderRadius: '200px',
-        background: '#FFF',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'space-between', 
+        borderRadius: "200px",
+        background: "#FFF",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "space-between",
+        fontSize: "18px"
+      }}
+      sx={{
+        textTransform: 'none'
       }}
     >
-      <div style={{ flex: 1, textAlign: 'center' }}>Let's Code!</div> 
+      <div style={{ flex: 1, textAlign: "center", color:"black", fontWeight:"bold" }} >Let's Code!</div>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="46"

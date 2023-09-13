@@ -74,15 +74,15 @@ export default function Home() {
   const theme = createTheme({
     typography: {
       h4: {
-        fontFamily: 'AllRoundGothicW01-Book, Arial',
         color: '#2C2C2C',
+        fontFamily: 'AllRoundGothicW01-Book, Arial',
         fontSize: '56px',
         fontWeight: 300,
       },
   
       h2: {
-        fontFamily: 'AllRoundGothicW01-Bold, Arial',
         color: '#FF9B50',
+        fontFamily: 'Poppins, Arial',
         fontSize: '86px',
         fontWeight: 700,
       },
@@ -91,7 +91,7 @@ export default function Home() {
         fontFamily: 'Poppins, Arial',
         fontSize: '22px',
         fontWeight: 400,
-        lineHeight: '35px' /* 227.273% */
+        lineHeight: '35px'
       }
     },
     palette: {
