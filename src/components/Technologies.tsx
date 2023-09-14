@@ -16,6 +16,13 @@ type Experience = {
 function WavyRectangle() {
   const experience: Experience[] = [
     {
+        techName: "Next.js",
+        years: 3,
+        height: "150px",
+        image: "/images/nextjs.svg",
+        src: "/images/wavered.svg",
+      },
+    {
       techName: "Node.js",
       years: 6,
       height: "200px",
@@ -89,6 +96,9 @@ function WavyRectangle() {
               borderTop: "none", 
               borderRadius: "15px",
               marginBottom: "25px",
+              '&:active': {
+                transform: "scale(0.78)" // Slightly scale down when clicked
+              },
               boxShadow: [
                 "-0px 25px 35px rgba(0, 0, 0, 0.3)", 
                 "0px 25px 10px rgba(0, 0, 0, 0.3)", 

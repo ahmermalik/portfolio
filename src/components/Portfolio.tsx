@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Grid, Typography, Button } from '@mui/material';
+import ArrowButton from "./ArrowButton";
 import Image from "next/image";
 
 const Portfolio: React.FC = () => {
@@ -145,7 +146,7 @@ const Portfolio: React.FC = () => {
         {/* 2nd Grid */}
         <Grid item xs={12} md={6}>
             <Typography variant="h5">{activeProject.name}</Typography>
-            <Button variant="contained">View Project</Button>
+            <ArrowButton>View Project</ArrowButton>
             <Typography variant="body1">{activeProject.technologies.join(', ')}</Typography>
             <Typography variant="body2">{activeProject.description}</Typography>
             <Image 
