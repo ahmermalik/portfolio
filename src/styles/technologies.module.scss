@@ -1,0 +1,47 @@
+
+.tech {
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  justify-content: center; 
+  height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+
+.tech .heading {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+
+.tech .technames {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.tech .technames > div {
+  flex: 1;
+  margin: 0 10px;
+  display: flex;
+  flex-direction: column; 
+  align-items: center; 
+}
+
+.tech .technames .imageContainer {
+  margin-bottom: auto; 
+}
+
+.tech .technames .years {
+  display: flex;
+  align-items: center; 
+  justify-content: center; 
+  position: absolute;
+  top: 10px; 
+  left: 0;
+  right: 0;
+  z-index: 2;  
+}

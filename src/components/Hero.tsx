@@ -91,7 +91,7 @@ const Hero: React.FC = () => {
             </IconButton>
           </a>
           <a
-            href="https://medium.com/@ahmermalik_96447"
+            href="https://medium.com/@ahmermalikm"
             target="_blank"
             rel="noopener noreferrer"
           >

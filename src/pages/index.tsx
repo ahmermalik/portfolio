@@ -1,9 +1,6 @@
 import { useState } from "react";
-import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
-import Image from "next/image";
-import { Inter } from "next/font/google";
-
+import Techonologies from "../components/Technologies";
 import {
   createTheme,
   ThemeProvider,
@@ -12,8 +9,7 @@ import {
   CssBaseline,
 } from "@mui/material";
 import { styled } from "@mui/material/styles";
-import FormGroup from "@mui/material/FormGroup";
-import FormControlLabel from "@mui/material/FormControlLabel";
+
 
 type ThemeMode = "light" | "dark";
 
@@ -124,6 +120,10 @@ export default function Home() {
         /> */}
         <section>
           <Hero />
+        </section>
+
+        <section>
+          <Techonologies/>
         </section>
       </main>
     </ThemeProvider>
