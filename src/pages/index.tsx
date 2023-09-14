@@ -118,11 +118,11 @@ export default function Home() {
             </FormGroup>
           }
         /> */}
-        <section>
+        <section className="herosection">
           <Hero />
         </section>
 
-        <section>
+        <section className="techsection">
           <Techonologies/>
         </section>
       </main>

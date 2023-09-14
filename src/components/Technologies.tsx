@@ -23,19 +23,20 @@ function WavyRectangle() {
       src: "/images/wavered.svg",
     },
     {
+        techName: "HTML",
+        years: 8,
+        height: "325px",
+        image: "/images/html.svg",
+        src: "/images/wavered.svg",
+      },
+    {
       techName: "React",
       years: 7,
       height: "250px",
       image: "/images/react.svg",
-      src: "/images/wavered.svg",
-    },
-    {
-      techName: "JavasSript",
-      years: 8,
-      height: "325px",
-      image: "/images/javascript.svg",
       src: "/images/waveblue.svg",
     },
+
     {
       techName: "TypeScript",
       years: 3,
@@ -50,20 +51,14 @@ function WavyRectangle() {
       image: "/images/sql.svg",
       src: "/images/waveblue.svg",
     },
-    {
-      techName: "HTML",
-      years: 8,
-      height: "325px",
-      image: "/images/html.svg",
-      src: "/images/waveorange.svg",
-    },
-    {
-      techName: "CSS",
-      years: 8,
-      height: "325px",
-      image: "/images/css.svg",
-      src: "/images/waveorange.svg",
-    },
+    // {
+    //     techName: "CSS",
+    //     years: 8,
+    //     height: "325px",
+    //     image: "/images/css.svg",
+    //     src: "/images/waveblue.svg",
+    //   },
+
     {
       techName: "AWS",
       years: 4,
@@ -71,6 +66,13 @@ function WavyRectangle() {
       image: "/images/aws.svg",
       src: "/images/waveorange.svg",
     },
+    {
+        techName: "JavasSript",
+        years: 8,
+        height: "325px",
+        image: "/images/javascript.svg",
+        src: "/images/waveorange.svg",
+      }
   ];
 
   return (
@@ -110,7 +112,7 @@ function WavyRectangle() {
             />
           </Box>
 
-          <Box className={styles.imageContainer}>
+          <Box className={styles.imageContainer} sx={{marginTop:"25px", paddingBottom:"25px"}}>
             <Image
               src={exp.image}
               alt={exp.techName}
