@@ -21,7 +21,8 @@ interface Props {
   section: string;
   setSection: React.Dispatch<React.SetStateAction<string>>; // we can always import it up top from React, but instead we're just going to call it as React.NameYourImport for now
   window?: () => Window;
-  modeSwitch: React.ReactElement;
+  item: boolean;
+  xs: number;
 }
 
 // { section, setSection, children }: any
@@ -38,7 +39,6 @@ const navItems = [
 const Navbar: React.FC<Props> = ({
   section,
   setSection,
-  modeSwitch,
   window,
 }) => {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -130,7 +130,7 @@ const Navbar: React.FC<Props> = ({
               display: { xs: "block", sm: "block", md: "block", lg: "block" },
             }}
           >
-            {modeSwitch}
+            {"modeSwitch"}
           </Box>
         </Toolbar>
       </AppBar>

@@ -11,7 +11,6 @@ import {
 } from "@mui/material";
 import { styled } from "@mui/material/styles";
 
-
 type ThemeMode = "light" | "dark";
 
 const MaterialUISwitch = styled(Switch)(({ theme }) => ({
@@ -71,25 +70,25 @@ export default function Home() {
   const theme = createTheme({
     typography: {
       h4: {
-        color: '#2C2C2C',
-        fontFamily: 'AllRoundGothicW01-Book, Arial',
-        fontSize: '56px',
+        color: "#2C2C2C",
+        fontFamily: "AllRoundGothicW01-Book, Arial",
+        fontSize: "56px",
         fontWeight: 300,
       },
-  
+
       h2: {
-        color: '#FF9B50',
-        fontFamily: 'Poppins, Arial',
-        fontSize: '86px',
+        color: "#FF9B50",
+        fontFamily: "Poppins, Arial",
+        fontSize: "86px",
         fontWeight: 700,
       },
-      body1:{
+      body1: {
         color: "#787878",
-        fontFamily: 'Poppins, Arial',
-        fontSize: '22px',
+        fontFamily: "Poppins, Arial",
+        fontSize: "22px",
         fontWeight: 400,
-        lineHeight: '35px'
-      }
+        lineHeight: "35px",
+      },
     },
     palette: {
       mode: mode,
@@ -104,30 +103,15 @@ export default function Home() {
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <main>
-        {/* <Navbar
-          section={section}
-          setSection={setSection}
-          modeSwitch={
-            <FormGroup>
-              {" "}
-              <FormControlLabel
-                checked={mode === "dark"}
-                onChange={handleModeChange}
-                control={<MaterialUISwitch sx={{ m: 1 }} />}
-                label=""
-              />
-            </FormGroup>
-          }
-        /> */}
         <section className="herosection">
-          <Hero />
+          <Hero section={section} setSection={setSection} />
         </section>
 
         <section className="techsection">
-          <Techonologies/>
+          <Techonologies />
         </section>
         <section className="portfoliosection">
-          <Portfolio/>
+          <Portfolio />
         </section>
       </main>
     </ThemeProvider>

@@ -9,29 +9,23 @@ import styles from "../styles/hero.module.scss";
 import ArrowButton from "./ArrowButton";
 import Box from "@mui/material/Box";
 import Navbar from "./Navbar";
-import FormGroup from "@mui/material/FormGroup";
-import FormControlLabel from "@mui/material/FormControlLabel";
 
-const Hero: React.FC = () => {
+
+type HeroProps = {
+  section: string; // replace string with the type of section, if it's not string
+  setSection: React.Dispatch<React.SetStateAction<string>>; // replace string if setSection handles a different type
+};
+
+
+const Hero: React.FC<HeroProps> = ({ section, setSection }) => {
   return (
     <Grid container spacing={0} className={styles.mainGrid}>
       <Grid item xs={12}>
         <Navbar
           item
           xs={12}
-          //   section={section}
-          //   setSection={setSection}
-          //   modeSwitch={
-          //     <FormGroup>
-          //       {" "}
-          //       <FormControlLabel
-          //         checked={mode === "dark"}
-          //         onChange={handleModeChange}
-          //         control={<MaterialUISwitch sx={{ m: 1 }} />}
-          //         label=""
-          //       />
-          //     </FormGroup>
-          //   }
+            section={section}
+            setSection={setSection}
         />
       </Grid>
 
@@ -48,18 +42,15 @@ const Hero: React.FC = () => {
       >
         <div>
           <Typography variant="h4" className={styles.intro}>
-            Hello, I'm
+            Hello, I&apos;m
           </Typography>
           <Typography variant="h2" className={styles.name}>
             Ahmer Malik
           </Typography>
           <Typography component="p" className={styles.loc}>
-            I'm a developer living in Texas
+            I&apos;m a developer living in Texas
           </Typography>
-          <ArrowButton
-            variant="contained"
-            color="primary"
-          >
+          <ArrowButton>
             Lets code
           </ArrowButton>
         </div>
@@ -123,14 +114,14 @@ const Hero: React.FC = () => {
       >
         <div className={styles.gridthree}>
           <Typography component="p" className={styles.subhead}>
-            "Exploring the cosmos of code"
+           `Exploring the cosmos of code`
           </Typography>
           <Typography component="p" className={styles.subpar}>
             {" "}
-            A passionate developer with a futuristic mindset. When I'm not busy
+            A passionate developer with a futuristic mindset. When I&apos;m not busy
             coding, you can find me gazing at the stars, diving into the world
             of cryptocurrencies, or analyzing charts. I love turning ideas into
-            reality through lines of code, and I'm excited to share my journey
+            reality through lines of code, and I&apos;m excited to share my journey
             with you.
           </Typography>
         </div>

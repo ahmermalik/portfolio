@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Grid, Typography, Button } from '@mui/material';
-
+import Image from "next/image";
 
 const Portfolio: React.FC = () => {
   const projects = [
@@ -148,10 +148,12 @@ const Portfolio: React.FC = () => {
             <Button variant="contained">View Project</Button>
             <Typography variant="body1">{activeProject.technologies.join(', ')}</Typography>
             <Typography variant="body2">{activeProject.description}</Typography>
-            <img 
+            <Image 
                 src={activeProject.image} 
                 alt={activeProject.name} 
-                style={{ width: '100%', height: 'auto', maxWidth: '600px' }}
+                width="100" 
+                height="100"
+                style={{  maxWidth: '600px' }}
             />
             <Typography variant="body1">{activeProject.summary}</Typography>
             <Typography variant="body2">Key Features:</Typography>
