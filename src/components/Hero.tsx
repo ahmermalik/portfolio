@@ -2,6 +2,7 @@ import React from "react";
 import { Grid, Typography, Button, IconButton } from "@mui/material";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import DescriptionSharpIconRounded from '@mui/icons-material/DescriptionSharp';
 import Image from "next/image";
 import success from "../images/successfulahmer.png";
 import styles from "../styles/hero.module.scss";
@@ -87,6 +88,19 @@ const Hero: React.FC = () => {
               sx={{ color: "#FF9B50", marginTop: "40px" }}
             >
               <LinkedInIcon />
+            </IconButton>
+          </a>
+          <a
+            href="https://medium.com/@ahmermalik_96447"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <IconButton
+              size="large"
+              color="primary"
+              sx={{ color: "#FF9B50", marginTop: "40px" }}
+            >
+              <DescriptionSharpIconRounded />
             </IconButton>
           </a>
         </span>
