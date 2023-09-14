@@ -65,56 +65,63 @@ function WavyRectangle() {
       src: "/images/waveorange.svg",
     },
     {
-        techName: "AWS",
-        years: 4,
-        height: "175px",
-        image: "/images/aws.svg",
-        src: "/images/waveorange.svg",
-      },
-];
+      techName: "AWS",
+      years: 4,
+      height: "175px",
+      image: "/images/aws.svg",
+      src: "/images/waveorange.svg",
+    },
+  ];
 
   return (
-<div className={styles.technames}>
-  {experience.map((exp) => (
-    <div key={exp.techName} >
+    <div className={styles.technames}>
+      {experience.map((exp) => (
+        <div key={exp.techName}>
+          <Box
+            sx={{
+              width: "125px",
+              height: exp.height,
+              position: "relative",
+              overflow: "hidden",
+              border: "1px solid #ccc",
+              borderTop: "none", 
+              borderRadius: "15px",
+              marginBottom: "25px",
+              boxShadow: [
+                "-0px 25px 35px rgba(0, 0, 0, 0.3)", 
+                "0px 25px 10px rgba(0, 0, 0, 0.3)", 
+                "0px 7px rgba(0, 0, 0, 0.3)", 
+              ].join(", "),
+            }}
+          >
+            <span className={styles.years}>{`${exp.years} yrs`}</span>
+            <Box
+              component="img"
+              src={exp.src}
+              alt={exp.techName}
+              sx={{
+                width: "100%",
+                height: "100%",
+                position: "absolute",
+                top: 0,
+                left: 0,
+                objectFit: "cover",
+              }}
+            />
+          </Box>
 
-      <Box
-        sx={{
-          width: "125px",
-          height: exp.height,
-          position: "relative",
-          overflow: "hidden",
-          border: '1px solid #ccc',
-          borderRadius: '15px',
-          boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.3)',
-          marginBottom: "25px"
-        }}
-      >
-        <span className={styles.years}>{`${exp.years} yrs`}</span>
-        <Box
-          component="img"
-          src={exp.src}
-          alt={exp.techName}
-          sx={{
-            width: "100%",
-            height: "100%",
-            position: "absolute",
-            top: 0,
-            left: 0,
-            objectFit: "cover"
-          }}
-        />
-      </Box>
-
-      <Box className={styles.imageContainer}>
-        <Image src={exp.image} alt={exp.techName} className={""} height={100} width={100} />
-      </Box>
+          <Box className={styles.imageContainer}>
+            <Image
+              src={exp.image}
+              alt={exp.techName}
+              className={""}
+              height={100}
+              width={100}
+            />
+          </Box>
+        </div>
+      ))}
     </div>
-  ))}
-</div>
-
-
-
   );
 }
 
@@ -122,10 +129,23 @@ const Technologies: React.FC = () => {
   return (
     <div className={styles.tech}>
       <div className={styles.heading}>
-        <Typography variant="h2" className={styles.name}>
+        <Typography
+          variant="h2"
+          className={styles.name}
+          sx={{ fontSize: "56px" }}
+        >
           Technologies
         </Typography>
-        <Typography component="p" className={styles.loc}>
+        <Typography
+          component="p"
+          className={styles.loc}
+          sx={{
+            marginTop: "15px",
+            marginBottom: "15px",
+            fontSize: "22px",
+            fontWeight: "400",
+          }}
+        >
           Leveraging Tech to Explore New Horizons
         </Typography>
       </div>
