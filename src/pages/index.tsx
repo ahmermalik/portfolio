@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Hero from "../components/Hero";
 import Techonologies from "../components/Technologies";
+import Portfolio from "../components/Portfolio";
 import {
   createTheme,
   ThemeProvider,
@@ -124,6 +125,9 @@ export default function Home() {
 
         <section className="techsection">
           <Techonologies/>
+        </section>
+        <section className="portfoliosection">
+          <Portfolio/>
         </section>
       </main>
     </ThemeProvider>
