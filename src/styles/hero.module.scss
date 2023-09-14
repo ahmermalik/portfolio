@@ -43,7 +43,8 @@
   .gridTwo {
     position: relative;
     display: flex; 
-    justify-content: center; 
+    flex-direction: column; // stacks children vertically
+    justify-content: flex-end; 
     align-items: center; 
     background-color:#FF9B50;
     width: auto; 
@@ -63,11 +64,16 @@
 
     // Using media queries to change the image size or other properties based on screen size
     @media (max-width: 1540px) { 
-      width: 140%; 
+      width: 100%; 
+      height: 650px;
       // styles for screens smaller than 600px (or use your preferred breakpoint)
     }
   
 
+  }
+  @media (max-width: 1540px) { 
+    width: 50%; 
+    // styles for screens smaller than 600px (or use your preferred breakpoint)
   }
   @media (min-width: 0px) and (max-width: 1000px) { 
     display: none;
