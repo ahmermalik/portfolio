@@ -2,10 +2,11 @@ import React from "react";
 import Button from "@mui/material/Button";
 
 interface ArrowButtonProps {
-
+btnName: string;
 }
 
-const ArrowButton: React.FC<ArrowButtonProps> = () =>{
+const ArrowButton: React.FC<ArrowButtonProps> = (props) =>{
+  const { btnName } = props;
   return (
     <Button
       style={{
@@ -24,7 +25,7 @@ const ArrowButton: React.FC<ArrowButtonProps> = () =>{
         textTransform: 'none'
       }}
     >
-      <div style={{ flex: 1, textAlign: "center", color:"black", fontWeight:"bold" }} >Let&apos;s Code!</div>
+      <div style={{ flex: 1, textAlign: "center", color:"black", fontWeight:"bold" }} >{btnName}</div>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="46"

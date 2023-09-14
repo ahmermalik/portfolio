@@ -146,7 +146,7 @@ const Portfolio: React.FC = () => {
         {/* 2nd Grid */}
         <Grid item xs={12} md={6}>
             <Typography variant="h5">{activeProject.name}</Typography>
-            <ArrowButton>View Project</ArrowButton>
+            <ArrowButton btnName={"View Project"}/>
             <Typography variant="body1">{activeProject.technologies.join(', ')}</Typography>
             <Typography variant="body2">{activeProject.description}</Typography>
             <Image 
