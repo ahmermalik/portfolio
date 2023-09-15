@@ -51,6 +51,7 @@ const Hero: React.FC<HeroProps> = ({ section, setSection }) => {
             I&apos;m a developer living in Texas
           </Typography>
           <ArrowButton btnName={"Let's Code!"}/>
+
         </div>
         <span>
           <a
