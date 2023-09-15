@@ -3,10 +3,11 @@ import Button from "@mui/material/Button";
 
 interface ArrowButtonProps {
 btnName: string;
+marginRight: string;
 }
 
 const ArrowButton: React.FC<ArrowButtonProps> = (props) =>{
-  const { btnName } = props;
+  const { btnName, marginRight } = props;
   return (
     <Button
       style={{
@@ -22,7 +23,8 @@ const ArrowButton: React.FC<ArrowButtonProps> = (props) =>{
         fontSize: "18px"
       }}
       sx={{
-        textTransform: 'none'
+        textTransform: 'none',
+        marginRight:{marginRight}
       }}
     >
       <div style={{ flex: 1, textAlign: "center", color:"black", fontWeight:"bold" }} >{btnName}</div>

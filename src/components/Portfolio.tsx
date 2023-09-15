@@ -261,7 +261,7 @@ const Portfolio: React.FC = () => {
       </Grid>
 
       {/* 2nd Grid */}
-      <Grid item xs={12} md={9}>
+      <Grid item xs={12} md={9} sx={{marginLeft:"50px"}}>
         <Box
           sx={{
             display: "flex",
@@ -279,7 +279,7 @@ const Portfolio: React.FC = () => {
           >
             {activeProject.name}
           </Typography>
-          <ArrowButton btnName={"View Project"} />
+          <ArrowButton btnName={"View Project"} marginRight={"10px"}/>
         </Box>
         <Typography
           variant="body1"
@@ -307,7 +307,6 @@ const Portfolio: React.FC = () => {
         <Image
           src={activeProject.image}
           alt={activeProject.name}
-          layout="responsive" 
           width={600}
           height={600}
           style={{

@@ -50,7 +50,7 @@ const Hero: React.FC<HeroProps> = ({ section, setSection }) => {
           <Typography component="p" className={styles.loc}>
             I&apos;m a developer living in Texas
           </Typography>
-          <ArrowButton btnName={"Let's Code!"}/>
+          <ArrowButton btnName={"Let's Code!"} marginRight={"1px"}/>
 
         </div>
         <span>
