@@ -19,7 +19,7 @@ type HeroProps = {
 
 const Hero: React.FC<HeroProps> = ({ section, setSection }) => {
   return (
-    <Grid container spacing={0} className={styles.mainGrid}>
+    <Grid container spacing={3} className={styles.mainGrid}>
       <Grid item xs={12}>
         <Navbar
           item
@@ -31,10 +31,7 @@ const Hero: React.FC<HeroProps> = ({ section, setSection }) => {
 
       <Grid
         item
-        xs={12}
-        sm={6}
-        md={6}
-        lg={4.35}
+        xs={12} sm={12} md={4} lg={4}  xl={4}
         display="flex"
         flexDirection="column"
         justifyContent="space-between"
@@ -48,7 +45,7 @@ const Hero: React.FC<HeroProps> = ({ section, setSection }) => {
             Ahmer Malik
           </Typography>
           <Typography component="p" className={styles.loc}>
-            I&apos;m a developer living in Texas
+            I&apos;m a fullstack developer living in Texas
           </Typography>
           <ArrowButton btnName={"Let's Code!"} marginRight={"1px"}/>
 
@@ -96,7 +93,7 @@ const Hero: React.FC<HeroProps> = ({ section, setSection }) => {
         </span>
       </Grid>
 
-      <Grid item xs={12} sm={6} md={6} lg={2.15} className={styles.gridTwo}>
+      <Grid item xs={12} sm={12} md={4} lg={4}  xl={5} className={styles.gridTwo}>
         <Image
           src={success}
           alt="Your image description"
@@ -104,14 +101,13 @@ const Hero: React.FC<HeroProps> = ({ section, setSection }) => {
         />
       </Grid>
       <Grid
-        item
-        xs={12}
-        lg={4.35}
+       item xs={12} sm={12} md={4} lg={4} xl={5}
         display="flex"
         flexDirection="column"
         justifyContent="space-between"
+        className={styles.gridthree}
       >
-        <div className={styles.gridthree}>
+
           <Typography component="p" className={styles.subhead}>
            `Exploring the cosmos of code`
           </Typography>
@@ -123,7 +119,7 @@ const Hero: React.FC<HeroProps> = ({ section, setSection }) => {
             reality through lines of code, and I&apos;m excited to share my journey
             with you.
           </Typography>
-        </div>
+ 
         <Button
           sx={{
             marginBottom: "50px",

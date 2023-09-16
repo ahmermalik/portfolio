@@ -20,7 +20,6 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    height: 100%;
   }
   .gridOne{
     padding-top: 110px;
@@ -43,42 +42,42 @@
   .gridTwo {
     position: relative;
     display: flex; 
-    flex-direction: column; // stacks children vertically
+    flex-direction: column;
     justify-content: flex-end; 
     align-items: center; 
     background-color:#FF9B50;
     width: auto; 
-    // height: 650px; //disabled allows orange to fill bottom
     overflow: visible;
     padding-top: 110px;
     margin-top: -100px;
- 
+    min-width: 350px;
+    max-width: 350px;
+    margin-left: auto;
+    margin-right: auto;
 
   .spilloverImage {
-    // position: absolute;
     top: 0;
     left: -13%; 
     right: -10%; 
-    width: 150%; 
+    max-width: 470px; 
+    min-width: 450px;
     height: 650px;
 
     // Using media queries to change the image size or other properties based on screen size
-    @media (max-width: 1540px) { 
-      width: 100%; 
-      height: 650px;
-      // styles for screens smaller than 600px (or use your preferred breakpoint)
-    }
+    @media (min-width: 0px) and (max-width: 600px) { //image adjustment
+      height: 450px;
+      max-width: 370px;
+      min-width: 350px;
   
-
-  }
-  @media (max-width: 1540px) { 
-    width: 50%; 
-    // styles for screens smaller than 600px (or use your preferred breakpoint)
-  }
-  @media (min-width: 0px) and (max-width: 1000px) { 
-    display: none;
+    }
   }
 
+  @media (min-width: 0px) and (max-width: 600px) { //orange background adjustment
+    margin: 0 auto;
+    height: 500px;
+    max-width: 270px;
+    min-width: 250px;
+  }
 }
 
   .gridthree {
@@ -87,6 +86,8 @@
     height: 100%;
     padding-top: 70px;
     padding-left: 70px;
+    margin-left: auto;
+    margin-right: auto;
 
     .subhead {
       color: #ff9b50;
