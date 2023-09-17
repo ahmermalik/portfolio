@@ -2,12 +2,13 @@ import React from "react";
 import Button from "@mui/material/Button";
 
 interface ArrowButtonProps {
-btnName: string;
-marginRight: string;
+btnName: String;
+marginRight: String;
+
 }
 
 const ArrowButton: React.FC<ArrowButtonProps> = (props) =>{
-  const { btnName, marginRight } = props;
+  const { btnName, marginRight} = props;
   return (
     <Button
       style={{

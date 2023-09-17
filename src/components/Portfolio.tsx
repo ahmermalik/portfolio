@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Grid, Typography, Button } from "@mui/material";
 import ArrowButton from "./ArrowButton";
 import Image from "next/image";
@@ -7,37 +7,85 @@ import Box from "@mui/material/Box";
 const Portfolio: React.FC = () => {
   const projects = [
     {
-      name: "Najumi",
-      technologies: ["Typescript", "Google Analytics", "jQuery"],
+      name: "Buffalo Bayou Funds Najumi",
+      technologies: [
+        "Node.js",
+        "React v18",
+        "TypeScript",
+        "PostgreSQL",
+        "Mix Panel",
+        "Docker",
+        "Web3.js",
+      ],
       description:
-        "Spearheaded the launch of three pivotal product features, achieving an 18% increase in subscription rates by crypto traders.",
+        "A crypto analysis dashboard that employs metrics like RSI, volume, MACD, price, and market cap, enabling traders to customize configurations for informed trades and effective risk management.",
       image: "/images/projects/najumi.png",
       url: "github.com/projecturl",
       summary:
-        "This project leverages JavaScript, Google Analytics, and jQuery to provide an exceptional user experience while boosting the restaurant's delivery service.",
+        "This project leverages Typescript both front-end and backend, utilizing React 18 and Material UI V5 within a Docker container, with user activity and performance tracked via Mix Panel integrations.",
       keyFeatures: [
+        "Tailored Analysis",
+        "Predictive Algorithm",
+        "Modern Tech Stack",
+        "Containerized Deployment",
+        "Comprehensive Metrics",
+      ],
+    },
+    {
+      name: "Cox Automotive API Storefront",
+      technologies: [
+        "React v16",
+        "Redux",
+        "C#",
+        "NoSQL",
+        "Amazon Web Services",
+      ],
+      description: `A storefront to sell APIs, featuring a user dashboard for API performance analytics, key, and environment management, an "API Try It" functionality for pre-signup testing, and comprehensive Swagger documentation for all available API products.`,
+      image: "/images/projects/caistore.png",
+      url: "https://developer.coxautoinc.com/",
+      summary:
+        "The project transitioned from classical React components to functional ones, leveraging React hooks for API calls and state management. Its serverless backend, built with the .NET framework in C# using the MVC pattern, was deployed on Amazon Web Services, with Google Analytics monitoring activity and performance.",
+      keyFeatures: [
+        "Robust .NET Backend Architecture",
+        "Cloud Integration",
+        "Real-time Analytics",
+        "API as a Service (AaaS)",
+        "Enhanced State Management",
+      ],
+    },
+    {
+      name: "Bull Bear Buddies",
+      technologies: [
+        "React v18",
+        "TypeScript",
+        "SQL",
+        "SCSS",
+        "Mix Panel",
+        "Material UI v5",
+        "Midjourney",
+      ],
+      description:
+        "A visually engaging modern web app designed for an NFT and Coin crypto trading group, aiming to convert visitors into club members by effectively presenting presale updates, dApp announcements, and the product roadmap in a sales-oriented format.",
+      image: "/images/projects/bullbearbuddies.png",
+      url: "http://bullbearbuddies.club/",
+      summary:
+        "This project leverages advanced sales driven front-end techniques to deliver an intuitive, visually engaging interface, showcasing roadmaps and proof of gains to entice user participation in the presale and dApp activities. It features high-quality imagery and is seamlessly hosted on Netlify, with data operations handled by Supabase.",
+      keyFeatures: [
+        "Visually Engaging Content",
         "Mobile-First Design",
         "Responsive Layout",
         "Interactive Menu",
+        "Interactive Presale Participation",
+        "Communicates with Human Psychology",
       ],
     },
-
     {
-      name: "CAI Storefront",
-      technologies: [
-        "React",
-        "Redux",
-        "Node.js",
-        "Express",
-        "Charts",
-        "Amazon Web Services",
-        "Jest",
-        "Enzyme",
-      ],
+      name: "Ahmer Malik",
+      technologies: ["Next.js", "SQL", "Mix Panel"],
       description:
         "Shish Kabob Cafe is a local restaurant known for its mouthwatering Mediterranean cuisine. To enhance its online presence and streamline the ordering process, we developed a mobile-first, responsive web application and integrated a seamless delivery system.",
-      image: "/images/projects/caistore.png",
-      url: "github.com/projecturl",
+      image: "/images/projects/ahmermalik.png",
+      url: "https://github.com/ahmermalik/portfolio_latest",
       summary:
         "This project leverages JavaScript, Google Analytics, and jQuery to provide an exceptional user experience while boosting the restaurant's delivery service.",
       keyFeatures: [
@@ -48,11 +96,11 @@ const Portfolio: React.FC = () => {
     },
     {
       name: "Shish Kabob Cafe",
-      technologies: ["JavaScript", "Google Analytics", "jQuery"],
+      technologies: ["HTML5", "JavaScript", "Google Analytics", "jQuery"],
       description:
         "Shish Kabob Cafe is a local restaurant known for its mouthwatering Mediterranean cuisine. To enhance its online presence and streamline the ordering process, we developed a mobile-first, responsive web application and integrated a seamless delivery system.",
       image: "/images/projects/shishkabob.png",
-      url: "github.com/projecturl",
+      url: "https://shishkabobkaty.com/",
       summary:
         "This project leverages JavaScript, Google Analytics, and jQuery to provide an exceptional user experience while boosting the restaurant's delivery service.",
       keyFeatures: [
@@ -63,127 +111,99 @@ const Portfolio: React.FC = () => {
     },
     {
       name: "Technician Chat App",
-      technologies: ["React", "Google Analytics", "jQuery"],
+      technologies: [
+        "React v16",
+        "Node.js",
+        "MongoDB",
+        "AG Grid",
+        "Amazon Web Services",
+      ],
       description:
-        "Shish Kabob Cafe is a local restaurant known for its mouthwatering Mediterranean cuisine. To enhance its online presence and streamline the ordering process, we developed a mobile-first, responsive web application and integrated a seamless delivery system.",
+        "Meticulously crafted for an HVAC company to enhance their accessibility and responsiveness to client needs, whether in the office or on-the-move with features such as pre-filled texts and the ability for clients to send images of their HVAC units, technicians could swiftly diagnose issues.",
       image: "/images/projects/chatapp2.png",
-      url: "github.com/projecturl",
+      url: "https://optimistic-goldberg-65009a.netlify.app/",
       summary:
-        "This project leverages JavaScript, Google Analytics, and jQuery to provide an exceptional user experience while boosting the restaurant's delivery service.",
+        "A full-stack CRUD web app developed for an HVAC company. Built using React, MongoDB, and Material UI, the app enables quick diagnosis and response through pre-filled texts and client photo submissions. Notably utilized during Hurricane Harvey, the app expedited response times, especially during crisis scenarios, marking a significant improvement in the company's service delivery in Austin and Houston, TX since 2018.",
       keyFeatures: [
-        "Mobile-First Design",
-        "Responsive Layout",
-        "Interactive Menu",
+        "Efficient contact and response system",
+        "Mobile-friendly accessibility",
+        "Proven reduction in communication lag",
       ],
     },
     {
       name: "Cryptotistics",
-      technologies: ["Python", "Google Analytics", "jQuery"],
+      technologies: ["Python", "Google Analytics", "Jinja", "SQL"],
       description:
-        "Shish Kabob Cafe is a local restaurant known for its mouthwatering Mediterranean cuisine. To enhance its online presence and streamline the ordering process, we developed a mobile-first, responsive web application and integrated a seamless delivery system.",
+        "A comprehensive cryptocurrency platform developed collaboratively as a group project that enables users  to search, display, and delve into a variety of metrics associated with cryptocurrencies.",
       image: "/images/projects/cryptotistics.png",
-      url: "github.com/projecturl",
+      url: "https://github.com/ahmermalik/cryptotistics",
       summary:
-        "This project leverages JavaScript, Google Analytics, and jQuery to provide an exceptional user experience while boosting the restaurant's delivery service.",
+        "A collaborative group project offering users an intuitive platform for cryptocurrency research, utilizing Python's Tornado, Google Analytics, OAuth login, Jinja templating, and a PostgreSQL backend for seamless CRUD operations.",
       keyFeatures: [
-        "Mobile-First Design",
-        "Responsive Layout",
-        "Interactive Menu",
-      ],
-    },
-    {
-      name: "Bull Bear Buddies",
-      technologies: ["JavaScript", "Google Analytics", "jQuery"],
-      description:
-        "Shish Kabob Cafe is a local restaurant known for its mouthwatering Mediterranean cuisine. To enhance its online presence and streamline the ordering process, we developed a mobile-first, responsive web application and integrated a seamless delivery system.",
-      image: "/images/projects/bullbearbuddies.png",
-      url: "github.com/projecturl",
-      summary:
-        "This project leverages JavaScript, Google Analytics, and jQuery to provide an exceptional user experience while boosting the restaurant's delivery service.",
-      keyFeatures: [
-        "Mobile-First Design",
-        "Responsive Layout",
-        "Interactive Menu",
-      ],
-    },
-    {
-      name: "Ahmer Malik",
-      technologies: ["Next.js", "Mix Panel", "jQuery"],
-      description:
-        "Shish Kabob Cafe is a local restaurant known for its mouthwatering Mediterranean cuisine. To enhance its online presence and streamline the ordering process, we developed a mobile-first, responsive web application and integrated a seamless delivery system.",
-      image: "/images/projects/ahmermalik.png",
-      url: "github.com/projecturl",
-      summary:
-        "This project leverages JavaScript, Google Analytics, and jQuery to provide an exceptional user experience while boosting the restaurant's delivery service.",
-      keyFeatures: [
-        "Mobile-First Design",
-        "Responsive Layout",
-        "Interactive Menu",
+        "Comprehensive metrics research",
+        "User-friendly interface allowing for easy search and display",
+        "OAuth login for secured access",
       ],
     },
   ];
   const nonprofitProjects = [
     {
-      name: "Water, Water Everywhere!",
-      technologies: ["JavaScript", "Google Analytics", "jQuery"],
-      description: "NASA.",
-      image: "/images/projects/waterwater.png",
-      url: "github.com/projecturl",
-      summary: "Utilizing Watson's A.I. to detect floods in an image",
-      keyFeatures: [
-        "Mobile-First Design",
-        "Responsive Layout",
-        "Interactive Menu",
-      ],
-    },
-    {
       name: "Houston Helps",
       technologies: [
-        "React",
-        "Redux",
-        "Node.js",
+        "Python",
         "Express",
-        "Charts",
-        "Amazon Web Services",
-        "Jest",
-        "Enzyme",
+        "MongoDB",
+        "Embedded JavaScript templates (EJS)",
       ],
-      description: "Craigslist scrapper",
+      description:
+        "Conceived during a Houston city-wide hackathon, the app employs a headless browser web-scraper to identify free items on Craigslist, streamlining the process for nonprofit organizations to locate and collect donations efficiently.",
       image: "/images/projects/houstonhelps.png",
-      url: "github.com/projecturl",
-      summary: "Grabbed free stuff from Craigslist",
+      url: "https://github.com/ahmermalik/HoustonHelps",
+      summary: "",
       keyFeatures: [
-        "Mobile-First Design",
-        "Responsive Layout",
-        "Interactive Menu",
+        "Efficient Item Location",
+        "Hackathon Origin",
+        "Headless Browser Webscapper",
+        "Dedicated to Non-Profit Organizations",
       ],
     },
+    // {
+    //   name: "Water, Water Everywhere!",
+    //   technologies: ["JavaScript", "Google Analytics", "jQuery"],
+    //   description:
+    //     "2nd place winner in NASA's Space App Challenge. Used the IBM Watson Visual Recognition engine to identify whether photographs/images indicate a flood risk situation.",
+    //   image: "/images/projects/waterwater.png",
+    //   url: "github.com/projecturl",
+    //   summary:
+    //     "Through machine learning, IBM Watson identified whether a number of selected images suggest a flood-risk, and the resulting image score will be augmented by data returned from the weather.com API.",
+    //   keyFeatures: ["Machine Learning", "Mobile-First Design"],
+    // },
   ];
   const [activeProject, setActiveProject] = useState(projects[0]);
 
   return (
     <Grid
       container
-      spacing={2}
-      sx={{ marginTop: "40px", marginBottom: "40px" }}
+      spacing={1}
+      sx={{marginBottom: "40px" }}
     >
       {/* 1st Grid */}
       <Grid
         item
         xs={12}
         md={2}
-        sx={{ marginLeft: "10px", marginRight: "10px" }}
+        sx={{ marginLeft: "10px", marginRight: "10px",  marginTop: "40px",  }}
       >
         <Typography
           variant="h2"
           className={""}
-          sx={{ fontSize: "56px", marginBottom: "20px" }}
+          sx={{ fontSize: "56px", }}
         >
           Portfolio
         </Typography>
         <Typography
           variant="h4"
-          sx={{ fontSize: "26px", fontWeight: "600", marginBottom: "60px" }}
+          sx={{ fontSize: "21px", fontWeight: "600",lineHeight: "50px",  marginBottom: "40px" }}
         >
           Explore my Digital Creations
         </Typography>
@@ -261,7 +281,7 @@ const Portfolio: React.FC = () => {
       </Grid>
 
       {/* 2nd Grid */}
-      <Grid item xs={12} md={9} sx={{marginLeft:"50px"}}>
+      <Grid item xs={12} md={9} sx={{ marginLeft: "50px",  marginTop: "40px" }}>
         <Box
           sx={{
             display: "flex",
@@ -279,7 +299,13 @@ const Portfolio: React.FC = () => {
           >
             {activeProject.name}
           </Typography>
+
+          <a href={activeProject.url} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }} >
           <ArrowButton btnName={"View Project"} marginRight={"10px"}/>
+
+          </a>
+        
+        
         </Box>
         <Typography
           variant="body1"
@@ -310,14 +336,17 @@ const Portfolio: React.FC = () => {
           width={600}
           height={600}
           style={{
-            width: "100%", // Will take up the full width of its container up to 600px
+            width: "100%",
             maxWidth: "1000px",
             maxHeight: "700px",
             borderRadius: "20px",
             background: `url(${activeProject.image}), lightgray -249.484px -6px / 144.156% 100.75% no-repeat`,
             boxShadow: "0px 20px 40px 0px rgba(0, 0, 0, 0.10)",
             marginBottom: "25px",
+            transition: "transform 0.3s ease-in-out",
           }}
+          onMouseOver={(e) => (e.currentTarget.style.transform = "scale(1.1)")}
+          onMouseOut={(e) => (e.currentTarget.style.transform = "scale(1)")}
         />
 
         <Typography
@@ -330,14 +359,24 @@ const Portfolio: React.FC = () => {
           {activeProject.summary}
         </Typography>
 
-        <Typography variant="body2">Key Features:</Typography>
+        <Typography
+          variant="body2"
+          sx={{
+            color: "#787878",
+            fontSize: ["15px", "17px", "18px"],
+            marginBottom: "-15px",
+            marginTop: "20px"
+          }}
+        >
+          Key Features:
+        </Typography>
         <ul>
           {activeProject.keyFeatures.map((feature) => (
             <li key={feature}>
               <Typography
                 variant="body2"
                 sx={{
-                  color: "#787878",
+                  color: "#000000",
                   fontSize: ["15px", "17px", "18px"],
                 }}
               >

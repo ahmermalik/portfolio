@@ -12,8 +12,8 @@ import Navbar from "./Navbar";
 
 
 type HeroProps = {
-  section: string; // replace string with the type of section, if it's not string
-  setSection: React.Dispatch<React.SetStateAction<string>>; // replace string if setSection handles a different type
+  section: string; 
+  setSection: React.Dispatch<React.SetStateAction<string>>; 
 };
 
 
