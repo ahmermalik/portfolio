@@ -2,8 +2,8 @@ import React from "react";
 import Button from "@mui/material/Button";
 
 interface ArrowButtonProps {
-btnName: String;
-marginRight: String;
+btnName: string;
+marginRight: string;
 
 }
 
