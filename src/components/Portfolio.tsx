@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useRef } from "react";
 import { Grid, Typography, Button } from "@mui/material";
 import ArrowButton from "./ArrowButton";
 import Image from "next/image";
@@ -6,6 +6,7 @@ import Box from "@mui/material/Box";
 import styles from "../styles/portfolio.module.scss";
 
 const Portfolio: React.FC = () => {
+  const detailsRef = useRef<HTMLDivElement>(null);
   const projects = [
     {
       name: "Buffalo Bayou Funds Najumi",
@@ -229,7 +230,15 @@ const Portfolio: React.FC = () => {
             {projects.map((project) => (
               <Typography
                 key={project.name}
-                onClick={() => setActiveProject(project)}
+                onClick={() => {
+                  setActiveProject(project);
+                  if (window.innerWidth <= 900) { // assuming 768px is your mobile breakpoint
+                    detailsRef.current?.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }}
+
+
+          
                 sx={{
                   fontSize: ["16px", "20px"],
                   lineHeight: "30px",
@@ -261,7 +270,12 @@ const Portfolio: React.FC = () => {
             {nonprofitProjects.map((project) => (
               <Typography
                 key={project.name}
-                onClick={() => setActiveProject(project)}
+                onClick={() => {
+                  setActiveProject(project);
+                  if (window.innerWidth <= 768) {
+                    detailsRef.current?.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }}
                 sx={{
                   fontSize: ["16px", "20px"],
                   lineHeight: "30px",
@@ -286,7 +300,7 @@ const Portfolio: React.FC = () => {
       </Grid>
 
       {/* 2nd Grid */}
-      <Grid item xs={12} md={9} className={styles.gridTwo}>
+      <Grid item xs={12} md={9} className={styles.gridTwo}  ref={detailsRef}>
         <Box
           component={"div"}
           sx={{
