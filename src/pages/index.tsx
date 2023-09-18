@@ -10,6 +10,12 @@ import {
   CssBaseline,
 } from "@mui/material";
 import { styled } from "@mui/material/styles";
+import type { NextPage } from 'next';
+import dynamic from 'next/dynamic';
+const Astronaut = dynamic(() => import('../components/Astronaut'), {
+  ssr: false,
+  loading: () => <div>loading...</div>,
+});
 
 type ThemeMode = "light" | "dark";
 
@@ -112,6 +118,9 @@ export default function Home() {
         </section>
         <section className="portfoliosection">
           <Portfolio />
+        </section>
+        <section className="TBD">
+          <Astronaut/>
         </section>
       </main>
     </ThemeProvider>
