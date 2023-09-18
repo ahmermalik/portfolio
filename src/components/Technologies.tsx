@@ -83,7 +83,7 @@ function WavyRectangle() {
   ];
 
   return (
-    <div className={styles.technames}>
+    <Box className={styles.technames}  component={"div"}>
       {experience.map((exp) => (
         <div key={exp.techName}>
           <Box
@@ -133,18 +133,18 @@ function WavyRectangle() {
           </Box>
         </div>
       ))}
-    </div>
+    </Box>
   );
 }
 
 const Technologies: React.FC = () => {
   return (
-    <div className={styles.tech}>
+    <Box className={styles.tech} component={"div"}>
       <div className={styles.heading}>
         <Typography
           variant="h2"
           className={styles.name}
-          sx={{ fontSize: "56px" }}
+          sx={{ fontSize: ["35px","56px"] }}
         >
           Technologies
         </Typography>
@@ -154,7 +154,7 @@ const Technologies: React.FC = () => {
           sx={{
             marginTop: "15px",
             marginBottom: "15px",
-            fontSize: "22px",
+            fontSize: ["15px","21px"],
             fontWeight: "400",
           }}
         >
@@ -163,7 +163,7 @@ const Technologies: React.FC = () => {
       </div>
 
       <WavyRectangle />
-    </div>
+    </Box>
   );
 };
 

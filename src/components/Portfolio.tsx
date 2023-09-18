@@ -3,6 +3,8 @@ import { Grid, Typography, Button } from "@mui/material";
 import ArrowButton from "./ArrowButton";
 import Image from "next/image";
 import Box from "@mui/material/Box";
+import styles from "../styles/portfolio.module.scss"
+
 
 const Portfolio: React.FC = () => {
   const projects = [
@@ -183,27 +185,29 @@ const Portfolio: React.FC = () => {
 
   return (
     <Grid
+      className={styles.portfolio}
       container
-      spacing={1}
-      sx={{marginBottom: "40px" }}
+      spacing={3}
     >
       {/* 1st Grid */}
       <Grid
+        className={styles.gridOne}
         item
         xs={12}
         md={2}
-        sx={{ marginLeft: "10px", marginRight: "10px",  marginTop: "40px",  }}
+        sx={{ marginLeft: "10px", marginRight: "10px", marginTop: "40px" }}
       >
         <Typography
           variant="h2"
-          className={""}
-          sx={{ fontSize: "56px", }}
+          className={styles.title}
+          sx={{ fontSize: ["35px", "56px"] }}
         >
           Portfolio
         </Typography>
         <Typography
           variant="h4"
-          sx={{ fontSize: "21px", fontWeight: "600",lineHeight: "50px",  marginBottom: "40px" }}
+          className={styles.explore}
+          sx={{ fontSize: ["15px", "21px"], fontWeight: "600", lineHeight: "50px", marginBottom: "40px" }}
         >
           Explore my Digital Creations
         </Typography>
@@ -226,7 +230,7 @@ const Portfolio: React.FC = () => {
                 key={project.name}
                 onClick={() => setActiveProject(project)}
                 sx={{
-                  fontSize: "20px",
+                  fontSize: ["16px", "20px"],
                   lineHeight: "30px",
                   fontWeight: "400",
                   cursor: "pointer",
@@ -258,7 +262,7 @@ const Portfolio: React.FC = () => {
                 key={project.name}
                 onClick={() => setActiveProject(project)}
                 sx={{
-                  fontSize: "20px",
+                  fontSize: ["16px", "20px"],
                   lineHeight: "30px",
                   fontWeight: "400",
                   cursor: "pointer",
@@ -281,7 +285,7 @@ const Portfolio: React.FC = () => {
       </Grid>
 
       {/* 2nd Grid */}
-      <Grid item xs={12} md={9} sx={{ marginLeft: "50px",  marginTop: "40px" }}>
+      <Grid item xs={12} md={9} className={styles.gridTwo}>
         <Box
           sx={{
             display: "flex",
@@ -301,17 +305,17 @@ const Portfolio: React.FC = () => {
           </Typography>
 
           <a href={activeProject.url} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }} >
-          <ArrowButton btnName={"View Project"} marginRight={"10px"}/>
+            <ArrowButton btnName={"View Project"} marginRight={"10px"} />
 
           </a>
-        
-        
+
+
         </Box>
         <Typography
           variant="body1"
           sx={{
             color: "#FF9B50",
-            fontSize: ["16px", "20px", "24px"],
+            fontSize: ["14px", "20px"]
           }}
         >
           {activeProject.technologies.join(", ")}
@@ -325,6 +329,7 @@ const Portfolio: React.FC = () => {
             fontStyle: "normal",
             fontWeight: 400,
             lineHeight: "50px",
+            marginBottom:"20px"
           }}
         >
           {activeProject.description}

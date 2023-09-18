@@ -5,7 +5,11 @@
   align-items: center; 
   justify-content: center; 
   box-sizing: border-box;
-  padding-top: 50px;
+  padding-top: 70px;
+
+  @media (min-width: 0px) and (max-width: 900px) {
+    padding-top: 50px;
+}
 }
 
 

@@ -37,19 +37,19 @@ const Hero: React.FC<HeroProps> = ({ section, setSection }) => {
         justifyContent="space-between"
         className={styles.gridOne}
       >
-        <div>
-          <Typography variant="h4" className={styles.intro}>
+        <Box component={"div"}>
+          <Typography variant="h4" className={styles.intro} >
             Hello, I&apos;m
           </Typography>
-          <Typography variant="h2" className={styles.name}>
+          <Typography variant="h2" className={styles.name}  >
             Ahmer Malik
           </Typography>
           <Typography component="p" className={styles.loc}>
-            I&apos;m a fullstack developer living in Texas
+            I&apos;m a fullstack engineer in Texas.
           </Typography>
           <ArrowButton btnName={"Let's Code!"} marginRight={"1px"}/>
 
-        </div>
+        </Box>
         <span>
           <a
             href="https://github.com/ahmermalik/"
@@ -113,7 +113,7 @@ const Hero: React.FC<HeroProps> = ({ section, setSection }) => {
           </Typography>
           <Typography component="p" className={styles.subpar}>
             {" "}
-            A passionate developer with a futuristic mindset. When I&apos;m not busy
+            A passionate engineer with a futuristic mindset. When I&apos;m not busy
             coding, you can find me gazing at the stars, diving into the world
             of cryptocurrencies, or analyzing charts. I love turning ideas into
             reality through lines of code, and I&apos;m excited to share my journey
@@ -121,6 +121,7 @@ const Hero: React.FC<HeroProps> = ({ section, setSection }) => {
           </Typography>
  
         <Button
+        onClick={() => window.open("/resume/Resume.pdf", "_blank")}
           sx={{
             marginBottom: "50px",
             alignSelf: "flex-end",
@@ -132,6 +133,7 @@ const Hero: React.FC<HeroProps> = ({ section, setSection }) => {
           }}
         >
           <Box
+            className={styles.resbutton}
             component="span"
             sx={{
               display: "inline-block",
