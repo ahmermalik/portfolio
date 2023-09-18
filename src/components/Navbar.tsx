@@ -48,7 +48,7 @@ const Navbar: React.FC<Props> = ({
   };
 
   const drawer = (
-    <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
+    <Box component={"div"} onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
       <Typography
         variant="h6"
         sx={{ my: 2 }}
@@ -76,7 +76,7 @@ const Navbar: React.FC<Props> = ({
     window !== undefined ? () => window().document.body : undefined;
 
   return (
-    <Box sx={{ display: "flex"}}>
+    <Box sx={{ display: "flex"}} component={"div"} >
       <CssBaseline />
       <AppBar
         component="nav"

@@ -8,7 +8,7 @@ import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 
 const AnimatedModel = () => {
   const { scene } = useThree();
-  const mixerRef = useRef(null);
+  const mixerRef = useRef<THREE.AnimationMixer | null>(null);
 
   useEffect(() => {
     const loader = new GLTFLoader();
@@ -37,14 +37,22 @@ const AnimatedModel = () => {
 
 const SceneSetup: React.FC = () => {
   const { camera, gl } = useThree();
-  const controlsRef = useRef(null);
+  const controlsRef = useRef<OrbitControls | null>(null);
 
   useEffect(() => {
-    controlsRef.current = new OrbitControls(camera, gl.domElement);
-    controlsRef.current.autoRotate = false;
-    controlsRef.current.autoRotateSpeed = 0.5;
-    return () => controlsRef.current.dispose();
-  }, [camera, gl]);
+    if (camera && gl.domElement) {
+        const controls = new OrbitControls(camera, gl.domElement);
+        controls.autoRotate = false;
+        controls.autoRotateSpeed = 0.5;
+        
+        // Set the controls to the ref so it can be used elsewhere
+        controlsRef.current = controls;
+
+        // Clean up on unmount
+        return () => controls.dispose();
+    }
+}, [camera, gl]);
+
 
   useFrame(() => {
     if (controlsRef.current) {
@@ -79,9 +87,9 @@ const Astronaut: React.FC = () => {
   }, []);
 
   return (
-    <Box component={"div"} ref={boxRef} sx={{ height: "900px", width: "1500px" }}>
+    <Box component={"div"} ref={boxRef} sx={{ height: "900px", width: "500px" }}>
       <Canvas onCreated={({ gl }) => {
-        gl.outputColorSpace = THREE.outputColorSpace;
+  (gl as any).outputColorSpace = THREE.SRGBColorSpace; 
         setLoading(false);
       }}>
         <SceneSetup />

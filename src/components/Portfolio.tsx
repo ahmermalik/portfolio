@@ -83,7 +83,7 @@ const Portfolio: React.FC = () => {
     },
     {
       name: "Ahmer Malik",
-      technologies: ["Next.js", "SQL", "Mix Panel"],
+      technologies: ["Next.js", "SQL", "Mix Panel", "Three.js"],
       description:
         "Shish Kabob Cafe is a local restaurant known for its mouthwatering Mediterranean cuisine. To enhance its online presence and streamline the ordering process, we developed a mobile-first, responsive web application and integrated a seamless delivery system.",
       image: "/images/projects/ahmermalik.png",
