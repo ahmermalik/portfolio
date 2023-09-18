@@ -10,7 +10,7 @@ import {
   CssBaseline,
 } from "@mui/material";
 import { styled } from "@mui/material/styles";
-import Work from "../components/Work";
+import Work from "../components/Experience";
 
 
 type ThemeMode = "light" | "dark";
