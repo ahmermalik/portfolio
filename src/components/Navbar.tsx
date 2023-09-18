@@ -24,8 +24,6 @@ interface Props {
   item: boolean;
   xs: number;
 }
-
-// { section, setSection, children }: any
 const drawerWidth = 240;
 const navItems = [
   "Home",
@@ -142,7 +140,7 @@ const Navbar: React.FC<Props> = ({
           open={mobileOpen}
           onClose={handleDrawerToggle}
           ModalProps={{
-            keepMounted: true, // Better open performance on mobile.
+            keepMounted: true, 
           }}
           sx={{
             display: { xs: "block", sm: "block", md: "block", lg: "block" },

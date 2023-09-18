@@ -232,13 +232,10 @@ const Portfolio: React.FC = () => {
                 key={project.name}
                 onClick={() => {
                   setActiveProject(project);
-                  if (window.innerWidth <= 900) { // assuming 768px is your mobile breakpoint
-                    detailsRef.current?.scrollIntoView({ behavior: 'smooth' });
+                  if (window.innerWidth <= 900) {
+                    detailsRef.current?.scrollIntoView({ behavior: "smooth" });
                   }
                 }}
-
-
-          
                 sx={{
                   fontSize: ["16px", "20px"],
                   lineHeight: "30px",
@@ -273,7 +270,7 @@ const Portfolio: React.FC = () => {
                 onClick={() => {
                   setActiveProject(project);
                   if (window.innerWidth <= 768) {
-                    detailsRef.current?.scrollIntoView({ behavior: 'smooth' });
+                    detailsRef.current?.scrollIntoView({ behavior: "smooth" });
                   }
                 }}
                 sx={{
@@ -300,7 +297,7 @@ const Portfolio: React.FC = () => {
       </Grid>
 
       {/* 2nd Grid */}
-      <Grid item xs={12} md={9} className={styles.gridTwo}  ref={detailsRef}>
+      <Grid item xs={12} md={9} className={styles.gridTwo} ref={detailsRef}>
         <Box
           component={"div"}
           sx={{
@@ -338,7 +335,7 @@ const Portfolio: React.FC = () => {
               component={"div"}
               className={styles.viewProject}
               sx={{
-                order: [3, 3, 2], // Button last on mobile, second on larger screens.
+                order: [3, 3, 2],
                 alignSelf: ["center", "center", "center"],
                 marginLeft: [0, 0, "auto"],
               }}
@@ -357,7 +354,7 @@ const Portfolio: React.FC = () => {
           <Typography
             variant="body1"
             sx={{
-              order: [2, 2, 3], // Technologies second on all screens.
+              order: [2, 2, 3],
               color: "#FF9B50",
               fontSize: ["14px", "20px"],
               marginRight: "10px",
@@ -380,7 +377,6 @@ const Portfolio: React.FC = () => {
             lineHeight: "30px",
             marginBottom: "20px",
             marginTop: "10px",
-           
           }}
         >
           {activeProject.description}

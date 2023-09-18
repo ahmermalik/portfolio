@@ -58,14 +58,6 @@ function WavyRectangle() {
       image: "/images/sql.svg",
       src: "/images/waveblue.svg",
     },
-    // {
-    //     techName: "CSS",
-    //     years: 8,
-    //     height: "325px",
-    //     image: "/images/css.svg",
-    //     src: "/images/waveblue.svg",
-    //   },
-
     {
       techName: "AWS",
       years: 4,
