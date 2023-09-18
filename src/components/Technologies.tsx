@@ -87,6 +87,7 @@ function WavyRectangle() {
       {experience.map((exp) => (
         <div key={exp.techName}>
           <Box
+           component={"div"} 
             sx={{
               width: "125px",
               height: exp.height,
@@ -122,7 +123,7 @@ function WavyRectangle() {
             />
           </Box>
 
-          <Box className={styles.imageContainer} sx={{marginTop:"25px", paddingBottom:"25px"}}>
+          <Box  component={"div"} className={styles.imageContainer} sx={{marginTop:"25px", paddingBottom:"25px"}}>
             <Image
               src={exp.image}
               alt={exp.techName}

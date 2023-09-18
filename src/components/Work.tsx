@@ -33,6 +33,13 @@ const Work: React.FC = () => {
         </Typography>
       </div>
       <Astronaut />
+      <div>
+        test test test test 
+      </div>
+      <span>
+
+        more test test test
+      </span>
     </Box>
   );
 };

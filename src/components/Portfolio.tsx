@@ -3,8 +3,7 @@ import { Grid, Typography, Button } from "@mui/material";
 import ArrowButton from "./ArrowButton";
 import Image from "next/image";
 import Box from "@mui/material/Box";
-import styles from "../styles/portfolio.module.scss"
-
+import styles from "../styles/portfolio.module.scss";
 
 const Portfolio: React.FC = () => {
   const projects = [
@@ -184,11 +183,7 @@ const Portfolio: React.FC = () => {
   const [activeProject, setActiveProject] = useState(projects[0]);
 
   return (
-    <Grid
-      className={styles.portfolio}
-      container
-      spacing={3}
-    >
+    <Grid className={styles.portfolio} container spacing={2}>
       {/* 1st Grid */}
       <Grid
         className={styles.gridOne}
@@ -207,11 +202,17 @@ const Portfolio: React.FC = () => {
         <Typography
           variant="h4"
           className={styles.explore}
-          sx={{ fontSize: ["15px", "21px"], fontWeight: "600", lineHeight: "50px", marginBottom: "40px" }}
+          sx={{
+            fontSize: ["15px", "21px"],
+            fontWeight: "600",
+            lineHeight: "50px",
+            marginBottom: "40px",
+          }}
         >
           Explore my Digital Creations
         </Typography>
         <Box
+          component={"div"}
           sx={{
             backgroundColor: "white",
             borderRadius: "30px",
@@ -224,7 +225,7 @@ const Portfolio: React.FC = () => {
           >
             Projects
           </Typography>
-          <Box sx={{ marginBottom: "10px" }}>
+          <Box sx={{ marginBottom: "10px" }} component={"div"}>
             {projects.map((project) => (
               <Typography
                 key={project.name}
@@ -256,7 +257,7 @@ const Portfolio: React.FC = () => {
           >
             Nonprofit Projects
           </Typography>
-          <Box>
+          <Box component={"div"}>
             {nonprofitProjects.map((project) => (
               <Typography
                 key={project.name}
@@ -287,39 +288,73 @@ const Portfolio: React.FC = () => {
       {/* 2nd Grid */}
       <Grid item xs={12} md={9} className={styles.gridTwo}>
         <Box
+          component={"div"}
           sx={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "space-between",
+            flexDirection: ["column", "column", "column"],
+            alignItems: "start",
+            gap: 2,
           }}
         >
-          <Typography
-            variant="h5"
+          <Box
+            component={"div"}
             sx={{
-              color: "#2C2C2C",
-              fontSize: ["24px", "32px", "56px"],
-              fontStyle: "normal",
+              display: "flex",
+              flexDirection: ["column", "column", "row"],
+              alignItems: "center",
+              justifyContent: "space-between",
+              width: "100%",
+              gap: 2,
             }}
           >
-            {activeProject.name}
+            <Typography
+              variant="h5"
+              sx={{
+                color: "#2C2C2C",
+                fontSize: ["24px", "32px", "56px"],
+                fontStyle: "normal",
+                textAlign: "left",
+                flexGrow: 1,
+                order: [1, 1, 1],
+              }}
+            >
+              {activeProject.name}
+            </Typography>
+
+            <Box
+              component={"div"}
+              className={styles.viewProject}
+              sx={{
+                order: [3, 3, 2], // Button last on mobile, second on larger screens.
+                alignSelf: ["center", "center", "center"],
+                marginLeft: [0, 0, "auto"],
+              }}
+            >
+              <a
+                href={activeProject.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ textDecoration: "none" }}
+              >
+                <ArrowButton btnName={"View Project"} marginRight={"10px"} />
+              </a>
+            </Box>
+          </Box>
+
+          <Typography
+            variant="body1"
+            sx={{
+              order: [2, 2, 3], // Technologies second on all screens.
+              color: "#FF9B50",
+              fontSize: ["14px", "20px"],
+              marginRight: "10px",
+              textAlign: "left",
+              width: "100%",
+              lineHeight: "30px",
+            }}
+          >
+            {activeProject.technologies.join(", ")}
           </Typography>
-
-          <a href={activeProject.url} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }} >
-            <ArrowButton btnName={"View Project"} marginRight={"10px"} />
-
-          </a>
-
-
         </Box>
-        <Typography
-          variant="body1"
-          sx={{
-            color: "#FF9B50",
-            fontSize: ["14px", "20px"]
-          }}
-        >
-          {activeProject.technologies.join(", ")}
-        </Typography>
 
         <Typography
           variant="body2"
@@ -328,37 +363,43 @@ const Portfolio: React.FC = () => {
             fontSize: ["15px", "17px", "18px"],
             fontStyle: "normal",
             fontWeight: 400,
-            lineHeight: "50px",
-            marginBottom:"20px"
+            lineHeight: "30px",
+            marginBottom: "20px",
+            marginTop: "10px",
+           
           }}
         >
           {activeProject.description}
         </Typography>
-
-        <Image
-          src={activeProject.image}
-          alt={activeProject.name}
-          width={600}
-          height={600}
-          style={{
-            width: "100%",
-            maxWidth: "1000px",
-            maxHeight: "700px",
-            borderRadius: "20px",
-            background: `url(${activeProject.image}), lightgray -249.484px -6px / 144.156% 100.75% no-repeat`,
-            boxShadow: "0px 20px 40px 0px rgba(0, 0, 0, 0.10)",
-            marginBottom: "25px",
-            transition: "transform 0.3s ease-in-out",
-          }}
-          onMouseOver={(e) => (e.currentTarget.style.transform = "scale(1.1)")}
-          onMouseOut={(e) => (e.currentTarget.style.transform = "scale(1)")}
-        />
-
+        <div className={styles.imageDiv}>
+          <Image
+            src={activeProject.image}
+            alt={activeProject.name}
+            width={600}
+            height={600}
+            style={{
+              width: "100%",
+              height: "auto",
+              maxWidth: "1000px",
+              maxHeight: "1000px",
+              borderRadius: "20px",
+              background: `url(${activeProject.image}), lightgray -249.484px -6px / 144.156% 100.75% no-repeat`,
+              boxShadow: "0px 20px 40px 0px rgba(0, 0, 0, 0.10)",
+              marginBottom: "35px",
+              transition: "transform 0.3s ease-in-out",
+            }}
+            onMouseOver={(e) =>
+              (e.currentTarget.style.transform = "scale(1.1)")
+            }
+            onMouseOut={(e) => (e.currentTarget.style.transform = "scale(1)")}
+          />
+        </div>
         <Typography
           variant="body1"
           sx={{
             color: "#787878",
             fontSize: ["15px", "17px", "18px"],
+            lineHeight: "30px",
           }}
         >
           {activeProject.summary}
@@ -370,7 +411,7 @@ const Portfolio: React.FC = () => {
             color: "#787878",
             fontSize: ["15px", "17px", "18px"],
             marginBottom: "-15px",
-            marginTop: "20px"
+            marginTop: "20px",
           }}
         >
           Key Features:

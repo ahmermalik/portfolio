@@ -126,6 +126,7 @@ const Navbar: React.FC<Props> = ({
           </IconButton>
           <Image src={logo} alt="Description" width={150} height={100}  />
           <Box
+           component={"div"} 
             sx={{
               display: { xs: "block", sm: "block", md: "block", lg: "block" },
             }}
