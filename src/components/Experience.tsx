@@ -10,25 +10,25 @@ const Astronaut = dynamic(() => import("./Astronaut"), {
 });
 const Experience: React.FC = () => {
   const companies = [{
-    name: "Buffalo Bayou",
+    name: "Buffalo Bayou Funds",
     role: "Software Engineer",
     dates: ["02/2021", "08/2023"],
-    accomplishments: ["18% Subscripition increase", "Tech Upgrade", "Debt Reduction"]
-  },{
-    name: "E9 Labs",
-    role: "Software Engineer",
-    dates: ["01/2019", "03/2019"],
-    accomplishments: ["Slashing response time by 75%", " Real-time chat", "chat history"]
-  },{
-    name: "Cox Enterprises Inc.",
-    role: "Software Engineer",
-    dates: ["03/2019", "02/2021"],
-    accomplishments: ["Raising conversion rates by 11%.", "API Portal Launch", "FCP Improvement"]
+    accomplishments: ["18% subscripition increase", "Tech upgrade", "Tech debt reduction"] 
   },{
     name: "Emerson Electric",
     role: "Analyst",
     dates: ["05/2015", "01/2017"],
-    accomplishments: ["Raising conversion rates by 11%.", "API Portal Launch", "FCP Improvement"]
+    accomplishments: ["Spreadsheet automation", "Tech upgrade", "Expense reduction"]
+  },{
+    name: "E9 Labs",
+    role: "Software Engineer",
+    dates: ["01/2019", "03/2019"],
+    accomplishments: ["Slashing response time by 75%", " Real-time chat", "Chat history"]
+  },{
+    name: "Cox Enterprises Inc.",
+    role: "Software Engineer",
+    dates: ["03/2019", "02/2021"],
+    accomplishments: ["Raising conversion rates by 11%.", "API Portal launch", "FCP improvement"]
   }]
   return (
     <Box component={"div"} className={styles.work}>
@@ -53,14 +53,10 @@ const Experience: React.FC = () => {
           Pushing Boundaries and Elevating User Engagement
         </Typography>
       </div>
-      <Astronaut companies={companies} />
-      <div>
-        test test test test 
-      </div>
-      <span>
 
-        more test test test
-      </span>
+  <div className={styles.astro}>
+    <Astronaut companies={companies} />
+</div>
     </Box>
   );
 };
