@@ -12,6 +12,7 @@ import styles from "../styles/experience.module.scss";
 extend({ OrbitControls });
 
 const AnimatedModel: React.FC<{ companies: any[] }> = ({ companies }) => {
+  //add day and night, you will also have to add the [color] into bottom of useEffect
   const { scene, camera } = useThree();
   const mixerRef = useRef<THREE.AnimationMixer | null>(null);
 
@@ -20,7 +21,7 @@ const AnimatedModel: React.FC<{ companies: any[] }> = ({ companies }) => {
     const loader = new GLTFLoader();
     loader.load("/astro/scene.gltf", (gltf) => {
       const model = gltf.scene;
-      model.position.set(0, 0, 0);
+      model.position.set(0, -50, 0); // always x, y z coordinate setup
       model.scale.set(55, 55, 55);
       scene.add(model);
 
@@ -63,10 +64,10 @@ const AnimatedModel: React.FC<{ companies: any[] }> = ({ companies }) => {
 
     /**Font section */
     const cornerPositions = [
-      { x: 70, y: 150 }, // top right
-      { x: 150, y: -10 }, // bottom right
-      { x: -250, y: -5 }, // bottom left
-      { x: -250, y: 150 }, // top left
+      { x: 70, y: 120 }, // top right
+      { x: 70, y: -30 }, // bottom right
+      { x: -250, y: -30 }, // bottom left
+      { x: -250, y: 120 }, // top left
     ];
 
     const fontLoader = new FontLoader();
@@ -103,7 +104,7 @@ const AnimatedModel: React.FC<{ companies: any[] }> = ({ companies }) => {
           });
           const roleMesh = new THREE.Mesh(
             roleGeometry,
-            new THREE.MeshBasicMaterial({ color: "#FF9B50" })
+            new THREE.MeshBasicMaterial({ color: "#20D9B7" })
           );
           roleMesh.position.set(
             cornerPositions[index].x,
@@ -120,7 +121,7 @@ const AnimatedModel: React.FC<{ companies: any[] }> = ({ companies }) => {
           });
           const datesMesh = new THREE.Mesh(
             datesGeometry,
-            new THREE.MeshBasicMaterial({ color: "#FF9B50" })
+            new THREE.MeshBasicMaterial({ color: "#E95B0C" })
           );
           datesMesh.position.set(
             cornerPositions[index].x,
@@ -140,7 +141,7 @@ const AnimatedModel: React.FC<{ companies: any[] }> = ({ companies }) => {
           );
           const accomplishmentsMesh = new THREE.Mesh(
             accomplishmentsGeometry,
-            new THREE.MeshBasicMaterial({ color: "#FF9B50" })
+            new THREE.MeshBasicMaterial({ color: "#20D9B7" })
           );
           accomplishmentsMesh.position.set(
             cornerPositions[index].x,
@@ -183,7 +184,7 @@ const SceneSetup: React.FC<{ companies: any[] }> = ({ companies }) => {
   return (
     <>
       <AnimatedModel companies={companies} />
-      <PerspectiveCamera makeDefault position={[20, 250, 290]} />
+      <PerspectiveCamera makeDefault position={[0, 200, 400]} />
       <ambientLight intensity={0.7} />
       <directionalLight position={[10, 20, 30]} intensity={2.5} />
       <directionalLight position={[-10, 20, -30]} intensity={2.5} />

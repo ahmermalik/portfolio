@@ -9,12 +9,13 @@ const Astronaut = dynamic(() => import("./Astronaut"), {
   loading: () => <div>loading...</div>,
 });
 const Experience: React.FC = () => {
-  const companies = [{
-    name: "Buffalo Bayou Funds",
-    role: "Software Engineer",
-    dates: ["02/2021", "08/2023"],
-    accomplishments: ["18% subscripition increase", "Tech upgrade", "Tech debt reduction"] 
-  },{
+  const companies = [
+    {
+      name: "Cox Enterprises Inc.",
+      role: "Software Engineer",
+      dates: ["03/2019", "02/2021"],
+      accomplishments: ["Raise conversion rates by 11%.", "FCP improvement", "API Portal launch"]
+    },{
     name: "Emerson Electric",
     role: "Analyst",
     dates: ["05/2015", "01/2017"],
@@ -25,10 +26,10 @@ const Experience: React.FC = () => {
     dates: ["01/2019", "03/2019"],
     accomplishments: ["Slashing response time by 75%", " Real-time chat", "Chat history"]
   },{
-    name: "Cox Enterprises Inc.",
+    name: "Buffalo Bayou Funds",
     role: "Software Engineer",
-    dates: ["03/2019", "02/2021"],
-    accomplishments: ["Raising conversion rates by 11%.", "API Portal launch", "FCP improvement"]
+    dates: ["02/2021", "08/2023"],
+    accomplishments: ["18% subscripition increase", "Tech upgrade", "Tech debt reduction"] 
   }]
   return (
     <Box component={"div"} className={styles.work}>
