@@ -60,7 +60,6 @@ const Experience: React.FC = () => {
           className={styles.subtitle}
           sx={{
             marginTop: "15px",
-            marginBottom: "15px",
             fontSize: ["15px", "21px"],
             fontWeight: "400",
           }}

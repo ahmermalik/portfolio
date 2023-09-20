@@ -4,7 +4,7 @@ import ArrowButton from "./ArrowButton";
 import Image from "next/image";
 import Box from "@mui/material/Box";
 import styles from "../styles/portfolio.module.scss";
-import {projects, nonprofitProjects } from "../data/projectsData";
+import { projects, nonprofitProjects } from "../data/projectsData";
 
 const Portfolio: React.FC = () => {
   const detailsRef = useRef<HTMLDivElement>(null);
@@ -19,12 +19,16 @@ const Portfolio: React.FC = () => {
         item
         xs={12}
         md={2}
-        sx={{ marginLeft: "10px", marginRight: "10px"}}
+        sx={{ marginLeft: "10px", marginRight: "10px" }}
       >
         <Typography
           variant="h2"
           className={styles.title}
-          sx={{ fontSize: ["35px", "56px"], marginLeft:"5px", marginTop:"4px" }}
+          sx={{
+            fontSize: ["35px", "56px"],
+            marginLeft: "5px",
+            marginTop: "4px",
+          }}
         >
           Portfolio
         </Typography>
@@ -36,8 +40,8 @@ const Portfolio: React.FC = () => {
             fontWeight: "600",
             lineHeight: "30px",
             marginBottom: "30px",
-            marginLeft:"5px",
-            paddingTop:"4px"
+            marginLeft: "5px",
+            paddingTop: "4px",
           }}
         >
           Explore my Digital Creations
@@ -86,7 +90,6 @@ const Portfolio: React.FC = () => {
               </Typography>
             ))}
           </Box>
-
           <Typography
             variant="subtitle1"
             sx={{ fontSize: "24px", fontWeight: "600", marginBottom: "20px" }}
@@ -125,7 +128,6 @@ const Portfolio: React.FC = () => {
           </Box>
         </Box>
       </Grid>
-
       {/* 2nd Grid */}
       <Grid item xs={12} md={9} className={styles.gridTwo} ref={detailsRef}>
         <Box
@@ -159,7 +161,6 @@ const Portfolio: React.FC = () => {
             >
               {activeProject.name}
             </Typography>
-
             <Box
               component={"div"}
               className={styles.viewProject}
@@ -178,7 +179,6 @@ const Portfolio: React.FC = () => {
               </a>
             </Box>
           </Box>
-
           <Typography
             variant="body1"
             sx={{
@@ -193,7 +193,6 @@ const Portfolio: React.FC = () => {
             {activeProject.technologies.join(", ")}
           </Typography>
         </Box>
-
         <Typography
           variant="body2"
           sx={{
