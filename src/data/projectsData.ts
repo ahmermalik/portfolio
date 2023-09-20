@@ -10,7 +10,7 @@ type Project = {
 
 export const projects: Project[] = [
   {
-    name: "Buffalo Bayou Funds Najumi",
+    name: "Buffalo Bayou Funds Analytics",
     technologies: [
       "Node.js",
       "React v18",

@@ -3,6 +3,7 @@ import Hero from "../components/Hero";
 import Techonologies from "../components/Technologies";
 import Portfolio from "../components/Portfolio";
 import Work from "../components/Experience";
+import Testimonials from "@/components/Testimonials";
 import {
   createTheme,
   ThemeProvider,
@@ -120,7 +121,7 @@ export default function Home() {
         </section>
 
         <section className="testimonials">
-          
+          <Testimonials/>
         </section>
 
         <section className="contact">

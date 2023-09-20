@@ -8,6 +8,7 @@ import { PerspectiveCamera, Text } from "@react-three/drei";
 import { FontLoader } from "three/examples/jsm/loaders/FontLoader";
 import { TextGeometry } from "three/examples/jsm/geometries/TextGeometry";
 import styles from "../styles/experience.module.scss";
+import Image from "next/image";
 
 extend({ OrbitControls });
 
@@ -236,7 +237,7 @@ const Astronaut: React.FC<{ companies: any[] }> = ({ companies }) => {
       >
         <SceneSetup companies={companies} cameraFOV={cameraFOV} />
       </Canvas>
-      {loading && <p>loading...</p>}
+      {loading &&  <Image src="/images/rocket.gif" alt="Loading..." width={400} height={300} />}
     </Box>
   );
 };
