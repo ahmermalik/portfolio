@@ -42,7 +42,7 @@ const Hero: React.FC<HeroProps> = ({ section, setSection }) => {
             Hello, I&apos;m
           </Typography>
           <Typography variant="h2" className={styles.name}  >
-            Ahmer Malik
+            Ahmer
           </Typography>
           <Typography component="p" className={styles.loc}>
             I&apos;m a fullstack engineer in Texas.
