@@ -2,6 +2,7 @@ import { useState } from "react";
 import Hero from "../components/Hero";
 import Techonologies from "../components/Technologies";
 import Portfolio from "../components/Portfolio";
+import Work from "../components/Experience";
 import {
   createTheme,
   ThemeProvider,
@@ -10,7 +11,6 @@ import {
   CssBaseline,
 } from "@mui/material";
 import { styled } from "@mui/material/styles";
-import Work from "../components/Experience";
 
 
 type ThemeMode = "light" | "dark";
@@ -67,7 +67,7 @@ export default function Home() {
   const [mode, setMode] = useState<ThemeMode>(
     prefersDarkMode ? "dark" : "light"
   );
-  const [section, setSection] = useState<string>("Home");
+  const [section, setSection] = useState<string>("home");
 
   const theme = createTheme({
     typography: {
@@ -105,19 +105,27 @@ export default function Home() {
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <main>
-        <section className="herosection">
+        <section className="home">
           <Hero section={section} setSection={setSection} />
         </section>
 
-        <section className="techsection">
+        <section className="technologies">
           <Techonologies />
         </section>
-        <section className="portfoliosection">
+        <section className="portfolio">
           <Portfolio />
         </section>
         <section className="work">
           <Work />
         </section>
+
+        <section className="testimonials">
+          
+        </section>
+
+        <section className="contact">
+          
+          </section>
       </main>
     </ThemeProvider>
   );

@@ -8,7 +8,6 @@ import experienceData from "../data/experienceData";
 
 
 const WavyRectangle =()=> {
-
   return (
     <Box className={styles.technames}  component={"div"}>
       {experienceData.map((exp) => (

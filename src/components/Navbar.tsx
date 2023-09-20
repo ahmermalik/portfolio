@@ -69,7 +69,6 @@ const Navbar: React.FC<Props> = ({
       </List>
     </Box>
   );
-
   const container =
     window !== undefined ? () => window().document.body : undefined;
 
@@ -129,7 +128,7 @@ const Navbar: React.FC<Props> = ({
               display: { xs: "block", sm: "block", md: "block", lg: "block" },
             }}
           >
-            {"modeSwitch"}
+            {/* {"modeSwitch"} */}
           </Box>
         </Toolbar>
       </AppBar>

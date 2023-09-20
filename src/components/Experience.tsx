@@ -1,44 +1,50 @@
+import React, { useState, useEffect, useRef } from "react";
 import Box from "@mui/material/Box";
 import dynamic from "next/dynamic";
-import { Grid, Typography, Button } from "@mui/material";
+import { Typography } from "@mui/material";
 import styles from "../styles/experience.module.scss";
-import { useMediaQuery } from '@mui/material';
-
-
+import { useMediaQuery } from "@mui/material";
+import companiesData from "../data/companiesData";
+import Image from "next/image";
 
 const AstronautMobile = dynamic(() => import("./AstronautMobile"), {
   ssr: false,
-  loading: () => <div>loading...</div>,
+  loading: () => (
+    <Image src="/images/rocket.gif" alt="Loading..." width={400} height={300} />
+  ),
 });
 
 const Astronaut = dynamic(() => import("./Astronaut"), {
   ssr: false,
-  loading: () => <div>loading...</div>,
+  loading: () => (
+    <Image src="/images/rocket.gif" alt="Loading..." width={400} height={300} />
+  ),
 });
+
 const Experience: React.FC = () => {
-  const isMobile = useMediaQuery('(max-width:900px)');
-  const companies = [
-    {
-      name: "Cox Enterprises Inc.",
-      role: "Software Engineer",
-      dates: ["03/2019", "02/2021"],
-      accomplishments: ["Raise conversion rates by 11%", "FCP improvement", "API Portal launch"]
-    },{
-    name: "Emerson Electric",
-    role: "Analyst",
-    dates: ["05/2015", "08/2017"],
-    accomplishments: ["Spreadsheet automation", "Tech upgrade", "Expense reduction"]
-  },{
-    name: "E9 Labs",
-    role: "Software Engineer",
-    dates: ["01/2019", "03/2019"],
-    accomplishments: ["Slashing response time by 75%", " Real-time chat", "Chat history"]
-  },{
-    name: "Buffalo Bayou Funds",
-    role: "Software Engineer",
-    dates: ["02/2021", "08/2023"],
-    accomplishments: ["18% subscripition increase", "Tech upgrade", "Tech debt reduction"] 
-  }]
+  const isMobile = useMediaQuery("(max-width:900px)");
+  const [isVisible, setIsVisible] = useState(false);
+  const refVisible = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      if (entries[0].isIntersecting) {
+        setIsVisible(true);
+        observer.disconnect();
+      }
+    });
+
+    if (refVisible.current) {
+      observer.observe(refVisible.current);
+    }
+
+    return () => {
+      if (refVisible.current) {
+        observer.disconnect();
+      }
+    };
+  }, []);
+
   return (
     <Box component={"div"} className={styles.work}>
       <Box component={"div"} className={styles.titlecontainer}>
@@ -47,7 +53,7 @@ const Experience: React.FC = () => {
           className={styles.title}
           sx={{ fontSize: ["35px", "56px"] }}
         >
-         Crafting Immersive Web Experiences
+          Crafting Immersive Web Experiences
         </Typography>
         <Typography
           component="p"
@@ -63,11 +69,11 @@ const Experience: React.FC = () => {
         </Typography>
       </Box>
 
-  <Box  component={"div"} className={styles.astro}>
+      <Box component={"div"} className={styles.astro} ref={refVisible}>
+        {isMobile && isVisible && <AstronautMobile />}
 
-  {isMobile ? <AstronautMobile/> :  <Astronaut companies={companies} />}
-   
-</Box>
+        {!isMobile && isVisible && <Astronaut companies={companiesData} />}
+      </Box>
     </Box>
   );
 };
