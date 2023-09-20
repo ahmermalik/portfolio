@@ -1,7 +1,7 @@
 .portfolio {
   background: #F5F5F5;
-  margin-bottom: 40px;
   padding-top: 100px;
+  padding-bottom: 30px;
 
   .gridOne {
     @media (min-width: 0px) and (max-width: 900px) {
@@ -16,11 +16,10 @@
 
   .gridTwo {
     margin-left: 50px;
-    margin-top: 40px;
     @media (min-width: 0px) and (max-width: 900px) {
       padding-left: 25px;
       padding-right: 25px;
-      margin-left: 0px;
+      margin-left: 10px;
     }
     .viewProject {
       @media (min-width: 0px) and (max-width: 900px) {

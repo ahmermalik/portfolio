@@ -100,7 +100,7 @@ const Hero: React.FC<HeroProps> = ({ section, setSection }) => {
         />
       </Grid>
       <Grid
-       item xs={12} sm={12} md={4} lg={4} xl={5}
+        item xs={12} sm={12} md={9} lg={4} xl={5}
         display="flex"
         flexDirection="column"
         justifyContent="space-between"
@@ -108,7 +108,8 @@ const Hero: React.FC<HeroProps> = ({ section, setSection }) => {
       >
 
           <Typography component="p" className={styles.subhead}>
-           `Exploring the cosmos of code`
+          {` "Exploring the cosmos of code" `}
+
           </Typography>
           <Typography component="p" className={styles.subpar}>
             {" "}
@@ -123,6 +124,7 @@ const Hero: React.FC<HeroProps> = ({ section, setSection }) => {
         onClick={() => window.open("/resume/Resume.pdf", "_blank")}
           sx={{
             marginBottom: "50px",
+            paddingRight: "50px",
             alignSelf: "flex-end",
             backgroundColor: "transparent",
             textTransform: "none",
