@@ -5,7 +5,6 @@ import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import Box from "@mui/material/Box";
 import { PerspectiveCamera } from "@react-three/drei";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
-import Image from "next/image";
 
 const AnimatedModel = () => {
   const { scene } = useThree();
@@ -101,7 +100,6 @@ const Astronaut: React.FC = () => {
       }}>
         <SceneSetup />
       </Canvas>
-      {loading &&  <Image src="/images/rocket.gif" alt="Loading..." width={400} height={300} />}
     </Box>
   );
 };
