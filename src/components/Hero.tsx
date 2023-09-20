@@ -35,14 +35,13 @@ const Hero: React.FC<HeroProps> = ({ section, setSection }) => {
         display="flex"
         flexDirection="column"
         justifyContent="space-between"
-        className={styles.gridOne}
       >
-        <Box component={"div"}>
+        <Box component={"div"} className={styles.gridOne}>
           <Typography variant="h4" className={styles.intro} >
             Hello, I&apos;m
           </Typography>
           <Typography variant="h2" className={styles.name}  >
-            Ahmer
+            Ahmer Malik
           </Typography>
           <Typography component="p" className={styles.loc}>
             I&apos;m a fullstack engineer in Texas.
@@ -50,7 +49,7 @@ const Hero: React.FC<HeroProps> = ({ section, setSection }) => {
           <ArrowButton btnName={"Let's Code!"} marginRight={"1px"}/>
 
         </Box>
-        <span>
+        <span className={styles.icons}>
           <a
             href="https://github.com/ahmermalik/"
             target="_blank"
