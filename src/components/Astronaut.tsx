@@ -25,9 +25,15 @@ const AnimatedModel: React.FC<{ companies: any[] }> = ({ companies }) => {
       model.scale.set(55, 55, 55);
       scene.add(model);
 
+      /**
+         The x axis runs from your left to your right.
+         The y axis runs from the floor to the ceiling.
+         The z axis runs from behind you to in front of you.
+       */
+
       /** Adding the point light */
       const pointLight = new THREE.PointLight(0xffffff, 111110.5);
-      pointLight.position.set(0, 7, 10); /** Adjust position  */
+      pointLight.position.set(0, 10, 10); /** Adjust position  */
       scene.add(pointLight);
 
       if (gltf.animations && gltf.animations.length > 0) {
@@ -85,9 +91,7 @@ const AnimatedModel: React.FC<{ companies: any[] }> = ({ companies }) => {
           });
           const nameMesh = new THREE.Mesh(
             nameGeometry,
-            new THREE.MeshPhongMaterial({
-              color: "#FF9B50",
-            })
+            new THREE.MeshBasicMaterial({ color: "#E95B0C" })
           );
           nameMesh.position.set(
             cornerPositions[index].x,
@@ -161,7 +165,10 @@ const AnimatedModel: React.FC<{ companies: any[] }> = ({ companies }) => {
   return null;
 };
 
-const SceneSetup: React.FC<{ companies: any[] }> = ({ companies }) => {
+const SceneSetup: React.FC<{ companies: any[]; cameraFOV: number }> = ({
+  companies,
+  cameraFOV,
+}) => {
   const controlsRef = useRef<OrbitControls | null>(null);
   const { camera, gl } = useThree();
 
@@ -184,7 +191,7 @@ const SceneSetup: React.FC<{ companies: any[] }> = ({ companies }) => {
   return (
     <>
       <AnimatedModel companies={companies} />
-      <PerspectiveCamera makeDefault position={[0, 200, 400]} />
+      <PerspectiveCamera makeDefault position={[0, 100, 400]} fov={cameraFOV} />
       <ambientLight intensity={0.7} />
       <directionalLight position={[10, 20, 30]} intensity={2.5} />
       <directionalLight position={[-10, 20, -30]} intensity={2.5} />
@@ -195,18 +202,22 @@ const SceneSetup: React.FC<{ companies: any[] }> = ({ companies }) => {
 const Astronaut: React.FC<{ companies: any[] }> = ({ companies }) => {
   const [loading, setLoading] = useState(true);
   const boxRef = useRef<HTMLDivElement | null>(null);
+  const [cameraFOV, setCameraFOV] = useState<number>(50); // default FOV value
 
   useEffect(() => {
     const handleResize = () => {
       if (boxRef.current) {
         const width = boxRef.current.clientWidth;
         const height = boxRef.current.clientHeight;
+
+        // This is an example calculation. Adjust as necessary.
+        const newFOV = 60 * 1.5*(width / window.innerWidth );
+        setCameraFOV(newFOV);
       }
     };
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
+  }, [companies, cameraFOV]);
   return (
     <Box
       component={"div"}
@@ -223,7 +234,7 @@ const Astronaut: React.FC<{ companies: any[] }> = ({ companies }) => {
           setLoading(false);
         }}
       >
-        <SceneSetup companies={companies} />
+        <SceneSetup companies={companies} cameraFOV={cameraFOV} />
       </Canvas>
       {loading && <p>loading...</p>}
     </Box>

@@ -2,23 +2,31 @@ import Box from "@mui/material/Box";
 import dynamic from "next/dynamic";
 import { Grid, Typography, Button } from "@mui/material";
 import styles from "../styles/experience.module.scss";
-import ArrowButton from "./ArrowButton";
+import { useMediaQuery } from '@mui/material';
+
+
+
+const AstronautMobile = dynamic(() => import("./AstronautMobile"), {
+  ssr: false,
+  loading: () => <div>loading...</div>,
+});
 
 const Astronaut = dynamic(() => import("./Astronaut"), {
   ssr: false,
   loading: () => <div>loading...</div>,
 });
 const Experience: React.FC = () => {
+  const isMobile = useMediaQuery('(max-width:900px)');
   const companies = [
     {
       name: "Cox Enterprises Inc.",
       role: "Software Engineer",
       dates: ["03/2019", "02/2021"],
-      accomplishments: ["Raise conversion rates by 11%.", "FCP improvement", "API Portal launch"]
+      accomplishments: ["Raise conversion rates by 11%", "FCP improvement", "API Portal launch"]
     },{
     name: "Emerson Electric",
     role: "Analyst",
-    dates: ["05/2015", "01/2017"],
+    dates: ["05/2015", "08/2017"],
     accomplishments: ["Spreadsheet automation", "Tech upgrade", "Expense reduction"]
   },{
     name: "E9 Labs",
@@ -33,7 +41,7 @@ const Experience: React.FC = () => {
   }]
   return (
     <Box component={"div"} className={styles.work}>
-      <div className={styles.titlecontainer}>
+      <Box component={"div"} className={styles.titlecontainer}>
         <Typography
           variant="h2"
           className={styles.title}
@@ -53,11 +61,13 @@ const Experience: React.FC = () => {
         >
           Pushing Boundaries and Elevating User Engagement
         </Typography>
-      </div>
+      </Box>
 
-  <div className={styles.astro}>
-    <Astronaut companies={companies} />
-</div>
+  <Box  component={"div"} className={styles.astro}>
+
+  {isMobile ? <AstronautMobile/> :  <Astronaut companies={companies} />}
+   
+</Box>
     </Box>
   );
 };

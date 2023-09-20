@@ -4,79 +4,14 @@ import Image from "next/image";
 import styles from "../styles/technologies.module.scss";
 import ArrowButton from "./ArrowButton";
 import Box from "@mui/material/Box";
+import experienceData from "../data/experienceData";
 
-type Experience = {
-  techName: string;
-  years: number;
-  height: string;
-  image: string;
-  src: string;
-};
 
-function WavyRectangle() {
-  const experience: Experience[] = [
-    {
-        techName: "Next.js",
-        years: 3,
-        height: "150px",
-        image: "/images/nextjs.svg",
-        src: "/images/wavered.svg",
-      },
-    {
-      techName: "Node.js",
-      years: 6,
-      height: "200px",
-      image: "/images/nodejs.svg",
-      src: "/images/wavered.svg",
-    },
-    {
-        techName: "HTML",
-        years: 8,
-        height: "325px",
-        image: "/images/html.svg",
-        src: "/images/wavered.svg",
-      },
-    {
-      techName: "React",
-      years: 7,
-      height: "250px",
-      image: "/images/react.svg",
-      src: "/images/waveblue.svg",
-    },
-
-    {
-      techName: "TypeScript",
-      years: 3,
-      height: "150px",
-      image: "/images/typescript.svg",
-      src: "/images/waveblue.svg",
-    },
-    {
-      techName: "SQL",
-      years: 7,
-      height: "250px",
-      image: "/images/sql.svg",
-      src: "/images/waveblue.svg",
-    },
-    {
-      techName: "AWS",
-      years: 4,
-      height: "175px",
-      image: "/images/aws.svg",
-      src: "/images/waveorange.svg",
-    },
-    {
-        techName: "JavasSript",
-        years: 8,
-        height: "325px",
-        image: "/images/javascript.svg",
-        src: "/images/waveorange.svg",
-      }
-  ];
+const WavyRectangle =()=> {
 
   return (
     <Box className={styles.technames}  component={"div"}>
-      {experience.map((exp) => (
+      {experienceData.map((exp) => (
         <div key={exp.techName}>
           <Box
            component={"div"} 
@@ -93,9 +28,8 @@ function WavyRectangle() {
                 transform: "scale(0.78)" // Slightly scale down when clicked
               },
               boxShadow: [
-                "-0px 25px 35px rgba(0, 0, 0, 0.3)", 
-                "0px 25px 10px rgba(0, 0, 0, 0.3)", 
-                "0px 7px rgba(0, 0, 0, 0.3)", 
+                "-0px 15px 25px rgba(0, 0, 0, 0.3)", 
+      
               ].join(", "),
             }}
           >
