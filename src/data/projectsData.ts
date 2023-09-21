@@ -80,15 +80,16 @@ export const projects: Project[] = [
     name: "Ahmer Malik",
     technologies: ["Next.js", "SQL", "Mix Panel", "Three.js"],
     description:
-      "Shish Kabob Cafe is a local restaurant known for its mouthwatering Mediterranean cuisine. To enhance its online presence and streamline the ordering process, we developed a mobile-first, responsive web application and integrated a seamless delivery system.",
+      "A cutting-edge front-end web application that demonstrates the power of modern web technologies. Focused on responsive design, the app employs Three.js to deliver distinct visual experiences for both mobile and desktop users. Draped in a theme appealing to crypto enthusiasts and space admirers, it subtly intertwines personal hobbies with professional showcases.",
     image: "/images/projects/ahmermalik.png",
     url: "https://github.com/ahmermalik/portfolio_latest",
     summary:
-      "This project leverages JavaScript, Google Analytics, and jQuery to provide an exceptional user experience while boosting the restaurant's delivery service.",
+      "This portfolio project epitomizes the forefront of web development, embracing server-side rendering with Next.js for optimized performance. With a unique cosmic-crypto theme, it offers a visually captivating and personalized user journey.",
     keyFeatures: [
-      "Mobile-First Design",
-      "Responsive Layout",
-      "Interactive Menu",
+      "Cutting-Edge Visuals",
+      "Responsive Design",
+      "Crypto-Cosmic Theme",
+      "Server-Side Rendering"
     ],
   },
   {
