@@ -1,29 +1,28 @@
 @font-face {
-    font-family: "All-Round-Gothic-Bold";
-    src: url("../../public/fonts/All-Round-Gothic-W01-Bold.ttf")
-      format("truetype");
-    font-weight: bold;
-    font-style: normal;
-    font-display: swap;
-  }
-  
-  @font-face {
-    font-family: "All-Round-Gothic-Book";
-    src: url("../../public/fonts/All-Round-Gothic-W01-Book.ttf")
-      format("truetype");
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-  }
+  font-family: "All-Round-Gothic-Bold";
+  src: url("../../public/fonts/All-Round-Gothic-W01-Bold.ttf")
+    format("truetype");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
 
-  @font-face {
-    font-family: "Poppins";
-    src: url("../../public/fonts/Poppins-Regular.ttf")
-      format("truetype");
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-  }
+@font-face {
+  font-family: "All-Round-Gothic-Book";
+  src: url("../../public/fonts/All-Round-Gothic-W01-Book.ttf")
+    format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("../../public/fonts/Poppins-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
 
 .testimonials {
   padding-top: 70px;
@@ -43,6 +42,8 @@
 
     @media (min-width: 0px) and (max-width: 900px) {
       margin-bottom: 0px;
+      margin-right: 10px;
+      margin-left: 10px;
     }
   }
   .iconLeft {
@@ -57,14 +58,12 @@
     }
   }
 
-  .testicard{
+  .testicard {
     margin-left: 470px;
     margin-right: 470px;
     margin-bottom: 50px;
     display: flex;
     overflow-x: auto;
-
-
 
     @media (min-width: 0px) and (max-width: 900px) {
       margin-left: 30px;
@@ -72,7 +71,7 @@
     }
   }
 
-  .iconRight{
+  .iconRight {
     position: absolute;
     top: 50%;
     right: 0;
@@ -85,20 +84,15 @@
   }
 }
 
-
-
-.tcard{
-
-  .cardName{
+.tcard {
+  .cardName {
     font-family: "Poppins";
     font-weight: 600;
-    color: #FF9B50;
-   
+    color: #ff9b50;
   }
 
-  .cardTestimony{
+  .cardTestimony {
     font-family: "Poppins";
-    color: #2C2C2C;
-
+    color: #2c2c2c;
   }
 }

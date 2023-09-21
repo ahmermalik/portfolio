@@ -22,7 +22,7 @@ export const testimonials: Testimonial[] = [
   {
     name: `Azael V.`,
     statement: `Ahmer Malik is someone I have had the privilege of knowing for over a decade. He helped me get my first job out of college and over the years I have witnessed his impressive transformation from a skilled financial analyst into a truly brilliant programmer. What has always struck me about Ahmer is his insatiable curiosity and meticulous attention to detail. It's his relentless pursuit of knowledge that sets him apart. Ahmer is always eager to learn, embracing new challenges and technologies with enthusiasm. I have seem him apply this curiosity and zeal not just to a company but various projects and products he has developed himself. He is always looking for ways to improve or make something better. His work ethic is truly commendable, and he has a remarkable ability to inspire those around him. He thrives in team environments and readily shares his expertise to propel the group forward. His presence on any team adds immeasurable value, fostering an atmosphere of innovation and cooperation.`,
-    photo: "/images/testimonials/img1",
+    photo: "/images/testimonials/azi.jpg",
     position: "Account Manager"
   },
 

@@ -69,7 +69,7 @@ const Testimonials: React.FC = () => {
 
   return (
     <Box component={"div"} className={styles.testimonials}>
-      <Typography variant="h4" sx={{ fontSize: ["35px", "56px"]}} className={styles.testitle}>
+      <Typography variant="h4" sx={{ fontSize: ["35px", "50px"]}} className={styles.testitle}>
         See What Clients and Collaborators Have to Say About My Work
       </Typography>
 
