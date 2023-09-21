@@ -25,6 +25,7 @@
 }
 
 .testimonials {
+  background-color: #F5F5F5;
   padding-top: 70px;
   position: relative;
   width: 100%;
@@ -48,13 +49,13 @@
   }
   .iconLeft {
     position: absolute;
-    top: 50%;
+    top: 60%;
     left: 0;
     z-index: 1;
     padding-left: 450px;
 
     @media (min-width: 0px) and (max-width: 900px) {
-      padding-left: 30px;
+      padding-left: 5px;
     }
   }
 
@@ -66,20 +67,20 @@
     overflow-x: auto;
 
     @media (min-width: 0px) and (max-width: 900px) {
-      margin-left: 30px;
-      margin-right: 30px;
+      margin-left: 25px;
+      margin-right: 25px;
     }
   }
 
   .iconRight {
     position: absolute;
-    top: 50%;
+    top: 60%;
     right: 0;
     z-index: 1;
     padding-right: 450px;
 
     @media (min-width: 0px) and (max-width: 900px) {
-      padding-right: 30px;
+      padding-right: 5px;
     }
   }
 }

@@ -59,7 +59,7 @@ const Testimonials: React.FC = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
 
   const scroll = (direction: "left" | "right") => {
-    const scrollAmount = direction === "left" ? -250 : 250;
+    const scrollAmount = direction === "left" ? -310 : 310;
     scrollRef.current?.scrollBy({
       top: 0,
       left: scrollAmount,
