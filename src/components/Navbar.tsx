@@ -18,8 +18,6 @@ import Button from "@mui/material/Button";
 import logo from "../images/logo.png";
 
 interface Props {
-  section: string;
-  setSection: React.Dispatch<React.SetStateAction<string>>; // we can always import it up top from React, but instead we're just going to call it as React.NameYourImport for now
   window?: () => Window;
   item: boolean;
   xs: number;
@@ -34,19 +32,19 @@ const navItems = [
   "Contact",
 ];
 
-const Navbar: React.FC<Props> = ({
-  section,
-  setSection,
-  window,
-}) => {
+const Navbar: React.FC<Props> = ({ window }) => {
   const [mobileOpen, setMobileOpen] = useState(false);
-
+  const [section, setSection] = useState<string>("home");
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
   };
 
   const drawer = (
-    <Box component={"div"} onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
+    <Box
+      component={"div"}
+      onClick={handleDrawerToggle}
+      sx={{ textAlign: "center" }}
+    >
       <Typography
         variant="h6"
         sx={{ my: 2 }}
@@ -59,9 +57,14 @@ const Navbar: React.FC<Props> = ({
       <List>
         {navItems.map((item) => (
           <ListItem key={item} disablePadding>
-            <Link to={item.toLowerCase()} smooth={true} key={item}>
+            <Link
+              to={item.toLowerCase()}
+              smooth={true}
+              spy={true}
+              onSetActive={() => setSection(item)}
+            >
               <ListItemButton sx={{ textAlign: "center" }}>
-                <ListItemText primary={item} onClick={() => setSection(item)} />
+                <ListItemText primary={item} />
               </ListItemButton>
             </Link>
           </ListItem>
@@ -73,7 +76,7 @@ const Navbar: React.FC<Props> = ({
     window !== undefined ? () => window().document.body : undefined;
 
   return (
-    <Box sx={{ display: "flex"}} component={"div"} >
+    <Box sx={{ display: "flex" }} component={"div"}>
       <CssBaseline />
       <AppBar
         component="nav"
@@ -121,9 +124,9 @@ const Navbar: React.FC<Props> = ({
           >
             <MenuIcon />
           </IconButton>
-          <Image src={logo} alt="Description" width={150} height={100}  />
+          <Image src={logo} alt="Description" width={150} height={100} />
           <Box
-           component={"div"} 
+            component={"div"}
             sx={{
               display: { xs: "block", sm: "block", md: "block", lg: "block" },
             }}
@@ -139,7 +142,7 @@ const Navbar: React.FC<Props> = ({
           open={mobileOpen}
           onClose={handleDrawerToggle}
           ModalProps={{
-            keepMounted: true, 
+            keepMounted: true,
           }}
           sx={{
             display: { xs: "block", sm: "block", md: "block", lg: "block" },

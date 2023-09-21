@@ -13,7 +13,6 @@ import {
 } from "@mui/material";
 import { styled } from "@mui/material/styles";
 
-
 type ThemeMode = "light" | "dark";
 
 const MaterialUISwitch = styled(Switch)(({ theme }) => ({
@@ -64,11 +63,11 @@ const MaterialUISwitch = styled(Switch)(({ theme }) => ({
 }));
 
 export default function Home() {
-  const prefersDarkMode = useMediaQuery("(prefers-color-scheme: dark)");
-  const [mode, setMode] = useState<ThemeMode>(
-    prefersDarkMode ? "dark" : "light"
-  );
-  const [section, setSection] = useState<string>("home");
+  // const prefersDarkMode = useMediaQuery("(prefers-color-scheme: dark)");
+  // const [mode, setMode] = useState<ThemeMode>(
+  //   prefersDarkMode ? "dark" : "light"
+  // );
+  const [mode, setMode] = useState<ThemeMode>("light"); // delete
 
   const theme = createTheme({
     typography: {
@@ -106,27 +105,25 @@ export default function Home() {
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <main>
-        <section className="home">
-          <Hero section={section} setSection={setSection} />
+        <section id="home">
+          <Hero />
         </section>
 
-        <section className="technologies">
+        <section id="technologies">
           <Techonologies />
         </section>
-        <section className="portfolio">
+        <section id="portfolio">
           <Portfolio />
         </section>
-        <section className="work">
+        <section id="work">
           <Work />
         </section>
 
-        <section className="testimonials">
-          <Testimonials/>
+        <section id="testimonials">
+          <Testimonials />
         </section>
 
-        <section className="contact">
-          
-          </section>
+        <section id="contact"></section>
       </main>
     </ThemeProvider>
   );

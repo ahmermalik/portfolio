@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import styles from "../styles/testimonials.module.scss";
 import { testimonials, Testimonial } from "@/data/testimonialsData";
-import { Box, Typography, Avatar, Tooltip, Collapse, IconButton } from '@mui/material';
+import { Box, Typography, Avatar, Card, Collapse, IconButton } from '@mui/material';
 import { ChevronLeft, ChevronRight } from '@mui/icons-material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import ExpandLessIcon from '@mui/icons-material/ExpandLess';
@@ -25,9 +25,9 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({ testimonial }) => {
       <Typography component={"p"} variant="h6">{testimonial.name}</Typography>
       <Typography  component={"p"} variant="body2">
         {snippet}
-        {/* <Collapse in={expanded}>
+        <Collapse in={expanded}>
           {remaining}
-        </Collapse> */}
+        </Collapse>
         {remaining && (
           <IconButton onClick={() => setExpanded(!expanded)} size="small" sx={{ marginLeft: 1 }}>
             {expanded ? <ExpandLessIcon fontSize="inherit" /> : <ExpandMoreIcon fontSize="inherit" />}
@@ -49,7 +49,7 @@ const Testimonials: React.FC = () => {
   
   return (
     <Box component={"div"} sx={{ position: 'relative', width: '100%', overflow: 'hidden' }}>
-      <Typography variant="h4" className={styles.testitle} >
+      <Typography variant="h4" className={styles.testitle} sx={{textAlign:"center", marginTop:"50px", marginBottom:"30px"}}>
       See What Clients and Collaborators Have to Say About My Work
           </Typography>
       <IconButton
@@ -65,12 +65,9 @@ const Testimonials: React.FC = () => {
         sx={{
           marginLeft:"470px",
           marginRight:"470px",
+          marginBottom:"50px",
           display: 'flex',
           overflowX: 'auto',
-          scrollbarWidth: 'none', // for Firefox
-          '&::-webkit-scrollbar': {
-            display: 'none', // for Chrome
-          },
         }}
       >
         {testimonials.map((t) => (

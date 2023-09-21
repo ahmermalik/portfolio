@@ -2,7 +2,7 @@ import React from "react";
 import { Grid, Typography, Button, IconButton } from "@mui/material";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import DescriptionSharpIconRounded from '@mui/icons-material/DescriptionSharp';
+import DescriptionSharpIconRounded from "@mui/icons-material/DescriptionSharp";
 import Image from "next/image";
 import success from "../images/successfulahmer.png";
 import styles from "../styles/hero.module.scss";
@@ -10,44 +10,35 @@ import ArrowButton from "./ArrowButton";
 import Box from "@mui/material/Box";
 import Navbar from "./Navbar";
 
-
-type HeroProps = {
-  section: string; 
-  setSection: React.Dispatch<React.SetStateAction<string>>; 
-};
-
-
-const Hero: React.FC<HeroProps> = ({ section, setSection }) => {
+const Hero: React.FC = ({  }) => {
   return (
     <Grid container spacing={3} className={styles.mainGrid}>
       <Grid item xs={12}>
-        <Navbar
-          item
-          xs={12}
-            section={section}
-            setSection={setSection}
-        />
+        <Navbar item xs={12} />
       </Grid>
 
       <Grid
         item
-        xs={12} sm={12} md={4} lg={4}  xl={4}
+        xs={12}
+        sm={12}
+        md={4}
+        lg={4}
+        xl={4}
         display="flex"
         flexDirection="column"
         justifyContent="space-between"
       >
         <Box component={"div"} className={styles.gridOne}>
-          <Typography variant="h4" className={styles.intro} >
+          <Typography variant="h4" className={styles.intro}>
             Hello, I&apos;m
           </Typography>
-          <Typography variant="h2" className={styles.name}  >
+          <Typography variant="h2" className={styles.name}>
             Ahmer Malik
           </Typography>
           <Typography component="p" className={styles.loc}>
             I&apos;m a fullstack engineer in Texas.
           </Typography>
-          <ArrowButton btnName={"Let's Code!"} marginRight={"1px"}/>
-
+          <ArrowButton btnName={"Let's Code!"} marginRight={"1px"} />
         </Box>
         <span className={styles.icons}>
           <a
@@ -92,7 +83,15 @@ const Hero: React.FC<HeroProps> = ({ section, setSection }) => {
         </span>
       </Grid>
 
-      <Grid item xs={12} sm={12} md={4} lg={4}  xl={5} className={styles.gridTwo}>
+      <Grid
+        item
+        xs={12}
+        sm={12}
+        md={4}
+        lg={4}
+        xl={5}
+        className={styles.gridTwo}
+      >
         <Image
           src={success}
           alt="Your image description"
@@ -100,28 +99,31 @@ const Hero: React.FC<HeroProps> = ({ section, setSection }) => {
         />
       </Grid>
       <Grid
-        item xs={12} sm={12} md={9} lg={4} xl={5}
+        item
+        xs={12}
+        sm={12}
+        md={9}
+        lg={4}
+        xl={5}
         display="flex"
         flexDirection="column"
         justifyContent="space-between"
         className={styles.gridthree}
       >
-
-          <Typography component="p" className={styles.subhead}>
+        <Typography component="p" className={styles.subhead}>
           {` "Exploring the cosmos of code" `}
+        </Typography>
+        <Typography component="p" className={styles.subpar}>
+          {" "}
+          A passionate engineer with a futuristic mindset. When I&apos;m not
+          busy coding, you can find me gazing at the stars, diving into the
+          world of cryptocurrencies, or analyzing charts. I love turning ideas
+          into reality through lines of code, and I&apos;m excited to share my
+          journey with you.
+        </Typography>
 
-          </Typography>
-          <Typography component="p" className={styles.subpar}>
-            {" "}
-            A passionate engineer with a futuristic mindset. When I&apos;m not busy
-            coding, you can find me gazing at the stars, diving into the world
-            of cryptocurrencies, or analyzing charts. I love turning ideas into
-            reality through lines of code, and I&apos;m excited to share my journey
-            with you.
-          </Typography>
- 
         <Button
-        onClick={() => window.open("/resume/Resume.pdf", "_blank")}
+          onClick={() => window.open("/resume/Resume.pdf", "_blank")}
           sx={{
             marginBottom: "50px",
             paddingRight: "50px",
