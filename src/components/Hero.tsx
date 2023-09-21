@@ -10,7 +10,7 @@ import ArrowButton from "./ArrowButton";
 import Box from "@mui/material/Box";
 import Navbar from "./Navbar";
 
-const Hero: React.FC = ({  }) => {
+const Hero: React.FC = ({}) => {
   return (
     <Grid container spacing={3} className={styles.mainGrid}>
       <Grid item xs={12}>
@@ -38,7 +38,14 @@ const Hero: React.FC = ({  }) => {
           <Typography component="p" className={styles.loc}>
             I&apos;m a fullstack engineer in Texas.
           </Typography>
-          <ArrowButton btnName={"Let's Code!"} marginRight={"1px"} />
+          <ArrowButton
+            btnName={"Let's Code!"}
+            marginRight={"1px"}
+            onClick={() => {
+              const element = document.getElementById("portfolio");
+              element?.scrollIntoView({ behavior: "smooth" });
+            }} 
+          />
         </Box>
         <span className={styles.icons}>
           <a

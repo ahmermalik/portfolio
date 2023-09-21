@@ -5,11 +5,11 @@ import styles from "../styles/arrowbutton.module.scss";
 interface ArrowButtonProps {
 btnName: string;
 marginRight: string;
-
+onClick: () => void;
 }
 
 const ArrowButton: React.FC<ArrowButtonProps> = (props) =>{
-  const { btnName, marginRight} = props;
+  const { btnName, marginRight, onClick } = props;
   return (
     <Button
     className={styles.arrowButton}
@@ -29,6 +29,7 @@ const ArrowButton: React.FC<ArrowButtonProps> = (props) =>{
         textTransform: 'none',
         marginRight:{marginRight}
       }}
+      onClick={onClick}
     >
       <div style={{ flex: 1, textAlign: "center", color:"black", fontWeight:"bold" }} >{btnName}</div>
       <svg
