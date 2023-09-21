@@ -9,7 +9,7 @@ import { projects, nonprofitProjects } from "../data/projectsData";
 const Portfolio: React.FC = () => {
   const detailsRef = useRef<HTMLDivElement>(null);
 
-  const [activeProject, setActiveProject] = useState(projects[0]);
+  const [activeProject, setActiveProject] = useState(projects[3]);
 
   return (
     <Grid className={styles.portfolio} container spacing={2}>

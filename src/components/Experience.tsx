@@ -6,6 +6,8 @@ import styles from "../styles/experience.module.scss";
 import { useMediaQuery } from "@mui/material";
 import companiesData from "../data/companiesData";
 import Image from "next/image";
+import Tooltip from "@mui/material/Tooltip";
+import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
 
 const AstronautMobile = dynamic(() => import("./AstronautMobile"), {
   ssr: false,
@@ -59,13 +61,22 @@ const Experience: React.FC = () => {
           component="p"
           className={styles.subtitle}
           sx={{
-            marginTop: "15px",
             fontSize: ["15px", "21px"],
             fontWeight: "400",
+            display: "inline-flex",
+            alignItems: "center",
           }}
         >
           Pushing Boundaries and Elevating User Engagement
-        </Typography>
+          {isMobile && (
+            <Tooltip
+              title="Experience enhanced features of this section on a desktop."
+              arrow
+            >
+              <InfoOutlinedIcon />
+            </Tooltip>
+          )}
+        </Typography>{" "}
       </Box>
 
       <Box component={"div"} className={styles.astro} ref={refVisible}>
