@@ -1,9 +1,75 @@
-.testimonials{
-padding-top: 50px;
+@font-face {
+    font-family: "All-Round-Gothic-Bold";
+    src: url("../../public/fonts/All-Round-Gothic-W01-Bold.ttf")
+      format("truetype");
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+  }
+  
+  @font-face {
+    font-family: "All-Round-Gothic-Book";
+    src: url("../../public/fonts/All-Round-Gothic-W01-Book.ttf")
+      format("truetype");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+
+.testimonials {
+  padding-top: 70px;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+
+  @media (min-width: 0px) and (max-width: 900px) {
+    padding-top: 0px;
+  }
+
+  .testitle {
+    font-family: "All-Round-Gothic-Book";
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 30px;
+
+    @media (min-width: 0px) and (max-width: 900px) {
+      margin-bottom: 0px;
+    }
+  }
+  .iconLeft {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    z-index: 1;
+    padding-left: 450px;
+
+    @media (min-width: 0px) and (max-width: 900px) {
+      padding-left: 30px;
+    }
+  }
+
+  .testicard{
+    margin-left: 470px;
+    margin-right: 470px;
+    margin-bottom: 50px;
+    display: flex;
+    overflow-x: auto;
+
+    @media (min-width: 0px) and (max-width: 900px) {
+      margin-left: 30px;
+      margin-right: 30px;
+    }
+  }
+
+  .iconRight{
+    position: absolute;
+    top: 50%;
+    right: 0;
+    z-index: 1;
 
 
-.testitle{
-    text-align:center;
-}
-
+    @media (min-width: 0px) and (max-width: 900px) {
+      padding-right: 30px;
+    }
+  }
 }

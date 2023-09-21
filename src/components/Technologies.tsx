@@ -9,7 +9,7 @@ import experienceData from "../data/experienceData";
 
 const WavyRectangle =()=> {
   return (
-    <Box className={styles.technames}  component={"div"}>
+    <Grid className={styles.technames}>
       {experienceData.map((exp) => (
         <div key={exp.techName}>
           <Box
@@ -52,14 +52,14 @@ const WavyRectangle =()=> {
             <Image
               src={exp.image}
               alt={exp.techName}
-              className={""}
+             
               height={100}
               width={100}
             />
           </Box>
         </div>
       ))}
-    </Box>
+    </Grid>
   );
 }
 

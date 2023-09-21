@@ -1,28 +1,49 @@
-.work{
-    padding-top: 50px;
+@font-face {
+  font-family: "All-Round-Gothic-Bold";
+  src: url("../../public/fonts/All-Round-Gothic-W01-Bold.ttf")
+    format("truetype");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
 
+@font-face {
+  font-family: "All-Round-Gothic-Book";
+  src: url("../../public/fonts/All-Round-Gothic-W01-Book.ttf")
+    format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
 
-    .titlecontainer{
-        text-align: center;
+@font-face {
+    font-family: "Poppins";
+    src: url("../../public/fonts/Poppins-Regular.ttf")
+      format("truetype");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
 
-        .title{
+.work {
+  padding-top: 70px;
 
-        }
+  .titlecontainer {
+    text-align: center;
 
-        .subtitle{
-            margin-top: 10px;
-            padding-bottom: 32px;
-        }
-
-
-
+    .title {
+      font-family: "All-Round-Gothic-Bold";
     }
 
-    .astro{
-        display: flex;
-        justify-content: center;
-        align-items: center;
+    .subtitle {
+      margin-top: 10px;
+      padding-bottom: 32px;
     }
+  }
 
-    
+  .astro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }

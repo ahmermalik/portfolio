@@ -10,7 +10,7 @@ type Project = {
 
 export const projects: Project[] = [
   {
-    name: "Buffalo Bayou Funds Analytics",
+    name: "BBF Analytics",
     technologies: [
       "Node.js",
       "React v18",
@@ -19,6 +19,7 @@ export const projects: Project[] = [
       "Mix Panel",
       "Docker",
       "Web3.js",
+      "Amazon Web Services"
     ],
     description:
       "A crypto analysis dashboard that employs metrics like RSI, volume, MACD, price, and market cap, enabling traders to customize configurations for informed trades and effective risk management.",
@@ -35,7 +36,7 @@ export const projects: Project[] = [
     ],
   },
   {
-    name: "Cox Automotive API Storefront",
+    name: "CAI API Storefront",
     technologies: ["React v16", "Redux", "C#", "NoSQL", "Amazon Web Services"],
     description: `A storefront to sell APIs, featuring a user dashboard for API performance analytics, key, and environment management, an "API Try It" functionality for pre-signup testing, and comprehensive Swagger documentation for all available API products.`,
     image: "/images/projects/caistore.png",
@@ -60,6 +61,7 @@ export const projects: Project[] = [
       "Mix Panel",
       "Material UI v5",
       "Midjourney",
+      "Netlify"
     ],
     description:
       "A visually engaging modern web app designed for an NFT and Coin crypto trading group, aiming to convert visitors into club members by effectively presenting presale updates, dApp announcements, and the product roadmap in a sales-oriented format.",
@@ -78,7 +80,7 @@ export const projects: Project[] = [
   },
   {
     name: "Ahmer Malik",
-    technologies: ["Next.js", "SQL", "Mix Panel", "Three.js"],
+    technologies: ["Next.js", "SQL", "Mix Panel", "Three.js", "Vercel"],
     description:
       "A cutting-edge front-end web application that demonstrates the power of modern web technologies. Focused on responsive design, the app employs Three.js to deliver distinct visual experiences for both mobile and desktop users. Draped in a theme appealing to crypto enthusiasts and space admirers, it subtly intertwines personal hobbies with professional showcases.",
     image: "/images/projects/ahmermalik.png",
@@ -94,7 +96,7 @@ export const projects: Project[] = [
   },
   {
     name: "Shish Kabob Cafe",
-    technologies: ["HTML5", "JavaScript", "Google Analytics", "jQuery"],
+    technologies: ["HTML5", "JavaScript", "Google Analytics", "jQuery", "Netlify"],
     description:
       "Shish Kabob Cafe is a local restaurant known for its mouthwatering Mediterranean cuisine. To enhance its online presence and streamline the ordering process, we developed a mobile-first, responsive web application and integrated a seamless delivery system.",
     image: "/images/projects/shishkabob.png",
@@ -130,7 +132,7 @@ export const projects: Project[] = [
   },
   {
     name: "Cryptotistics",
-    technologies: ["Python", "Google Analytics", "Jinja", "SQL"],
+    technologies: ["Python", "Google Analytics", "Jinja", "SQL", "Amazon Web Services"],
     description:
       "A comprehensive cryptocurrency platform developed collaboratively as a group project that enables users  to search, display, and delve into a variety of metrics associated with cryptocurrencies.",
     image: "/images/projects/cryptotistics.png",

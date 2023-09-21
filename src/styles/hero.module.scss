@@ -16,6 +16,15 @@
   font-display: swap;
 }
 
+@font-face {
+    font-family: "Poppins";
+    src: url("../../public/fonts/Poppins-Regular.ttf")
+      format("truetype");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+
 .mainGrid {
   & .MuiGrid-item {
     display: flex;
@@ -129,6 +138,7 @@
       text-align: right;
       font-size: 26px;
       margin-top: 50px;
+      font-family:"Poppins";
 
       &:hover {
         background-color: transparent;

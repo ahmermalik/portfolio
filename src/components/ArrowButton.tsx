@@ -1,5 +1,6 @@
 import React from "react";
 import Button from "@mui/material/Button";
+import styles from "../styles/arrowbutton.module.scss";
 
 interface ArrowButtonProps {
 btnName: string;
@@ -11,6 +12,7 @@ const ArrowButton: React.FC<ArrowButtonProps> = (props) =>{
   const { btnName, marginRight} = props;
   return (
     <Button
+    className={styles.arrowButton}
       style={{
         boxShadow: "0px 20px 12px rgba(0, 0, 0, 0.1)",
         width: "232px",

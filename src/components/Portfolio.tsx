@@ -33,7 +33,6 @@ const Portfolio: React.FC = () => {
           Portfolio
         </Typography>
         <Typography
-          variant="h4"
           className={styles.explore}
           sx={{
             fontSize: ["15px", "20px"],
@@ -150,20 +149,17 @@ const Portfolio: React.FC = () => {
             }}
           >
             <Typography
+            className={styles.projectName}
               variant="h5"
               sx={{
-                color: "#2C2C2C",
                 fontSize: ["24px", "32px", "56px"],
-                fontStyle: "normal",
-                textAlign: "left",
-                flexGrow: 1,
               }}
             >
               {activeProject.name}
             </Typography>
             <Box
               component={"div"}
-              className={styles.viewProject}
+              className={styles.viewProjectBtn}
               sx={{
                 alignSelf: ["center", "center", "center"],
                 marginLeft: [0, 0, "auto"],
@@ -180,6 +176,7 @@ const Portfolio: React.FC = () => {
             </Box>
           </Box>
           <Typography
+          className={styles.techNames}
             variant="body1"
             sx={{
               color: "#FF9B50",
@@ -194,15 +191,11 @@ const Portfolio: React.FC = () => {
           </Typography>
         </Box>
         <Typography
+          className={styles.projDescrip}
           variant="body2"
           sx={{
             color: "#787878",
             fontSize: ["15px", "17px", "18px"],
-            fontStyle: "normal",
-            fontWeight: 400,
-            lineHeight: "30px",
-            marginBottom: "20px",
-            marginTop: "10px",
           }}
         >
           {activeProject.description}
@@ -231,6 +224,7 @@ const Portfolio: React.FC = () => {
           />
         </div>
         <Typography
+          className={styles.summary}
           variant="body1"
           sx={{
             color: "#787878",
@@ -242,6 +236,7 @@ const Portfolio: React.FC = () => {
         </Typography>
 
         <Typography
+        className={styles.featitle}
           variant="body2"
           sx={{
             color: "#787878",
@@ -256,6 +251,7 @@ const Portfolio: React.FC = () => {
           {activeProject.keyFeatures.map((feature) => (
             <li key={feature}>
               <Typography
+               className={styles.features}
                 variant="body2"
                 sx={{
                   color: "#000000",

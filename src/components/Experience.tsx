@@ -62,18 +62,19 @@ const Experience: React.FC = () => {
           className={styles.subtitle}
           sx={{
             fontSize: ["15px", "21px"],
-            fontWeight: "400",
+            fontWeight: "600",
             display: "inline-flex",
             alignItems: "center",
+            color: "#2C2C2C"
           }}
         >
-          Pushing Boundaries and Elevating User Engagement
+          Pushing Boundaries & Elevating User Engagement
           {isMobile && (
             <Tooltip
               title="Experience enhanced features of this section on a desktop."
               arrow
             >
-              <InfoOutlinedIcon />
+              <InfoOutlinedIcon style={{fontSize:"15px"}} />
             </Tooltip>
           )}
         </Typography>{" "}

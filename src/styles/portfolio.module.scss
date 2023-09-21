@@ -1,33 +1,84 @@
+@font-face {
+  font-family: "All-Round-Gothic-Bold";
+  src: url("../../public/fonts/All-Round-Gothic-W01-Bold.ttf")
+    format("truetype");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "All-Round-Gothic-Book";
+  src: url("../../public/fonts/All-Round-Gothic-W01-Book.ttf")
+    format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("../../public/fonts/Poppins-Regular.ttf")
+    format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 .portfolio {
   background: #F5F5F5;
   padding-top: 100px;
   padding-bottom: 30px;
 
   .gridOne {
-    @media (min-width: 0px) and (max-width: 900px) {
       .title {
+        font-family: "All-Round-Gothic-Bold";
         text-align: center;
       }
       .explore {
+        color: #2C2C2C;
+        font-family: "Poppins";
+        font-weight: 600;
         text-align: center;
       }
-    }
   }
 
   .gridTwo {
     margin-left: 50px;
+
+
     @media (min-width: 0px) and (max-width: 900px) {
       padding-left: 25px;
       padding-right: 25px;
       margin-left: 10px;
     }
-    .viewProject {
+
+    .projectName{
+      font-family: "All-Round-Gothic-Book";
+      color: #2C2C2C;
+      text-align: left;
+      flex-grow: 1;
+    }
+    .techNames{
+      font-family: "Poppins";
+      
+    }
+
+    .projDescrip{
+      font-family: "Poppins";
+      font-weight: 400;
+      line-height: 30px;
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+
+    .viewProjectBtn {
       @media (min-width: 0px) and (max-width: 900px) {
         margin-bottom: 30px;
       }
     }
 
     .imageDiv {
+ 
       @media (min-width: 0px) and (max-width: 900px) {
         display: flex;
         justify-content: center;
@@ -35,5 +86,21 @@
         padding-right: 20px;
       }
     }
+
+    .summary{
+      font-family: "Poppins";
+      font-weight: 400;
+    }
+    .featitle{
+      font-family: "Poppins";
+    }
+    
+    .features{
+      font-family: "Poppins";
+      font-weight: 600;
+    }
+
+
+
   }
 }
