@@ -25,16 +25,16 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({ testimonial }) => {
   const remaining = testimonial.statement.slice(150);
 
   return (
-    <Box component={"div"} sx={{ minWidth: 300, padding: 2, marginRight: 3 }}>
+    <Box component={"div"} sx={{ minWidth: 300, padding: 2, marginRight: 3 }} className={styles.tcard}>
       <Avatar
         src={testimonial.photo}
         alt={testimonial.name}
         sx={{ width: 60, height: 60, marginBottom: 2 }}
       />
-      <Typography component={"p"} variant="h6">
+      <Typography component={"p"} variant="h6" className={styles.cardName}>
         {testimonial.name}
       </Typography>
-      <Typography component={"p"} variant="body2">
+      <Typography component={"p"} variant="body2" className={styles.cardTestimony}>
         {snippet}
         <Collapse in={expanded}>{remaining}</Collapse>
         {remaining && (
@@ -63,7 +63,7 @@ const Testimonials: React.FC = () => {
     scrollRef.current?.scrollBy({
       top: 0,
       left: scrollAmount,
-      behavior: "smooth",
+      behavior: "smooth"
     });
   };
 
@@ -72,9 +72,14 @@ const Testimonials: React.FC = () => {
       <Typography variant="h4" sx={{ fontSize: ["35px", "56px"]}} className={styles.testitle}>
         See What Clients and Collaborators Have to Say About My Work
       </Typography>
-      <IconButton className={styles.iconLeft} onClick={() => scroll("left")}>
+
+      <Box  className={styles.iconLeft} component={"div"} >
+
+      <IconButton onClick={() => scroll("left")}>
         <ChevronLeft />
       </IconButton>
+      </Box>
+
 
       <Box ref={scrollRef} component={"div"} className={styles.testicard}>
         {testimonials.map((t) => (
@@ -82,9 +87,11 @@ const Testimonials: React.FC = () => {
         ))}
       </Box>
 
-      <IconButton className={styles.iconRight} onClick={() => scroll("right")}>
+     <Box className={styles.iconRight} component={"div"}>
+     <IconButton  onClick={() => scroll("right")}>
         <ChevronRight />
       </IconButton>
+     </Box>
     </Box>
   );
 };
