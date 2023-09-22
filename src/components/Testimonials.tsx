@@ -27,7 +27,7 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({ testimonial }) => {
   return (
     <Box
       component={"div"}
-      sx={{ minWidth: 300, padding: 2, marginRight: 3 }}
+      sx={{padding: 2, marginRight: 3 }}
       className={styles.tcard}
     >
       <Avatar
@@ -67,7 +67,7 @@ const Testimonials: React.FC = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
 
   const scroll = (direction: "left" | "right") => {
-    const scrollAmount = direction === "left" ? -310 : 310;
+    const scrollAmount = direction === "left" ? -240 : 240;
     scrollRef.current?.scrollBy({
       top: 0,
       left: scrollAmount,

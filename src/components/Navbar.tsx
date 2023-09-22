@@ -14,7 +14,6 @@ import ListItemText from "@mui/material/ListItemText";
 import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
-import Button from "@mui/material/Button";
 import logo from "../images/logo.png";
 
 interface Props {
@@ -24,12 +23,12 @@ interface Props {
 }
 const drawerWidth = 240;
 const navItems = [
-  "Home",
-  "Technologies",
-  "Portfolio",
-  "Work",
-  "Testimonials",
-  "Contact",
+  { label: "Home", id: "home" },
+  { label: "Technologies", id: "technologies" },
+  { label: "Portfolio", id: "portfolio" },
+  { label: "Work", id: "work" },
+  { label: "Testimonials", id: "testimonials" },
+  // { label: "Contact", id: "contact" },
 ];
 
 const Navbar: React.FC<Props> = ({ window }) => {
@@ -56,17 +55,14 @@ const Navbar: React.FC<Props> = ({ window }) => {
       <Divider />
       <List>
         {navItems.map((item) => (
-          <ListItem key={item} disablePadding>
-            <Link
-              to={item.toLowerCase()}
-              smooth={true}
-              spy={true}
-              onSetActive={() => setSection(item)}
+          <ListItem key={item.id} disablePadding>
+            <ListItemButton
+              component="a"
+              href={`#${item.id}`}
+              sx={{ textAlign: "center" }}
             >
-              <ListItemButton sx={{ textAlign: "center" }}>
-                <ListItemText primary={item} />
-              </ListItemButton>
-            </Link>
+              <ListItemText primary={item.label} />
+            </ListItemButton>
           </ListItem>
         ))}
       </List>

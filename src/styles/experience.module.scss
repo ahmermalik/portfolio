@@ -31,6 +31,9 @@
 
   .titlecontainer {
     text-align: center;
+    display: flex;       
+    flex-direction: column; 
+    align-items: center;
 
     .title {
       font-family: "All-Round-Gothic-Bold";
@@ -38,8 +41,10 @@
 
     .subtitle {
       margin-top: 10px;
-      padding-bottom: 32px;
+      margin-bottom: 32px;
+
     }
+
   }
 
   .astro {

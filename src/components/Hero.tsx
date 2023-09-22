@@ -29,10 +29,18 @@ const Hero: React.FC = ({}) => {
         justifyContent="space-between"
       >
         <Box component={"div"} className={styles.gridOne}>
-          <Typography variant="h4" className={styles.intro}>
+          <Typography
+            variant="h4"
+            className={styles.intro}
+            sx={{ fontSize: ["35px", "56px"] }}
+          >
             Hello, I&apos;m
           </Typography>
-          <Typography variant="h2" className={styles.name}>
+          <Typography
+            variant="h2"
+            className={styles.name}
+            sx={{ fontSize: ["56px", "86px"] }}
+          >
             Ahmer Malik
           </Typography>
           <Typography component="p" className={styles.loc}>
@@ -44,7 +52,7 @@ const Hero: React.FC = ({}) => {
             onClick={() => {
               const element = document.getElementById("portfolio");
               element?.scrollIntoView({ behavior: "smooth" });
-            }} 
+            }}
           />
         </Box>
         <span className={styles.icons}>
@@ -131,10 +139,11 @@ const Hero: React.FC = ({}) => {
 
         <Button
           onClick={() => window.open("/resume/Resume.pdf", "_blank")}
+          className={styles.resContainer}
           sx={{
             marginBottom: "50px",
             paddingRight: "50px",
-            alignSelf: "flex-end",
+            alignSelf: "center",
             backgroundColor: "transparent",
             textTransform: "none",
             "&:hover": {

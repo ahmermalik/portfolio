@@ -133,24 +133,37 @@
       }
     }
 
-    .resbutton {
+    .resContainer{
       align-self: flex-end;
-      text-align: right;
-      font-size: 26px;
-      margin-top: 104px;
-      font-family:"Poppins";
 
-      &:hover {
-        background-color: transparent;
-      }
-
-      @media (max-width: 600px) {
+      @media (max-width: 900px) {
+        align-self: center;
         margin-top: 20px;
         font-size: 18px;
       }
+
+      .resbutton {
+       
+        text-align: right;
+        font-size: 26px;
+        margin-top: 104px;
+        font-family:"Poppins";
+  
+        &:hover {
+          background-color: transparent;
+        }
+  
+        @media (max-width: 900px) {
+          align-self: center;
+          margin-top: 20px;
+          font-size: 18px;
+        }
+      }
+
     }
 
-    @media (max-width: 600px) {
+
+    @media (max-width: 900px) {
       padding: 30px;
     }
   }

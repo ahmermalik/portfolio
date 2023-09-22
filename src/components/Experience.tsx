@@ -63,21 +63,21 @@ const Experience: React.FC = () => {
           sx={{
             fontSize: ["15px", "21px"],
             fontWeight: "600",
-            display: "inline-flex",
-            alignItems: "center",
-            color: "#2C2C2C"
+            color: "#2C2C2C",
           }}
         >
           Pushing Boundaries & Elevating User Engagement
           {isMobile && (
-            <Tooltip
-              title="Experience enhanced features of this section on a desktop."
-              arrow
-            >
-              <InfoOutlinedIcon style={{fontSize:"15px"}} />
-            </Tooltip>
+              <Tooltip
+                title="Experience enhanced features of this section on a desktop."
+                arrow
+                className={styles.toolTip}
+               sx={{ display: "inline-flex", marginLeft: "8px" }}
+              >
+                <InfoOutlinedIcon style={{ fontSize: "15px" }} />
+              </Tooltip>
           )}
-        </Typography>{" "}
+        </Typography>
       </Box>
 
       <Box component={"div"} className={styles.astro} ref={refVisible}>
