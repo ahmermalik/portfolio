@@ -14,7 +14,7 @@ export default function App({ Component, pageProps }: AppProps) {
         <meta property="og:title" content="Ahmer Malik Portfolio" />
         <meta
           property="og:description"
-          content="Software Engineering leader, Web3 enthusiast, Bitcoin and Space lover. This is the portal to all things Ahmer, welcome!"
+          content="Software Engineering Leader immersed in Web3. Avid about Bitcoin and the cosmos. Explore Ahmer's digital universe!"
         />
         <meta property="og:url" content="https://ahmermalik.com" />
         <meta property="og:type" content="website" />

@@ -101,7 +101,6 @@ const Testimonials: React.FC = () => {
       }}
     >
       <Typography
-        
         sx={{
           paddingBottom: "20px",
           fontSize: ["35px", "50px"],
