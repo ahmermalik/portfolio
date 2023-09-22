@@ -1,7 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import Image from "next/image";
 import AppBar from "@mui/material/AppBar";
-import { Link } from "react-scroll";
 import Box from "@mui/material/Box";
 import CssBaseline from "@mui/material/CssBaseline";
 import Divider from "@mui/material/Divider";
@@ -15,6 +14,8 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import logo from "../images/logo.png";
+import { ThemeContext } from "@/context/theme-context";
+import LightModeIcon from '@mui/icons-material/LightMode';
 
 interface Props {
   window?: () => Window;
@@ -33,10 +34,10 @@ const navItems = [
 
 const Navbar: React.FC<Props> = ({ window }) => {
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [section, setSection] = useState<string>("home");
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
   };
+  const toggleTheme = useContext(ThemeContext);
 
   const drawer = (
     <Box
@@ -127,7 +128,12 @@ const Navbar: React.FC<Props> = ({ window }) => {
               display: { xs: "block", sm: "block", md: "block", lg: "block" },
             }}
           >
-            {/* {"modeSwitch"} */}
+      <LightModeIcon 
+        onClick={()=>toggleTheme} 
+        style={{ cursor: 'pointer' }}
+        
+        sx={{color:"black"}}
+      />
           </Box>
         </Toolbar>
       </AppBar>
