@@ -1,6 +1,8 @@
 import React from "react";
 import Button from "@mui/material/Button";
 import styles from "../styles/arrowbutton.module.scss";
+import { useTheme } from "@mui/material/styles";
+
 
 interface ArrowButtonProps {
 btnName: string;
@@ -9,29 +11,39 @@ onClick?: () => void;
 }
 
 const ArrowButton: React.FC<ArrowButtonProps> = (props) =>{
+  const theme = useTheme();
   const { btnName, marginRight, onClick } = props;
   return (
     <Button
     className={styles.arrowButton}
       style={{
-        boxShadow: "0px 20px 12px rgba(0, 0, 0, 0.1)",
+        boxShadow: theme.palette.mode === "light" 
+        ? "0px 20px 12px rgba(0, 0, 0, 0.1)"
+        : "0px 20px 12px rgba(255, 255, 255, 0.1)", 
         width: "232px",
         height: "56px",
         flexShrink: 0,
         borderRadius: "200px",
-        background: "#FFF",
         display: "flex",
         alignItems: "center",
         justifyContent: "space-between",
-        fontSize: "18px"
+        fontSize: "18px",
+        background: theme.palette.mode === "light"
+        ? "#FFFFFF"
+        : "#2D2D2D", 
+
       }}
       sx={{
         textTransform: 'none',
-        marginRight:{marginRight}
+        marginRight:{marginRight},
+        fontColor:
+        theme.palette.mode === "light"
+          ? "#2C2C2C"
+          : theme.palette.background.default,
       }}
       onClick={onClick}
     >
-      <div style={{ flex: 1, textAlign: "center", color:"black", fontWeight:"bold" }} >{btnName}</div>
+      <div style={{ flex: 1, textAlign: "center", fontWeight:"bold" }} >{btnName}</div>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="46"

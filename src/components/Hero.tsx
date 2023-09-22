@@ -9,8 +9,10 @@ import styles from "../styles/hero.module.scss";
 import ArrowButton from "./ArrowButton";
 import Box from "@mui/material/Box";
 import Navbar from "./Navbar";
+import { useTheme } from "@mui/material/styles";
 
 const Hero: React.FC = ({}) => {
+  const theme = useTheme();
   return (
     <Grid container spacing={3} className={styles.mainGrid}>
       <Grid item xs={12}>
@@ -30,9 +32,14 @@ const Hero: React.FC = ({}) => {
       >
         <Box component={"div"} className={styles.gridOne}>
           <Typography
-            variant="h4"
             className={styles.intro}
-            sx={{ fontSize: ["35px", "56px"] }}
+            sx={{
+              fontSize: ["35px", "56px"],
+              fontColor:
+                theme.palette.mode === "light"
+                  ? "#fffff"
+                  : theme.palette.background.default,
+            }}
           >
             Hello, I&apos;m
           </Typography>

@@ -15,7 +15,9 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import logo from "../images/logo.png";
 import { ThemeContext } from "../context/theme-context";
-import LightModeIcon from '@mui/icons-material/LightMode';
+import LightModeIcon from "@mui/icons-material/LightMode";
+import NightlightTwoToneIcon from "@mui/icons-material/NightlightTwoTone";
+import { useTheme } from "@mui/material/styles";
 
 interface Props {
   window?: () => Window;
@@ -33,6 +35,7 @@ const navItems = [
 ];
 
 const Navbar: React.FC<Props> = ({ window }) => {
+  const theme = useTheme();
   const [mobileOpen, setMobileOpen] = useState(false);
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
@@ -105,7 +108,11 @@ const Navbar: React.FC<Props> = ({ window }) => {
           },
         }}
       >
-        <Toolbar>
+        <Toolbar
+          sx={{
+            background: theme.palette.mode === "light" ? "#ffffff" : "#000000",
+          }}
+        >
           <IconButton
             color="primary"
             aria-label="open drawer"
@@ -128,11 +135,18 @@ const Navbar: React.FC<Props> = ({ window }) => {
               display: { xs: "block", sm: "block", md: "block", lg: "block" },
             }}
           >
-      <LightModeIcon 
-        onClick={toggleTheme} 
-        style={{ cursor: 'pointer' }}
-        sx={{color:"black"}}
-      />
+            {theme.palette.mode === "dark" ? (
+              <NightlightTwoToneIcon
+                onClick={toggleTheme}
+                style={{ cursor: "pointer" }}
+              />
+            ) : (
+              <LightModeIcon
+                onClick={toggleTheme}
+                style={{ cursor: "pointer" }}
+                sx={{ color: "black" }}
+              />
+            )}
           </Box>
         </Toolbar>
       </AppBar>
