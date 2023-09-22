@@ -81,32 +81,6 @@ const Navbar: React.FC<Props> = ({ window }) => {
       <AppBar
         component="nav"
         position="static"
-        sx={{
-          backgroundColor: "transparent",
-          boxShadow: "none",
-          paddingLeft: "10px",
-          paddingRight: "10px",
-          "@media (max-width: 1536px)": {
-            paddingLeft: "20px",
-            paddingRight: "20px",
-          },
-          "@media (max-width: 1200px)": {
-            paddingLeft: "15px",
-            paddingRight: "15px",
-          },
-          "@media (max-width: 900px)": {
-            paddingLeft: "10px",
-            paddingRight: "10px",
-          },
-          "@media (max-width: 650px)": {
-            paddingLeft: "7px",
-            paddingRight: "7px",
-          },
-          "@media (max-width: 450px)": {
-            paddingLeft: "5px",
-            paddingRight: "5px",
-          },
-        }}
       >
         <Toolbar
           sx={{
