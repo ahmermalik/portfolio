@@ -5,7 +5,7 @@ import styles from "../styles/arrowbutton.module.scss";
 interface ArrowButtonProps {
 btnName: string;
 marginRight: string;
-onClick: () => void;
+onClick?: () => void;
 }
 
 const ArrowButton: React.FC<ArrowButtonProps> = (props) =>{

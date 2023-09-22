@@ -118,7 +118,7 @@ const Hero: React.FC = ({}) => {
         className={styles.gridthree}
       >
         <Typography component="p" className={styles.subhead}>
-          {` "Exploring the cosmos of code" `}
+          {` "Exploring the cosmos of code." `}
         </Typography>
         <Typography component="p" className={styles.subpar}>
           {" "}
