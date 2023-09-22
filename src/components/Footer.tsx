@@ -1,12 +1,15 @@
-import { Box } from "@mui/material";
-import styles from "../styles/footer.module.scss";
-import { Typography, IconButton, Grid } from "@mui/material";
-import GitHubIcon from "@mui/icons-material/GitHub";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import DescriptionSharpIconRounded from "@mui/icons-material/DescriptionSharp";
+import { Box, Typography, IconButton, Grid, useTheme } from "@mui/material";
+import { GitHub as GitHubIcon, LinkedIn as LinkedInIcon, DescriptionSharp as DescriptionSharpIconRounded } from "@mui/icons-material";
 import Image from "next/image";
+
+import styles from "../styles/footer.module.scss";
 import logo from "../images/logo.png";
-import { useTheme } from "@mui/material/styles";
+import mixpanel from 'mixpanel-browser';
+
+const { NEXT_PUBLIC_MIXPANEL_ID } = process.env;
+mixpanel.init(NEXT_PUBLIC_MIXPANEL_ID as string, { ignore_dnt: true });
+
+
 
 const Footer: React.FC = () => {
   const theme = useTheme();

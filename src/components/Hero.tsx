@@ -1,18 +1,28 @@
 import React from "react";
-import { Grid, Typography, Button, IconButton } from "@mui/material";
+import Image from "next/image";
+import mixpanel from 'mixpanel-browser';
+import styles from "../styles/hero.module.scss";
+import success from "../images/successfulahmer.png";
+
+import {
+  Grid,
+  Typography,
+  Button,
+  IconButton,
+  Box,
+  useTheme
+} from "@mui/material";
+
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import DescriptionSharpIconRounded from "@mui/icons-material/DescriptionSharp";
-import Image from "next/image";
-import success from "../images/successfulahmer.png";
-import styles from "../styles/hero.module.scss";
+
 import ArrowButton from "./ArrowButton";
-import Box from "@mui/material/Box";
 import Navbar from "./Navbar";
-import { useTheme } from "@mui/material/styles";
-import mixpanel from 'mixpanel-browser';
+
 const { NEXT_PUBLIC_MIXPANEL_ID } = process.env;
 mixpanel.init(NEXT_PUBLIC_MIXPANEL_ID as string, { ignore_dnt: true });
+
 
 const Hero: React.FC = ({ }) => {
   const theme = useTheme();

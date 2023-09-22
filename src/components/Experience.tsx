@@ -1,14 +1,17 @@
 import React, { useState, useEffect, useRef } from "react";
-import Box from "@mui/material/Box";
 import dynamic from "next/dynamic";
-import { Typography } from "@mui/material";
-import styles from "../styles/experience.module.scss";
-import { useMediaQuery } from "@mui/material";
-import companiesData from "../data/companiesData";
 import Image from "next/image";
-import Tooltip from "@mui/material/Tooltip";
+import styles from "../styles/experience.module.scss";
+import companiesData from "../data/companiesData";
+import {
+  Box,
+  Typography,
+  useMediaQuery,
+  Tooltip,
+  useTheme
+} from "@mui/material";
 import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
-import { useTheme } from "@mui/material/styles";
+
 
 const AstronautMobile = dynamic(() => import("./AstronautMobile"), {
   ssr: false,

@@ -1,20 +1,23 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import * as THREE from "three";
-import { Canvas, useThree, useFrame, extend } from "@react-three/fiber";
+import { Canvas, useFrame, useThree, extend } from "@react-three/fiber";
+import { PerspectiveCamera, Text } from "@react-three/drei";
+
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
-import Box from "@mui/material/Box";
-import { PerspectiveCamera, Text } from "@react-three/drei";
 import { FontLoader } from "three/examples/jsm/loaders/FontLoader";
 import { TextGeometry } from "three/examples/jsm/geometries/TextGeometry";
-import styles from "../styles/experience.module.scss";
+
+import Box from "@mui/material/Box";
 import { useTheme } from "@mui/material/styles";
+
+import styles from "../styles/experience.module.scss";
+
 
 extend({ OrbitControls });
 
 const AnimatedModel: React.FC<{ companies: any[] }> = ({ companies }) => {
   const theme = useTheme();
-  //add day and night, you will also have to add the [color] into bottom of useEffect
   const { scene, camera } = useThree();
   const mixerRef = useRef<THREE.AnimationMixer | null>(null);
 
@@ -216,7 +219,7 @@ const Astronaut: React.FC<{ companies: any[] }> = ({ companies }) => {
         const width = boxRef.current.clientWidth;
         const height = boxRef.current.clientHeight;
 
-        // This is an example calculation. Adjust as necessary.
+        //  Adjust as necessary.
         const newFOV = 60 * 1.5 * (width / window.innerWidth);
         setCameraFOV(newFOV);
       }

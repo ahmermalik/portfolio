@@ -2,10 +2,12 @@ import React, { useState, useRef, useEffect } from "react";
 import * as THREE from "three";
 import { Canvas, useThree, useFrame } from "@react-three/fiber";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
-import Box from "@mui/material/Box";
-import { PerspectiveCamera } from "@react-three/drei";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
+import { PerspectiveCamera } from "@react-three/drei";
+
+import Box from "@mui/material/Box";
 import { useTheme } from "@mui/material/styles";
+
 
 
 

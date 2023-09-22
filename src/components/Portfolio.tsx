@@ -1,14 +1,14 @@
 import { useState, useRef } from "react";
-import { Grid, Typography, Button } from "@mui/material";
-import ArrowButton from "./ArrowButton";
 import Image from "next/image";
-import Box from "@mui/material/Box";
+import { Grid, Typography, Button, Box, useTheme } from "@mui/material";
+import ArrowButton from "./ArrowButton";
 import styles from "../styles/portfolio.module.scss";
 import { projects, nonprofitProjects } from "../data/projectsData";
-import { useTheme } from "@mui/material/styles";
 import mixpanel from 'mixpanel-browser';
+
 const { NEXT_PUBLIC_MIXPANEL_ID } = process.env;
 mixpanel.init(NEXT_PUBLIC_MIXPANEL_ID as string, { ignore_dnt: true });
+
 
 
 const Portfolio: React.FC = () => {

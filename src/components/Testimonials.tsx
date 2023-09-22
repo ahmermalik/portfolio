@@ -90,16 +90,14 @@ const Testimonials: React.FC = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
   const theme = useTheme();
   const scroll = (direction: "left" | "right") => {
-    const viewWidth = window.innerWidth; 
-    const scrollAmount = direction === "left" ? -0.5 * viewWidth : 0.5 * viewWidth;  // Calculate 40% of the view width
+    const viewWidth = window.innerWidth;
+    const scrollAmount = direction === "left" ? -0.5 * viewWidth : 0.5 * viewWidth;
     scrollRef.current?.scrollBy({
-        top: 0,
-        left: scrollAmount,
-        behavior: "smooth",
+      top: 0,
+      left: scrollAmount,
+      behavior: "smooth",
     });
-};
-
-
+  };
   return (
     <Box
       component={"div"}

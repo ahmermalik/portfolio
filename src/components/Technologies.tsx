@@ -1,11 +1,9 @@
 import React from "react";
-import { Grid, Typography, Button, IconButton } from "@mui/material";
 import Image from "next/image";
 import styles from "../styles/technologies.module.scss";
-import ArrowButton from "./ArrowButton";
-import Box from "@mui/material/Box";
 import experienceData from "../data/experienceData";
-import { useTheme } from "@mui/material/styles";
+import { Grid, Typography, Box, useTheme } from "@mui/material";
+
 
 const WavyRectangle = () => {
   return (
