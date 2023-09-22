@@ -5,10 +5,14 @@ import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import Box from "@mui/material/Box";
 import { PerspectiveCamera } from "@react-three/drei";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
+import { useTheme } from "@mui/material/styles";
+
+
 
 const AnimatedModel = () => {
   const { scene } = useThree();
   const mixerRef = useRef<THREE.AnimationMixer | null>(null);
+  const theme = useTheme();
 
   useEffect(() => {
     const loader = new GLTFLoader();
@@ -19,10 +23,11 @@ const AnimatedModel = () => {
       scene.add(model);
 
 
-      const pointLight = new THREE.PointLight("#fbba72", 111110);
-      pointLight.position.set(0, 150, 50); /** Adjust position  */
-      scene.add(pointLight);
-
+      if (theme.palette.mode === "dark")  {
+        const pointLight = new THREE.PointLight(0xffffff, 111110.5);
+        pointLight.position.set(0, 10, 10);
+        scene.add(pointLight);
+      }
       
       if (gltf.animations && gltf.animations.length > 0) {
         const mixer = new THREE.AnimationMixer(model);

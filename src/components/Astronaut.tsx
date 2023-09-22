@@ -8,10 +8,12 @@ import { PerspectiveCamera, Text } from "@react-three/drei";
 import { FontLoader } from "three/examples/jsm/loaders/FontLoader";
 import { TextGeometry } from "three/examples/jsm/geometries/TextGeometry";
 import styles from "../styles/experience.module.scss";
+import { useTheme } from "@mui/material/styles";
 
 extend({ OrbitControls });
 
 const AnimatedModel: React.FC<{ companies: any[] }> = ({ companies }) => {
+  const theme = useTheme();
   //add day and night, you will also have to add the [color] into bottom of useEffect
   const { scene, camera } = useThree();
   const mixerRef = useRef<THREE.AnimationMixer | null>(null);
@@ -31,11 +33,6 @@ const AnimatedModel: React.FC<{ companies: any[] }> = ({ companies }) => {
          The z axis runs from behind you to in front of you.
        */
 
-      /** Adding the point light */
-      const pointLight = new THREE.PointLight(0xffffff, 111110.5);
-      pointLight.position.set(0, 10, 10); /** Adjust position  */
-      scene.add(pointLight);
-
       if (gltf.animations && gltf.animations.length > 0) {
         const mixer = new THREE.AnimationMixer(model);
         gltf.animations.forEach((clip) => {
@@ -46,7 +43,16 @@ const AnimatedModel: React.FC<{ companies: any[] }> = ({ companies }) => {
     });
 
     /**Background color set */
-    scene.background = new THREE.Color(0x000000);
+    if (theme.palette.mode === "light") {
+      scene.background = new THREE.Color(0xf5f5f5);
+    } else if (theme.palette.mode === "dark") {
+      scene.background = new THREE.Color(0x000000);
+
+      /** Adding the point light */
+      const pointLight = new THREE.PointLight(0xffffff, 111110.5);
+      pointLight.position.set(0, 10, 10); /** Adjust position  */
+      scene.add(pointLight);
+    }
 
     /**Background for stars */
     const starsGeometry = new THREE.BufferGeometry();
@@ -62,7 +68,7 @@ const AnimatedModel: React.FC<{ companies: any[] }> = ({ companies }) => {
       new THREE.Float32BufferAttribute(starsVertices, 3)
     );
     const starsMaterial = new THREE.PointsMaterial({
-      color: 0xffffff,
+      color: theme.palette.mode === "light" ? 0x000000 : 0xffffff,
       size: 1,
     }); //star color dark mode:0xFFFFFF light mode: 0x000000
     const starField = new THREE.Points(starsGeometry, starsMaterial);
@@ -211,7 +217,7 @@ const Astronaut: React.FC<{ companies: any[] }> = ({ companies }) => {
         const height = boxRef.current.clientHeight;
 
         // This is an example calculation. Adjust as necessary.
-        const newFOV = 60 * 1.5*(width / window.innerWidth );
+        const newFOV = 60 * 1.5 * (width / window.innerWidth);
         setCameraFOV(newFOV);
       }
     };
