@@ -7,6 +7,7 @@ import Footer from "@/components/Footer";
 import {
   CssBaseline,
 } from "@mui/material";
+import ScrollToTopBtn from "../components/ScrollToTopBtn";
 
 export default function Home() {
 
@@ -34,6 +35,7 @@ export default function Home() {
 
         <section id="contact"></section>
         <Footer/>
+        <ScrollToTopBtn/>
       </main>
     </>
   );

@@ -79,6 +79,7 @@ const Navbar: React.FC<Props> = ({ window }) => {
     <Box sx={{ display: "flex" }} component={"div"}>
       <CssBaseline />
       <AppBar
+       elevation={0}
         component="nav"
         position="static"
       >
