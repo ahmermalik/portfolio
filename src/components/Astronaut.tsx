@@ -162,7 +162,7 @@ const AnimatedModel: React.FC<{ companies: any[] }> = ({ companies }) => {
         });
       }
     );
-  }, [scene, companies]);
+  }, [scene, companies, theme.palette.mode]);
 
   useFrame((state, delta) => {
     if (mixerRef.current) mixerRef.current.update(delta);

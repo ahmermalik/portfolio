@@ -37,7 +37,7 @@ const AnimatedModel = () => {
         mixerRef.current = mixer;
       }
     });
-  }, [scene]);
+  }, [scene, theme.palette.mode]);
 
   useFrame((state, delta) => {
     if (mixerRef.current) mixerRef.current.update(delta);
