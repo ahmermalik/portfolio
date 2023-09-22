@@ -26,7 +26,6 @@
 
 .portfolio {
   background: #F5F5F5;
-  padding-top: 100px;
   padding-bottom: 30px;
 
   .gridOne {
@@ -57,9 +56,16 @@
       color: #2C2C2C;
       text-align: left;
       flex-grow: 1;
+
+      @media (min-width: 0px) and (max-width: 900px) {
+        font-weight: 600;
+        margin-bottom: 5px;
+        margin-top: 20px;
+      }
     }
     .techNames{
       font-family: "Poppins";
+      margin-top: 20px;
       
     }
 
