@@ -6,6 +6,10 @@ import Box from "@mui/material/Box";
 import styles from "../styles/portfolio.module.scss";
 import { projects, nonprofitProjects } from "../data/projectsData";
 import { useTheme } from "@mui/material/styles";
+import mixpanel from 'mixpanel-browser';
+const { NEXT_PUBLIC_MIXPANEL_ID } = process.env;
+mixpanel.init(NEXT_PUBLIC_MIXPANEL_ID as string, { ignore_dnt: true });
+
 
 const Portfolio: React.FC = () => {
   const detailsRef = useRef<HTMLDivElement>(null);
@@ -85,7 +89,10 @@ const Portfolio: React.FC = () => {
                   setActiveProject(project);
                   if (window.innerWidth <= 900) {
                     detailsRef.current?.scrollIntoView({ behavior: "smooth" });
-                  }
+                  };
+                  mixpanel.track('Project Button', {
+                    'Type': project.name,
+                  });
                 }}
                 sx={{
                   fontSize: ["16px", "20px"],

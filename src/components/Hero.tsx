@@ -10,8 +10,11 @@ import ArrowButton from "./ArrowButton";
 import Box from "@mui/material/Box";
 import Navbar from "./Navbar";
 import { useTheme } from "@mui/material/styles";
+import mixpanel from 'mixpanel-browser';
+const { NEXT_PUBLIC_MIXPANEL_ID } = process.env;
+mixpanel.init(NEXT_PUBLIC_MIXPANEL_ID as string, { ignore_dnt: true });
 
-const Hero: React.FC = ({}) => {
+const Hero: React.FC = ({ }) => {
   const theme = useTheme();
   return (
     <Grid container spacing={3} className={styles.mainGrid}>
@@ -59,6 +62,9 @@ const Hero: React.FC = ({}) => {
             onClick={() => {
               const element = document.getElementById("portfolio");
               element?.scrollIntoView({ behavior: "smooth" });
+              mixpanel.track('Lets Code Button', {
+                'Type': "Lets Code  Button",
+              });
             }}
           />
         </Box>
@@ -67,6 +73,9 @@ const Hero: React.FC = ({}) => {
             href="https://github.com/ahmermalik/"
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => mixpanel.track('Github Button', {
+              'Type': "Github Button",
+            })}
           >
             <IconButton
               color="primary"
@@ -80,6 +89,9 @@ const Hero: React.FC = ({}) => {
             href="https://www.linkedin.com/in/ahmermalikm/"
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => mixpanel.track('Linkedin Button', {
+              'Type': "Linkedin Button",
+            })}
           >
             <IconButton
               size="large"
@@ -93,6 +105,9 @@ const Hero: React.FC = ({}) => {
             href="https://medium.com/@ahmermalikm"
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => mixpanel.track('Medium Button', {
+              'Type': "Medium Button",
+            })}
           >
             <IconButton
               size="large"
@@ -145,7 +160,12 @@ const Hero: React.FC = ({}) => {
         </Typography>
 
         <Button
-          onClick={() => window.open("/resume/Resume.pdf", "_blank")}
+          onClick={() => {
+            window.open("/resume/Resume.pdf", "_blank");
+            mixpanel.track('Resume Button', {
+              'Type': "Resume Button",
+            });
+          }}
           className={styles.resContainer}
           sx={{
             marginBottom: "50px",
@@ -181,9 +201,3 @@ const Hero: React.FC = ({}) => {
 };
 
 export default Hero;
-
-// xs: 0px and up (extra-small devices, phones)
-// sm: 600px and up (small devices, tablets in portrait mode)
-// md: 900px and up (medium devices, tablets in landscape mode and some small laptop screens)
-// lg: 1200px and up (large devices, most laptops, and desktops)
-// xl: 1536px and up (extra-large devices, large desktops)

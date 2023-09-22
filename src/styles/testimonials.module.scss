@@ -1,7 +1,6 @@
 @font-face {
   font-family: "All-Round-Gothic-Bold";
-  src: url("../../public/fonts/All-Round-Gothic-W01-Bold.ttf")
-    format("truetype");
+  src: url("../../public/fonts/All-Round-Gothic-W01-Bold.ttf") format("truetype");
   font-weight: bold;
   font-style: normal;
   font-display: swap;
@@ -9,8 +8,7 @@
 
 @font-face {
   font-family: "All-Round-Gothic-Book";
-  src: url("../../public/fonts/All-Round-Gothic-W01-Book.ttf")
-    format("truetype");
+  src: url("../../public/fonts/All-Round-Gothic-W01-Book.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -56,7 +54,7 @@
     position: absolute;
     top: 60%;
     z-index: 1;
-    right: 5vw; /* Corrected from 'left' to 'right' */
+    right: 5vw;
   }
 
   .testicard {

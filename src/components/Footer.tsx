@@ -35,6 +35,9 @@ const Footer: React.FC = () => {
             href="https://github.com/ahmermalik/"
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => mixpanel.track('Github Button', {
+              'Type': "Github Button Footer",
+            })}
           >
             <IconButton color="primary" sx={{ color: "#787878" }}>
               <GitHubIcon />
@@ -44,6 +47,9 @@ const Footer: React.FC = () => {
             href="https://www.linkedin.com/in/ahmermalikm/"
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => mixpanel.track('Linkedin Button', {
+              'Type': "Linkedin Button Footer",
+            })}
           >
             <IconButton size="large" color="primary" sx={{ color: "#787878" }}>
               <LinkedInIcon />
@@ -53,6 +59,9 @@ const Footer: React.FC = () => {
             href="https://medium.com/@ahmermalikm"
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => mixpanel.track('Medium Button', {
+              'Type': "Medium Button Footer",
+            })}
           >
             <IconButton size="large" color="primary" sx={{ color: "#787878" }}>
               <DescriptionSharpIconRounded />

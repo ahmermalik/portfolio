@@ -8,6 +8,9 @@ import {
   CssBaseline,
 } from "@mui/material";
 import ScrollToTopBtn from "../components/ScrollToTopBtn";
+import mixpanel from 'mixpanel-browser';
+const {  NEXT_PUBLIC_MIXPANEL_ID } = process.env;
+mixpanel.init(NEXT_PUBLIC_MIXPANEL_ID as string, { ignore_dnt: true });
 
 export default function Home() {
 

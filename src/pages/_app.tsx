@@ -18,6 +18,7 @@ export default function App({ Component, pageProps }: AppProps) {
         />
         <meta property="og:url" content="https://ahmermalik.com" />
         <meta property="og:type" content="website" />
+        <meta name="author" content="Ahmer Malik"></meta>
       </Head>
       <Component {...pageProps} />
     </ThemeProvider>

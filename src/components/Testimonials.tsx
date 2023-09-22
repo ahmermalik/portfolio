@@ -13,6 +13,10 @@ import { ChevronLeft, ChevronRight } from "@mui/icons-material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import ExpandLessIcon from "@mui/icons-material/ExpandLess";
 import { useTheme } from "@mui/material/styles";
+import mixpanel from 'mixpanel-browser';
+const { NEXT_PUBLIC_MIXPANEL_ID } = process.env;
+mixpanel.init(NEXT_PUBLIC_MIXPANEL_ID as string, { ignore_dnt: true });
+
 
 type TestimonialCardProps = {
   testimonial: Testimonial;
@@ -61,7 +65,12 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({ testimonial }) => {
         <Collapse in={expanded}>{remaining}</Collapse>
         {remaining && (
           <IconButton
-            onClick={() => setExpanded(!expanded)}
+            onClick={() => {
+              setExpanded(!expanded)
+              mixpanel.track('Testimony Button', {
+                'Type': "Testimony Section",
+              });
+            }}
             size="small"
             sx={{ marginLeft: 1 }}
           >
@@ -81,13 +90,15 @@ const Testimonials: React.FC = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
   const theme = useTheme();
   const scroll = (direction: "left" | "right") => {
-    const scrollAmount = direction === "left" ? -240 : 240;
+    const viewWidth = window.innerWidth; 
+    const scrollAmount = direction === "left" ? -0.5 * viewWidth : 0.5 * viewWidth;  // Calculate 40% of the view width
     scrollRef.current?.scrollBy({
-      top: 0,
-      left: scrollAmount,
-      behavior: "smooth",
+        top: 0,
+        left: scrollAmount,
+        behavior: "smooth",
     });
-  };
+};
+
 
   return (
     <Box
@@ -127,7 +138,12 @@ const Testimonials: React.FC = () => {
       </Box>
 
       <Box className={styles.iconRight} component={"div"}>
-        <IconButton onClick={() => scroll("right")}>
+        <IconButton onClick={() => {
+          scroll("right")
+          mixpanel.track('Testimony Scroll Button', {
+            'Type': "Testimony Section",
+          });
+        }}>
           <ChevronRight />
         </IconButton>
       </Box>
