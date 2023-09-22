@@ -25,19 +25,17 @@
 }
 
 .portfolio {
-  background: #F5F5F5;
   padding-bottom: 30px;
 
   .gridOne {
       .title {
         font-family: "All-Round-Gothic-Bold";
-        text-align: center;
+        text-align: left;
       }
       .explore {
-        color: #2C2C2C;
         font-family: "Poppins";
         font-weight: 600;
-        text-align: center;
+        text-align: left;
       }
   }
 
@@ -53,7 +51,6 @@
 
     .projectName{
       font-family: "All-Round-Gothic-Book";
-      color: #2C2C2C;
       text-align: left;
       flex-grow: 1;
 

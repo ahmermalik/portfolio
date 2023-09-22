@@ -14,7 +14,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import logo from "../images/logo.png";
-import { ThemeContext } from "@/context/theme-context";
+import { ThemeContext } from "../context/theme-context";
 import LightModeIcon from '@mui/icons-material/LightMode';
 
 interface Props {
@@ -129,9 +129,8 @@ const Navbar: React.FC<Props> = ({ window }) => {
             }}
           >
       <LightModeIcon 
-        onClick={()=>toggleTheme} 
+        onClick={toggleTheme} 
         style={{ cursor: 'pointer' }}
-        
         sx={{color:"black"}}
       />
           </Box>

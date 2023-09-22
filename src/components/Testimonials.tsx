@@ -12,22 +12,30 @@ import {
 import { ChevronLeft, ChevronRight } from "@mui/icons-material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import ExpandLessIcon from "@mui/icons-material/ExpandLess";
+import { useTheme } from "@mui/material/styles";
 
 type TestimonialCardProps = {
   testimonial: Testimonial;
 };
 
 const TestimonialCard: React.FC<TestimonialCardProps> = ({ testimonial }) => {
+  const theme = useTheme();
   const [expanded, setExpanded] = useState(false);
 
-  // Extract the snippet and remaining part of the testimonial
   const snippet = testimonial.statement.slice(0, 150);
   const remaining = testimonial.statement.slice(150);
 
   return (
     <Box
       component={"div"}
-      sx={{padding: 2, marginRight: 3 }}
+      sx={{
+        padding: 2,
+        marginRight: 3,
+        background:
+          theme.palette.mode === "light"
+            ? "#F5F5F5"
+            : theme.palette.background.default,
+      }}
       className={styles.tcard}
     >
       <Avatar
@@ -42,6 +50,12 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({ testimonial }) => {
         component={"p"}
         variant="body2"
         className={styles.cardTestimony}
+        sx={{
+          fontColor:
+            theme.palette.mode === "light"
+              ? "#2c2c2c"
+              : theme.palette.background.default,
+        }}
       >
         {snippet}
         <Collapse in={expanded}>{remaining}</Collapse>
@@ -65,7 +79,7 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({ testimonial }) => {
 
 const Testimonials: React.FC = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
-
+  const theme = useTheme();
   const scroll = (direction: "left" | "right") => {
     const scrollAmount = direction === "left" ? -240 : 240;
     scrollRef.current?.scrollBy({
@@ -76,10 +90,25 @@ const Testimonials: React.FC = () => {
   };
 
   return (
-    <Box component={"div"} className={styles.testimonials}>
+    <Box
+      component={"div"}
+      className={styles.testimonials}
+      sx={{
+        background:
+          theme.palette.mode === "light"
+            ? "#F5F5F5"
+            : theme.palette.background.default,
+      }}
+    >
       <Typography
-        variant="h4"
-        sx={{ fontSize: ["35px", "50px"] }}
+        
+        sx={{
+          fontSize: ["35px", "50px"],
+          fontColor:
+            theme.palette.mode === "light"
+              ? "#2c2c2c"
+              : theme.palette.background.default,
+        }}
         className={styles.testitle}
       >
         See What Clients and Collaborators Have to Say About My Work

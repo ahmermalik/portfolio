@@ -5,14 +5,25 @@ import Image from "next/image";
 import Box from "@mui/material/Box";
 import styles from "../styles/portfolio.module.scss";
 import { projects, nonprofitProjects } from "../data/projectsData";
+import { useTheme } from "@mui/material/styles";
 
 const Portfolio: React.FC = () => {
   const detailsRef = useRef<HTMLDivElement>(null);
-
+  const theme = useTheme();
   const [activeProject, setActiveProject] = useState(projects[0]);
 
   return (
-    <Grid className={styles.portfolio} container spacing={2}>
+    <Grid
+      className={styles.portfolio}
+      container
+      spacing={2}
+      sx={{
+        background:
+          theme.palette.mode === "light"
+            ? "#F5F5F5"
+            : theme.palette.background.default,
+      }}
+    >
       {/* 1st Grid */}
       <Grid
         className={styles.gridOne}
@@ -26,7 +37,7 @@ const Portfolio: React.FC = () => {
           className={styles.title}
           sx={{
             fontSize: ["35px", "56px"],
-            marginLeft: "5px",
+            marginLeft: "15px",
             marginTop: "4px",
           }}
         >
@@ -39,8 +50,12 @@ const Portfolio: React.FC = () => {
             fontWeight: "600",
             lineHeight: "30px",
             marginBottom: "30px",
-            marginLeft: "5px",
+            marginLeft: "15px",
             paddingTop: "4px",
+            fontColor:
+            theme.palette.mode === "light"
+              ? "#2C2C2C"
+              : theme.palette.background.default,
           }}
         >
           Explore my Digital Creations
@@ -48,7 +63,10 @@ const Portfolio: React.FC = () => {
         <Box
           component={"div"}
           sx={{
-            backgroundColor: "white",
+            background:
+            theme.palette.mode === "light"
+              ? "#ffffff"
+              : theme.palette.background.default,
             borderRadius: "30px",
             padding: "20px",
           }}
@@ -149,10 +167,14 @@ const Portfolio: React.FC = () => {
             }}
           >
             <Typography
-            className={styles.projectName}
+              className={styles.projectName}
               variant="h5"
               sx={{
                 fontSize: ["24px", "32px", "56px"],
+                fontColor:
+                theme.palette.mode === "light"
+                  ? "#2C2C2C"
+                  : theme.palette.background.default,
               }}
             >
               {activeProject.name}
@@ -176,7 +198,7 @@ const Portfolio: React.FC = () => {
             </Box>
           </Box>
           <Typography
-          className={styles.techNames}
+            className={styles.techNames}
             variant="body1"
             sx={{
               color: "#FF9B50",
@@ -236,7 +258,7 @@ const Portfolio: React.FC = () => {
         </Typography>
 
         <Typography
-        className={styles.featitle}
+          className={styles.featitle}
           variant="body2"
           sx={{
             color: "#787878",
@@ -251,11 +273,15 @@ const Portfolio: React.FC = () => {
           {activeProject.keyFeatures.map((feature) => (
             <li key={feature}>
               <Typography
-               className={styles.features}
+                className={styles.features}
                 variant="body2"
                 sx={{
-                  color: "#000000",
                   fontSize: ["15px", "17px", "18px"],
+                  fontColor:
+                  theme.palette.mode === "light"
+                    ? "#000000"
+                    : theme.palette.background.default,
+  
                 }}
               >
                 {feature}

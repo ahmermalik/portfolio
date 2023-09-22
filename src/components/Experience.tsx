@@ -8,6 +8,7 @@ import companiesData from "../data/companiesData";
 import Image from "next/image";
 import Tooltip from "@mui/material/Tooltip";
 import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
+import { useTheme } from "@mui/material/styles";
 
 const AstronautMobile = dynamic(() => import("./AstronautMobile"), {
   ssr: false,
@@ -24,6 +25,7 @@ const Astronaut = dynamic(() => import("./Astronaut"), {
 });
 
 const Experience: React.FC = () => {
+  const theme = useTheme();
   const isMobile = useMediaQuery("(max-width:900px)");
   const [isVisible, setIsVisible] = useState(false);
   const refVisible = useRef(null);
@@ -48,7 +50,12 @@ const Experience: React.FC = () => {
   }, []);
 
   return (
-    <Box component={"div"} className={styles.work}>
+    <Box component={"div"} className={styles.work}       sx={{
+      background:
+        theme.palette.mode === "light"
+          ? "#F5F5F5"
+          : theme.palette.background.default,
+    }}>
       <Box component={"div"} className={styles.titlecontainer}>
         <Typography
           variant="h2"
@@ -63,7 +70,10 @@ const Experience: React.FC = () => {
           sx={{
             fontSize: ["15px", "21px"],
             fontWeight: "600",
-            color: "#2C2C2C",
+            fontColor:
+            theme.palette.mode === "light"
+              ? "#2C2C2C"
+              : theme.palette.background.default,
           }}
         >
           Pushing Boundaries & Elevating User Engagement

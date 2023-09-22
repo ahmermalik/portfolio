@@ -5,31 +5,28 @@ import styles from "../styles/technologies.module.scss";
 import ArrowButton from "./ArrowButton";
 import Box from "@mui/material/Box";
 import experienceData from "../data/experienceData";
+import { useTheme } from "@mui/material/styles";
 
-
-const WavyRectangle =()=> {
+const WavyRectangle = () => {
   return (
     <Grid className={styles.technames}>
       {experienceData.map((exp) => (
         <div key={exp.techName}>
           <Box
-           component={"div"} 
+            component={"div"}
             sx={{
               width: "125px",
               height: exp.height,
               position: "relative",
               overflow: "hidden",
               border: "1px solid #ccc",
-              borderTop: "none", 
+              borderTop: "none",
               borderRadius: "15px",
               marginBottom: "25px",
-              '&:active': {
-                transform: "scale(0.78)" // Slightly scale down when clicked
+              "&:active": {
+                transform: "scale(0.78)", // Slightly scale down when clicked
               },
-              boxShadow: [
-                "-0px 15px 25px rgba(0, 0, 0, 0.3)", 
-      
-              ].join(", "),
+              boxShadow: ["-0px 15px 25px rgba(0, 0, 0, 0.3)"].join(", "),
             }}
           >
             <span className={styles.years}>{`${exp.years} yrs`}</span>
@@ -48,11 +45,14 @@ const WavyRectangle =()=> {
             />
           </Box>
 
-          <Box  component={"div"} className={styles.imageContainer} sx={{marginTop:"25px", paddingBottom:"25px"}}>
+          <Box
+            component={"div"}
+            className={styles.imageContainer}
+            sx={{ marginTop: "25px", paddingBottom: "25px" }}
+          >
             <Image
               src={exp.image}
               alt={exp.techName}
-             
               height={100}
               width={100}
             />
@@ -61,16 +61,26 @@ const WavyRectangle =()=> {
       ))}
     </Grid>
   );
-}
+};
 
 const Technologies: React.FC = () => {
+  const theme = useTheme();
   return (
-    <Box className={styles.tech} component={"div"}>
+    <Box
+      className={styles.tech}
+      component={"div"}
+      sx={{
+        background:
+          theme.palette.mode === "light"
+            ? "linear-gradient(to bottom, #ffffff, #f5f5f5)"
+            : theme.palette.background.default,
+      }}
+    >
       <div className={styles.heading}>
         <Typography
           variant="h2"
           className={styles.name}
-          sx={{ fontSize: ["35px","56px"] }}
+          sx={{ fontSize: ["35px", "56px"] }}
         >
           Technologies
         </Typography>
@@ -80,7 +90,7 @@ const Technologies: React.FC = () => {
           sx={{
             marginTop: "15px",
             marginBottom: "15px",
-            fontSize: ["15px","21px"],
+            fontSize: ["15px", "21px"],
             fontWeight: "400",
           }}
         >
