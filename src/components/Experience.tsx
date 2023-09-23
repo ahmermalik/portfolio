@@ -37,45 +37,50 @@ const Astronaut = dynamic(() => import("./Astronaut"), {
 const CompanyBox: React.FC<CompanyBoxProps> = ({ company }) => {
   const theme = useTheme();
   return (
-    <Box
-      component="div"
-      sx={{
-       
-        width: 400,
-        height: 213,
-        borderRadius: 5,
-        border: "1px solid #ffff", // Assuming you want a border
-        background: theme.palette.mode === "light" ? "#FFFFFF" : "#000000",
-        marginBottom: 4,
-        padding: 2,
-        boxShadow:
-          theme.palette.mode === "light"
-            ? "0px 20px 12px rgba(0, 0, 0, 0.1)"
-            : "0px 20px 12px rgba(255, 255, 255, 0.1)",
-      }}
-    >
-      <Typography variant="h6" component="div" fontWeight="bold">
-        {company.role}
-      </Typography>
-      <Typography
-        variant="body1"
-        component="span"
-        color="#FF9B50"
-        style={{ marginRight: 8 }}
-      >
-        {company.name}
-      </Typography>
-      <Typography variant="body2" component="span">
-        {company.dates[0]} - {company.dates[1]}
-      </Typography>
-      <List>
-        {company.accomplishments.map((achievement, index) => (
-          <ListItem key={index} disablePadding dense>
-            <ListItemText primary={`• ${achievement}`} />
-          </ListItem>
-        ))}
-      </List>
-    </Box>
+<Box
+  className={styles.comBox}
+  component="div"
+  sx={{
+    borderRadius: 5,
+    border: "1px solid #ffff",
+    background: theme.palette.mode === "light" ? "#FFFFFF" : "#000000",
+    marginBottom: 4,
+    padding: 2,
+    boxShadow:
+      theme.palette.mode === "light"
+        ? "0px 10px 2px rgba(0, 0, 0, 0.1)"
+        : "0px 10px 2px rgba(255, 255, 255, 0.1)",
+  }}
+>
+  <Typography fontWeight="bold" className={styles.comRole}>
+    {company.role}
+  </Typography>
+
+  <Box
+  component={"div"}
+    display="flex"
+    justifyContent="start"
+    alignItems="center"
+    gap={2} 
+  >
+    <Typography className={styles.comName} style={{ marginRight: 8 }}>
+      {company.name}
+    </Typography>
+
+    <Typography className={styles.comDate}>
+      {company.dates[0]} - {company.dates[1]}
+    </Typography>
+  </Box>
+
+  <List>
+    {company.accomplishments.map((achievement, index) => (
+      <ListItem key={index} disablePadding dense className={styles.comAchievements}>
+        <ListItemText primary={`• ${achievement}`} />
+      </ListItem>
+    ))}
+  </List>
+</Box>
+
   );
 };
 
