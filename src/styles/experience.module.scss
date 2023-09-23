@@ -25,6 +25,8 @@
 }
 
 .comBox {
+
+
   .comRole {
     font-size: 10px;
     font-family: "All-Round-Gothic-Bold";
@@ -47,7 +49,7 @@
     font-family: "Poppins";
     font-size: 12px;
   }
-  .styles.comAchievements {
+  .comAchievements {
     font-family: "Poppins";
     color: #787878;
     font-size: 15px;
@@ -56,6 +58,7 @@
     line-height: 36px; 
   }
 }
+
 
 .work {
   padding-top: 70px;
@@ -78,7 +81,9 @@
 
   .astro {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    gap: 16px;
   }
 }

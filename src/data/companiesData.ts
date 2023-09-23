@@ -11,7 +11,7 @@ const companies: Company[] = [
     role: "Software Engineer",
     dates: ["02/2021", "08/2023"],
     accomplishments: [
-      "18% subscripition increase",
+      "18% subscription increase",
       "Tech upgrade",
       "Tech debt reduction",
     ],

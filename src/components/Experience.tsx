@@ -37,50 +37,54 @@ const Astronaut = dynamic(() => import("./Astronaut"), {
 const CompanyBox: React.FC<CompanyBoxProps> = ({ company }) => {
   const theme = useTheme();
   return (
-<Box
-  className={styles.comBox}
-  component="div"
-  sx={{
-    borderRadius: 5,
-    border: "1px solid #ffff",
-    background: theme.palette.mode === "light" ? "#FFFFFF" : "#000000",
-    marginBottom: 4,
-    padding: 2,
-    boxShadow:
-      theme.palette.mode === "light"
-        ? "0px 10px 2px rgba(0, 0, 0, 0.1)"
-        : "0px 10px 2px rgba(255, 255, 255, 0.1)",
-  }}
->
-  <Typography fontWeight="bold" className={styles.comRole}>
-    {company.role}
-  </Typography>
+    <Box
+      className={styles.comBox}
+      component="div"
+      sx={{
+        borderRadius: 5,
+        border: "1px solid #ffff",
+        background: theme.palette.mode === "light" ? "#FFFFFF" : "#000000",
+        marginBottom: 4,
+        padding: 2,
+        boxShadow:
+          theme.palette.mode === "light"
+            ? "0px 10px 2px rgba(0, 0, 0, 0.1)"
+            : "0px 10px 2px rgba(255, 255, 255, 0.1)",
+      }}
+    >
+      <Typography fontWeight="bold" className={styles.comRole}>
+        {company.role}
+      </Typography>
 
-  <Box
-  component={"div"}
-    display="flex"
-    justifyContent="start"
-    alignItems="center"
-    gap={2} 
-  >
-    <Typography className={styles.comName} style={{ marginRight: 8 }}>
-      {company.name}
-    </Typography>
+      <Box
+        component={"div"}
+        display="flex"
+        justifyContent="start"
+        alignItems="center"
+        gap={2}
+      >
+        <Typography className={styles.comName} style={{ marginRight: 8 }}>
+          {company.name}
+        </Typography>
 
-    <Typography className={styles.comDate}>
-      {company.dates[0]} - {company.dates[1]}
-    </Typography>
-  </Box>
+        <Typography className={styles.comDate}>
+          {company.dates[0]} - {company.dates[1]}
+        </Typography>
+      </Box>
 
-  <List>
-    {company.accomplishments.map((achievement, index) => (
-      <ListItem key={index} disablePadding dense className={styles.comAchievements}>
-        <ListItemText primary={`• ${achievement}`} />
-      </ListItem>
-    ))}
-  </List>
-</Box>
-
+      <List>
+        {company.accomplishments.map((achievement, index) => (
+          <ListItem
+            key={index}
+            disablePadding
+            dense
+            className={styles.comAchievements}
+          >
+            <ListItemText primary={`🏅 ${achievement}`} />
+          </ListItem>
+        ))}
+      </List>
+    </Box>
   );
 };
 
@@ -155,18 +159,19 @@ const Experience: React.FC = () => {
       </Box>
 
       <Box component={"div"} className={styles.astro} ref={refVisible}>
-        {!isMobile && isVisible && <Astronaut companies={companies} />}
-
-        <Grid>
-          {isMobile && isVisible && <AstronautMobile />}
-
+        <Box component={"span"}>
+          {" "}
+          {!isMobile && isVisible && <Astronaut companies={companies} />}
+        </Box>
+        {isMobile && isVisible && <AstronautMobile />}
+        <Box component={"span"}>
           {isMobile &&
             isVisible &&
             companies?.length &&
             companies.map((company, index) => (
               <CompanyBox key={index} company={company} />
             ))}
-        </Grid>
+        </Box>
       </Box>
     </Box>
   );
