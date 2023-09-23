@@ -100,7 +100,7 @@ const Astronaut: React.FC = () => {
   }, []);
 
   return (
-    <Box component={"div"} ref={boxRef} sx={{ height: "500px", width: "350px" }}>
+    <Box component={"div"} ref={boxRef} sx={{ height: "500px", width: "350px", marginBottom:"5px" }}>
       <Canvas onCreated={({ gl }) => {
   (gl as any).outputColorSpace = THREE.SRGBColorSpace; 
         setLoading(false);

@@ -2,16 +2,23 @@ import React, { useState, useEffect, useRef } from "react";
 import dynamic from "next/dynamic";
 import Image from "next/image";
 import styles from "../styles/experience.module.scss";
-import companiesData from "../data/companiesData";
+import companies, { Company } from "../data/companiesData";
 import {
   Box,
   Typography,
   useMediaQuery,
   Tooltip,
-  useTheme
+  useTheme,
+  List,
+  ListItem,
+  Grid,
+  ListItemText,
 } from "@mui/material";
 import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
 
+type CompanyBoxProps = {
+  company: Company;
+};
 
 const AstronautMobile = dynamic(() => import("./AstronautMobile"), {
   ssr: false,
@@ -26,6 +33,51 @@ const Astronaut = dynamic(() => import("./Astronaut"), {
     <Image src="/images/rocket.gif" alt="Loading..." width={400} height={300} />
   ),
 });
+
+const CompanyBox: React.FC<CompanyBoxProps> = ({ company }) => {
+  const theme = useTheme();
+  return (
+    <Box
+      component="div"
+      sx={{
+       
+        width: 400,
+        height: 213,
+        borderRadius: 5,
+        border: "1px solid #ffff", // Assuming you want a border
+        background: theme.palette.mode === "light" ? "#FFFFFF" : "#000000",
+        marginBottom: 4,
+        padding: 2,
+        boxShadow:
+          theme.palette.mode === "light"
+            ? "0px 20px 12px rgba(0, 0, 0, 0.1)"
+            : "0px 20px 12px rgba(255, 255, 255, 0.1)",
+      }}
+    >
+      <Typography variant="h6" component="div" fontWeight="bold">
+        {company.role}
+      </Typography>
+      <Typography
+        variant="body1"
+        component="span"
+        color="#FF9B50"
+        style={{ marginRight: 8 }}
+      >
+        {company.name}
+      </Typography>
+      <Typography variant="body2" component="span">
+        {company.dates[0]} - {company.dates[1]}
+      </Typography>
+      <List>
+        {company.accomplishments.map((achievement, index) => (
+          <ListItem key={index} disablePadding dense>
+            <ListItemText primary={`• ${achievement}`} />
+          </ListItem>
+        ))}
+      </List>
+    </Box>
+  );
+};
 
 const Experience: React.FC = () => {
   const theme = useTheme();
@@ -53,12 +105,16 @@ const Experience: React.FC = () => {
   }, []);
 
   return (
-    <Box component={"div"} className={styles.work}       sx={{
-      background:
-        theme.palette.mode === "light"
-          ? "#F5F5F5"
-          : theme.palette.background.default,
-    }}>
+    <Box
+      component={"div"}
+      className={styles.work}
+      sx={{
+        background:
+          theme.palette.mode === "light"
+            ? "#F5F5F5"
+            : theme.palette.background.default,
+      }}
+    >
       <Box component={"div"} className={styles.titlecontainer}>
         <Typography
           variant="h2"
@@ -74,29 +130,38 @@ const Experience: React.FC = () => {
             fontSize: ["15px", "21px"],
             fontWeight: "600",
             fontColor:
-            theme.palette.mode === "light"
-              ? "#2C2C2C"
-              : theme.palette.background.default,
+              theme.palette.mode === "light"
+                ? "#2C2C2C"
+                : theme.palette.background.default,
           }}
         >
           Pushing Boundaries & Elevating User Engagement
           {isMobile && (
-              <Tooltip
-                title="Experience enhanced features of this section on a desktop."
-                arrow
-                className={styles.toolTip}
-               sx={{ display: "inline-flex", marginLeft: "8px" }}
-              >
-                <InfoOutlinedIcon style={{ fontSize: "15px" }} />
-              </Tooltip>
+            <Tooltip
+              title="Experience enhanced features of this section on a desktop."
+              arrow
+              className={styles.toolTip}
+              sx={{ display: "inline-flex", marginLeft: "8px" }}
+            >
+              <InfoOutlinedIcon style={{ fontSize: "15px" }} />
+            </Tooltip>
           )}
         </Typography>
       </Box>
 
       <Box component={"div"} className={styles.astro} ref={refVisible}>
-        {isMobile && isVisible && <AstronautMobile />}
+        {!isMobile && isVisible && <Astronaut companies={companies} />}
 
-        {!isMobile && isVisible && <Astronaut companies={companiesData} />}
+        <Grid>
+          {isMobile && isVisible && <AstronautMobile />}
+
+          {isMobile &&
+            isVisible &&
+            companies?.length &&
+            companies.map((company, index) => (
+              <CompanyBox key={index} company={company} />
+            ))}
+        </Grid>
       </Box>
     </Box>
   );
