@@ -65,9 +65,7 @@
 
   .titlecontainer {
     text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+
 
     .title {
       font-family: "All-Round-Gothic-Bold";
@@ -86,4 +84,14 @@
     align-items: center;
     gap: 16px;
   }
+
+  .astromobilecontainer{
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+  }
+
 }

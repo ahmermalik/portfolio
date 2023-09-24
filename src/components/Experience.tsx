@@ -158,11 +158,12 @@ const Experience: React.FC = () => {
         </Typography>
       </Box>
 
-      <Box component={"div"} className={styles.astro} ref={refVisible}>
-        <Box component={"span"}>
+     
+        <Box component={"span"} className={styles.astro}>
           {" "}
           {!isMobile && isVisible && <Astronaut companies={companies} />}
         </Box>
+        <Box component={"div"}  ref={refVisible} className={styles.astromobilecontainer}>
         {isMobile && isVisible && <AstronautMobile />}
         <Box component={"span"}>
           {isMobile &&
