@@ -22,7 +22,7 @@ export const projects: Project[] = [
       "Amazon Web Services"
     ],
     description:
-      "The algorithms supporting this dashboard allowed Buffalo Bayou Funds to become top 🏆 .17% 🏆 of traders on Binance in 2021. A crypto analysis dashboard that employs metrics like RSI, volume, MACD, price, and market cap, enabling traders to customize configurations for informed trades and effective risk management.",
+    "Buffalo Bayou Funds reached the top 0.17% 🏆 of traders on Binance in 2021, thanks to the advanced algorithms behind this dashboard. As a crypto analysis tool, it utilizes key metrics such as RSI, volume, MACD, price, and market cap. This allows traders to tailor their configurations, ensuring informed trades and effective risk management.",
     image: "/images/projects/najumi.png",
     url: "https://www.buffalobayoufunds.com/",
     summary:

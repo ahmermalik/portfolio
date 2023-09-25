@@ -9,7 +9,7 @@ const companies: Company[] = [
   {
     name: "Buffalo Bayou Funds",
     role: "Software Engineer",
-    dates: ["02/2021", "08/2023"],
+    dates: ["02/2021", "Present"],
     accomplishments: [
       "18% subscription increase",
       "Tech upgrade",
@@ -22,14 +22,14 @@ const companies: Company[] = [
     dates: ["03/2019", "02/2021"],
     accomplishments: [
       "Raise conversion rates by 11%",
-      "FCP improvement",
+      "60% FCP improvement",
       "API Portal launch",
     ],
   },
   {
     name: "E9 Labs",
     role: "Software Engineer",
-    dates: ["01/2019", "03/2019"],
+    dates: ["06/2018", "03/2019"],
     accomplishments: [
       "Slashing response time by 75%",
       " Real-time chat",
@@ -39,7 +39,7 @@ const companies: Company[] = [
   {
     name: "Emerson Electric",
     role: "Analyst",
-    dates: ["05/2015", "08/2017"],
+    dates: ["07/2015", "09/2017"],
     accomplishments: [
       "Spreadsheet automation",
       "Tech upgrade",
