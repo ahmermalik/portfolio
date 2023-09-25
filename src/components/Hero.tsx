@@ -20,9 +20,8 @@ import DescriptionSharpIconRounded from "@mui/icons-material/DescriptionSharp";
 import ArrowButton from "./ArrowButton";
 import Navbar from "./Navbar";
 
-const { NEXT_PUBLIC_MIXPANEL_ID } = process.env;
-mixpanel.init(NEXT_PUBLIC_MIXPANEL_ID as string, { ignore_dnt: true });
-
+const { MIXPANEL_TOKEN } = process.env;
+mixpanel.init(MIXPANEL_TOKEN as string, { ignore_dnt: true });
 
 const Hero: React.FC = ({ }) => {
   const theme = useTheme();

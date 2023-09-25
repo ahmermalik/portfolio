@@ -47,12 +47,11 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({ testimonial }) => {
         alt={testimonial.name}
         sx={{ width: 60, height: 60, marginBottom: 2 }}
       />
-      <Typography component={"p"} variant="h6" className={styles.cardName}>
+      <Typography className={styles.cardName}>
         {testimonial.name}
       </Typography>
       <Typography
-        component={"p"}
-        variant="body2"
+        component={"div"}
         className={styles.cardTestimony}
         sx={{
           fontColor:
