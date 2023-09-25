@@ -9,7 +9,7 @@ const companies: Company[] = [
   {
     name: "Buffalo Bayou Funds",
     role: "Software Engineer",
-    dates: ["02/2021", "Present"],
+    dates: ["02/2021", "Current"],
     accomplishments: [
       "18% subscription increase",
       "Tech upgrade",
