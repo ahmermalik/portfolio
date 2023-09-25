@@ -6,8 +6,7 @@ import styles from "../styles/portfolio.module.scss";
 import { projects, nonprofitProjects } from "../data/projectsData";
 import mixpanel from 'mixpanel-browser';
 
-const { NEXT_PUBLIC_MIXPANEL_ID } = process.env;
-mixpanel.init(NEXT_PUBLIC_MIXPANEL_ID as string, { ignore_dnt: true });
+mixpanel.init(process.env.mixPanelToken as string, { ignore_dnt: true });
 
 
 

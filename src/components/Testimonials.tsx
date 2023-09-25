@@ -14,8 +14,7 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import ExpandLessIcon from "@mui/icons-material/ExpandLess";
 import { useTheme } from "@mui/material/styles";
 import mixpanel from 'mixpanel-browser';
-const { NEXT_PUBLIC_MIXPANEL_ID } = process.env;
-mixpanel.init(NEXT_PUBLIC_MIXPANEL_ID as string, { ignore_dnt: true });
+mixpanel.init(process.env.mixPanelToken as string, { ignore_dnt: true });
 
 
 type TestimonialCardProps = {
