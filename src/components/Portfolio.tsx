@@ -56,9 +56,9 @@ const Portfolio: React.FC = () => {
             marginLeft: "15px",
             paddingTop: "4px",
             fontColor:
-            theme.palette.mode === "light"
-              ? "#2C2C2C"
-              : theme.palette.background.default,
+              theme.palette.mode === "light"
+                ? "#2C2C2C"
+                : theme.palette.background.default,
           }}
         >
           Explore my Digital Creations
@@ -67,9 +67,9 @@ const Portfolio: React.FC = () => {
           component={"div"}
           sx={{
             background:
-            theme.palette.mode === "light"
-              ? "#ffffff"
-              : theme.palette.background.default,
+              theme.palette.mode === "light"
+                ? "#ffffff"
+                : theme.palette.background.default,
             borderRadius: "30px",
             padding: "20px",
           }}
@@ -178,9 +178,9 @@ const Portfolio: React.FC = () => {
               sx={{
                 fontSize: ["24px", "32px", "56px"],
                 fontColor:
-                theme.palette.mode === "light"
-                  ? "#2C2C2C"
-                  : theme.palette.background.default,
+                  theme.palette.mode === "light"
+                    ? "#2C2C2C"
+                    : theme.palette.background.default,
               }}
             >
               {activeProject.name}
@@ -199,7 +199,12 @@ const Portfolio: React.FC = () => {
                 rel="noopener noreferrer"
                 style={{ textDecoration: "none" }}
               >
-                <ArrowButton btnName={"View Project"} marginRight={"10px"} />
+                <ArrowButton btnName={"View Project"} marginRight={"10px"} onClick={() => {
+
+                  mixpanel.track('View Project Button', {
+                    'Type': activeProject.name,
+                  });
+                }} />
               </a>
             </Box>
           </Box>
@@ -284,10 +289,10 @@ const Portfolio: React.FC = () => {
                 sx={{
                   fontSize: ["15px", "17px", "18px"],
                   fontColor:
-                  theme.palette.mode === "light"
-                    ? "#000000"
-                    : theme.palette.background.default,
-  
+                    theme.palette.mode === "light"
+                      ? "#000000"
+                      : theme.palette.background.default,
+
                 }}
               >
                 {feature}
