@@ -80,7 +80,7 @@ export const projects: Project[] = [
   },
   {
     name: "Ahmer Malik",
-    technologies: ["Next.js", "SQL", "Mix Panel", "Three.js", "Vercel"],
+    technologies: ["Next.js", "Mix Panel", "Three.js", "Vercel"],
     description:
       "A cutting-edge front-end web application that demonstrates the power of modern web technologies. Focused on responsive design, the app employs Three.js to deliver distinct visual experiences for both mobile and desktop users. Draped in a theme appealing to crypto enthusiasts and space admirers, it subtly intertwines personal hobbies with professional showcases.",
     image: "/images/projects/ahmermalik.png",
