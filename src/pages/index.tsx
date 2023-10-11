@@ -11,11 +11,10 @@ import ScrollToTopBtn from "../components/ScrollToTopBtn";
 
 import { CssBaseline } from "@mui/material";
 
-const { NEXT_PUBLIC_MIXPANEL_ID } = process.env;
-mixpanel.init(NEXT_PUBLIC_MIXPANEL_ID as string, { ignore_dnt: true });
-
+mixpanel.init(process.env.mixPanelToken as string, { ignore_dnt: true });
 
 export default function Home() {
+
   useEffect(() => {
     if ((window as any).mixpanel) {
       mixpanel.track("Page Visited", {
@@ -23,7 +22,7 @@ export default function Home() {
       });
     }
   }, []);
-  
+
   return (
     <>
       <CssBaseline />
@@ -47,8 +46,8 @@ export default function Home() {
         </section>
 
         <section id="contact"></section>
-        <Footer/>
-        <ScrollToTopBtn/>
+        <Footer />
+        <ScrollToTopBtn />
       </main>
     </>
   );

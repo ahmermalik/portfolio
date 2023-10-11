@@ -14,8 +14,7 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import ExpandLessIcon from "@mui/icons-material/ExpandLess";
 import { useTheme } from "@mui/material/styles";
 import mixpanel from 'mixpanel-browser';
-const { NEXT_PUBLIC_MIXPANEL_ID } = process.env;
-mixpanel.init(NEXT_PUBLIC_MIXPANEL_ID as string, { ignore_dnt: true });
+mixpanel.init(process.env.mixPanelToken as string, { ignore_dnt: true });
 
 
 type TestimonialCardProps = {
@@ -47,12 +46,11 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({ testimonial }) => {
         alt={testimonial.name}
         sx={{ width: 60, height: 60, marginBottom: 2 }}
       />
-      <Typography component={"p"} variant="h6" className={styles.cardName}>
+      <Typography className={styles.cardName}>
         {testimonial.name}
       </Typography>
       <Typography
-        component={"p"}
-        variant="body2"
+        component={"div"}
         className={styles.cardTestimony}
         sx={{
           fontColor:

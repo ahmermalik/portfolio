@@ -48,8 +48,8 @@ const CompanyBox: React.FC<CompanyBoxProps> = ({ company }) => {
         padding: 2,
         boxShadow:
           theme.palette.mode === "light"
-            ? "0px 10px 2px rgba(0, 0, 0, 0.1)"
-            : "0px 10px 2px rgba(255, 255, 255, 0.1)",
+            ? ["-0px 15px 25px rgba(0, 0, 0, 0.3)"].join(", ")
+            : ["-0px 15px 25px rgba(255, 255, 255, 0.1)"].join(", "),
       }}
     >
       <Typography fontWeight="bold" className={styles.comRole}>
@@ -158,11 +158,12 @@ const Experience: React.FC = () => {
         </Typography>
       </Box>
 
-      <Box component={"div"} className={styles.astro} ref={refVisible}>
-        <Box component={"span"}>
+     
+        <Box component={"span"} className={styles.astro}>
           {" "}
           {!isMobile && isVisible && <Astronaut companies={companies} />}
         </Box>
+        <Box component={"div"}  ref={refVisible} className={styles.astromobilecontainer}>
         {isMobile && isVisible && <AstronautMobile />}
         <Box component={"span"}>
           {isMobile &&
