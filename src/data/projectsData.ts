@@ -15,11 +15,10 @@ export const projects: Project[] = [
       "Node.js",
       "React v18",
       "TypeScript",
-      "PostgreSQL",
       "Mix Panel",
       "Docker",
       "Web3.js",
-      "Amazon Web Services"
+      "AWS (Lambda, CodeBuild, CloudFront, SQL Server, Secrets Management, CodeDeploy, S3)"
     ],
     description:
       "The algorithms supporting this dashboard allowed Buffalo Bayou Funds to become top 🏆 .17% 🏆 of traders on Binance in 2021. A crypto analysis dashboard that employs metrics like RSI, volume, MACD, price, and market cap, enabling traders to customize configurations for informed trades and effective risk management.",
@@ -37,7 +36,7 @@ export const projects: Project[] = [
   },
   {
     name: "CAI API Storefront",
-    technologies: ["React v16", "Redux", "C#", "NoSQL", "Amazon Web Services"],
+    technologies: ["React v16", "Redux", "C#", "NoSQL", "AWS (Lambda, CodeBuild, CloudFront, DynamoDB, Secrets Management, Code Deploy, S3, API Gateway)"],
     description: `A storefront to sell APIs, featuring a user dashboard for API performance analytics, key, and environment management, an "API Try It" functionality for pre-signup testing, and comprehensive Swagger documentation for all available API products.`,
     image: "/images/projects/caistore.png",
     url: "https://developer.coxautoinc.com/",
