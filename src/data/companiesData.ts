@@ -30,7 +30,7 @@ const companies: Company[] = [
   {
     name: "E9 Labs",
     role: "Engineer",
-    dates: ["06/2018", "03/2019"],
+    dates: ["01/2018", "03/2019"],
     accomplishments: [
       "Slashing response time by 75%",
       " Real-time chat",
