@@ -164,7 +164,6 @@ const Experience: React.FC = () => {
           {!isMobile && isVisible && <Astronaut companies={companies} />}
         </Box>
         <Box component={"div"}  ref={refVisible} className={styles.astromobilecontainer}>
-        {isMobile && isVisible && <AstronautMobile />}
         <Box component={"span"}>
           {isMobile &&
             isVisible &&
