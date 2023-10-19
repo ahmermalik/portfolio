@@ -168,7 +168,7 @@ const Hero: React.FC = ({ }) => {
           journey with you.
         </Typography>
 
-        {/* <Button
+        <Button
           onClick={() => {
             window.open("/resume/Resume.pdf", "_blank");
             mixpanel.track('Resume Button', {
@@ -203,7 +203,7 @@ const Hero: React.FC = ({ }) => {
           >
             Download Resume
           </Box>
-        </Button> */}
+        </Button>
       </Grid>
     </Grid>
   );
