@@ -5,3 +5,7 @@ Steps to run:
 1. Git clone
 2. npm install
 3. npm run dev
+
+
+to deploy:
+1. vercel -p
