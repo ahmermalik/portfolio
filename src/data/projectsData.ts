@@ -25,7 +25,7 @@ export const projects: Project[] = [
     ],
     description:
     "Almond cow is an Almond Milk machine manufacturer and a healthier lifestyle brand.",
-    image: "/images/projects/najumi.png",
+    image: "/images/projects/almondcow.png",
     url: "https://www.almondcow.co/",
     summary:
       "This project leverages Open A.I.'s GPT-4 to leverage content creation and refreshes, Sanity.io's CMS, and a Shopify to provide a robust shopping experience in React.",
