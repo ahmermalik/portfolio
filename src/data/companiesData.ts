@@ -8,17 +8,18 @@ export type Company = {
 const companies: Company[] = [
   {
     name: "Buffalo Bayou Funds",
-    role: "Software Engineer",
+    role: "Director",
     dates: ["02/2021", "Current"],
     accomplishments: [
       "18% subscription increase",
       "Tech upgrade",
       "Tech debt reduction",
+      "Manage 3 teams"
     ],
   },
   {
     name: "Cox Enterprises Inc.",
-    role: "Software Engineer",
+    role: "Lead",
     dates: ["03/2019", "02/2021"],
     accomplishments: [
       "Raise conversion rates by 11%",
@@ -28,8 +29,8 @@ const companies: Company[] = [
   },
   {
     name: "E9 Labs",
-    role: "Software Engineer",
-    dates: ["06/2018", "03/2019"],
+    role: "Engineer",
+    dates: ["01/2018", "03/2019"],
     accomplishments: [
       "Slashing response time by 75%",
       " Real-time chat",

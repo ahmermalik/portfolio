@@ -15,7 +15,10 @@ mixpanel.init(process.env.mixPanelToken as string, { ignore_dnt: true });
 
 export default function Home() {
 
+
   useEffect(() => {
+    document.title = "Top Houston JavaScript Engineer: Expert in Full-Stack Development, SEO, and Sales-Driven Applications | Ahmer Malik";
+
     if ((window as any).mixpanel) {
       mixpanel.track("Page Visited", {
         "Home": "Landed on ahmermalik.com"
