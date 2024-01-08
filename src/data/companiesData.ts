@@ -19,7 +19,7 @@ const companies: Company[] = [
   },
   {
     name: "Cox Enterprises Inc.",
-    role: "Lead",
+    role: "FE Lead",
     dates: ["03/2019", "02/2021"],
     accomplishments: [
       "Raise conversion rates by 11%",

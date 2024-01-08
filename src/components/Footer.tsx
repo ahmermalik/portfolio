@@ -73,7 +73,7 @@ const Footer: React.FC = () => {
 
         <Grid item md={6} className={styles.footItemsTwo}>
           <Typography className={styles.copyright}>
-            © 2023 AHMER MALIK, ALL RIGHTS RESERVED.
+            © 2024 AHMER MALIK, ALL RIGHTS RESERVED.
           </Typography>
         </Grid>
       </Grid>
