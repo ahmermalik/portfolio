@@ -24,7 +24,7 @@ export const projects: Project[] = [
       "Debug Bear"
     ],
     description:
-    "Almond cow is an Almond Milk machine manufacturer and a healthier lifestyle brand.",
+    "Almond Cow is an almond milk machine manufacturer and a healthier lifestyle brand, promoting sustainable choices for drinks, desserts, and meals.",
     image: "/images/projects/almondcow.png",
     url: "https://www.almondcow.co/",
     summary:
