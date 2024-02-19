@@ -21,10 +21,6 @@ const WavyRectangle = () => {
               borderTop: "none",
               borderRadius: "15px",
               marginBottom: "25px",
-              "&:active": {
-                transform: "scale(0.78)", // Slightly scale down when clicked
-              },
-              boxShadow: ["-0px 15px 25px rgba(0, 0, 0, 0.3)"].join(", "),
             }}
           >
             <span className={styles.years}>{`${exp.years} yrs`}</span>

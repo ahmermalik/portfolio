@@ -10,8 +10,9 @@ type Project = {
 
 export const projects: Project[] = [
   {
-    name: "BBF Analytics",
+    name: "Swift Sage A.I.",
     technologies: [
+      "GPT-4",
       "Node.js",
       "React v18",
       "TypeScript",
@@ -21,11 +22,11 @@ export const projects: Project[] = [
       "AWS (Lambda, SQL Server, S3, CI/CD)"
     ],
     description:
-    "Buffalo Bayou Funds reached the top 0.17% 🏆 of traders on Binance in 2021, thanks to the advanced algorithms behind this dashboard. As a crypto analysis tool, it utilizes key metrics such as RSI, volume, MACD, price, and market cap. This allows traders to tailor their configurations, ensuring informed trades and effective risk management.",
-    image: "/images/projects/najumi.png",
-    url: "https://www.buffalobayoufunds.com/",
+    "Advanced A.I. driven analytics, where GPT is at the wheel. Continuously monitoring market conditions and selecting the appropriate mixture of algorithms to produce real-time insights allows traders to make predictable outcomes and maintain effective risk management.",
+    image: "/images/projects/swiftsage.png",
+    url: "https://www.swiftsage.ai/",
     summary:
-      "This project leverages Typescript both front-end and backend, utilizing React 18 and Material UI V5 within a Docker container, with user activity and performance tracked via Mix Panel integrations.",
+      "This project leverages React 18 to curate a seamless user experience, with user activity and performance tracked via Mix Panel integrations.",
     keyFeatures: [
       "Tailored Analysis",
       "Predictive Algorithm",
@@ -93,57 +94,57 @@ export const projects: Project[] = [
       "Server-Side Rendering"
     ],
   },
-  {
-    name: "Shish Kabob Cafe",
-    technologies: ["HTML5", "JavaScript", "Google Analytics", "jQuery", "Netlify"],
-    description:
-      "Shish Kabob Cafe is a local restaurant known for its mouthwatering Mediterranean cuisine. To enhance its online presence and streamline the ordering process, we developed a mobile-first, responsive web application and integrated a seamless delivery system.",
-    image: "/images/projects/shishkabob.png",
-    url: "https://shishkabobkaty.com/",
-    summary:
-      "This project leverages JavaScript, Google Analytics, and jQuery to provide an exceptional user experience while boosting the restaurant's delivery service.",
-    keyFeatures: [
-      "Mobile-First Design",
-      "Responsive Layout",
-      "Interactive Menu",
-    ],
-  },
-  {
-    name: "Technician Chat App",
-    technologies: [
-      "React v16",
-      "Node.js",
-      "MongoDB",
-      "AG Grid",
-      "Amazon Web Services",
-    ],
-    description:
-      "Meticulously crafted for an HVAC company to enhance their accessibility and responsiveness to client needs, whether in the office or on-the-move with features such as pre-filled texts and the ability for clients to send images of their HVAC units, technicians could swiftly diagnose issues.",
-    image: "/images/projects/chatapp2.png",
-    url: "https://optimistic-goldberg-65009a.netlify.app/",
-    summary:
-      "A full-stack CRUD web app developed for an HVAC company. Built using React, MongoDB, and Material UI, the app enables quick diagnosis and response through pre-filled texts and client photo submissions. Notably utilized during Hurricane Harvey, the app expedited response times, especially during crisis scenarios, marking a significant improvement in the company's service delivery in Austin and Houston, TX since 2018.",
-    keyFeatures: [
-      "Efficient contact and response system",
-      "Mobile-friendly accessibility",
-      "Proven reduction in communication lag",
-    ],
-  },
-  {
-    name: "Cryptotistics",
-    technologies: ["Python", "Google Analytics", "Jinja", "SQL", "Amazon Web Services"],
-    description:
-      "A comprehensive cryptocurrency platform developed collaboratively as a group project that enables users  to search, display, and delve into a variety of metrics associated with cryptocurrencies.",
-    image: "/images/projects/cryptotistics.png",
-    url: "https://github.com/ahmermalik/cryptotistics",
-    summary:
-      "A collaborative group project offering users an intuitive platform for cryptocurrency research, utilizing Python's Tornado, Google Analytics, OAuth login, Jinja templating, and a PostgreSQL backend for seamless CRUD operations.",
-    keyFeatures: [
-      "Comprehensive metrics research",
-      "User-friendly interface allowing for easy search and display",
-      "OAuth login for secured access",
-    ],
-  },
+  // {
+  //   name: "Shish Kabob Cafe",
+  //   technologies: ["HTML5", "JavaScript", "Google Analytics", "jQuery", "Netlify"],
+  //   description:
+  //     "Shish Kabob Cafe is a local restaurant known for its mouthwatering Mediterranean cuisine. To enhance its online presence and streamline the ordering process, we developed a mobile-first, responsive web application and integrated a seamless delivery system.",
+  //   image: "/images/projects/shishkabob.png",
+  //   url: "https://shishkabobkaty.com/",
+  //   summary:
+  //     "This project leverages JavaScript, Google Analytics, and jQuery to provide an exceptional user experience while boosting the restaurant's delivery service.",
+  //   keyFeatures: [
+  //     "Mobile-First Design",
+  //     "Responsive Layout",
+  //     "Interactive Menu",
+  //   ],
+  // },
+  // {
+  //   name: "Technician Chat App",
+  //   technologies: [
+  //     "React v16",
+  //     "Node.js",
+  //     "MongoDB",
+  //     "AG Grid",
+  //     "Amazon Web Services",
+  //   ],
+  //   description:
+  //     "Meticulously crafted for an HVAC company to enhance their accessibility and responsiveness to client needs, whether in the office or on-the-move with features such as pre-filled texts and the ability for clients to send images of their HVAC units, technicians could swiftly diagnose issues.",
+  //   image: "/images/projects/chatapp2.png",
+  //   url: "https://optimistic-goldberg-65009a.netlify.app/",
+  //   summary:
+  //     "A full-stack CRUD web app developed for an HVAC company. Built using React, MongoDB, and Material UI, the app enables quick diagnosis and response through pre-filled texts and client photo submissions. Notably utilized during Hurricane Harvey, the app expedited response times, especially during crisis scenarios, marking a significant improvement in the company's service delivery in Austin and Houston, TX since 2018.",
+  //   keyFeatures: [
+  //     "Efficient contact and response system",
+  //     "Mobile-friendly accessibility",
+  //     "Proven reduction in communication lag",
+  //   ],
+  // },
+  // {
+  //   name: "Cryptotistics",
+  //   technologies: ["Python", "Google Analytics", "Jinja", "SQL", "Amazon Web Services"],
+  //   description:
+  //     "A comprehensive cryptocurrency platform developed collaboratively as a group project that enables users  to search, display, and delve into a variety of metrics associated with cryptocurrencies.",
+  //   image: "/images/projects/cryptotistics.png",
+  //   url: "https://github.com/ahmermalik/cryptotistics",
+  //   summary:
+  //     "A collaborative group project offering users an intuitive platform for cryptocurrency research, utilizing Python's Tornado, Google Analytics, OAuth login, Jinja templating, and a PostgreSQL backend for seamless CRUD operations.",
+  //   keyFeatures: [
+  //     "Comprehensive metrics research",
+  //     "User-friendly interface allowing for easy search and display",
+  //     "OAuth login for secured access",
+  //   ],
+  // },
 ];
 
 export const nonprofitProjects: Project[] = [

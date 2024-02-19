@@ -20,8 +20,8 @@ import {
 } from "@mui/material";
 
 import MenuIcon from "@mui/icons-material/Menu";
-import LightModeIcon from "@mui/icons-material/LightMode";
-import NightlightTwoToneIcon from "@mui/icons-material/NightlightTwoTone";
+// import LightModeIcon from "@mui/icons-material/LightMode";
+// import NightlightTwoToneIcon from "@mui/icons-material/NightlightTwoTone";
 
 interface Props {
   window?: () => Window;
@@ -114,7 +114,7 @@ const Navbar: React.FC<Props> = ({ window }) => {
               display: { xs: "block", sm: "block", md: "block", lg: "block" },
             }}
           >
-            {theme.palette.mode === "dark" ? (
+            {/* {theme.palette.mode === "dark" ? (
               <NightlightTwoToneIcon
                 onClick={toggleTheme}
                 style={{ cursor: "pointer" }}
@@ -125,7 +125,7 @@ const Navbar: React.FC<Props> = ({ window }) => {
                 style={{ cursor: "pointer" }}
                 sx={{ color: "black" }}
               />
-            )}
+            )} */}
           </Box>
         </Toolbar>
       </AppBar>
