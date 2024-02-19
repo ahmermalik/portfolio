@@ -10,7 +10,38 @@ type Project = {
 
 export const projects: Project[] = [
   {
+<<<<<<< HEAD
     name: "Swift Sage A.I.",
+=======
+    name: "Almond Cow",
+    technologies: [
+      "Gatsby.js",
+      "Open AI",
+      "Semrush",
+      "Ahrefs",
+      "Sanity.io",
+      "Shopify",
+      "Node.js",
+      "Google Tag Manager",
+      "Netlify",
+      "Debug Bear"
+    ],
+    description:
+    "Almond Cow is an almond milk machine manufacturer and a healthier lifestyle brand, promoting sustainable choices for drinks, desserts, and meals.",
+    image: "/images/projects/almondcow.png",
+    url: "https://www.almondcow.co/",
+    summary:
+      "This project leverages Open A.I.'s GPT-4 to leverage content creation and refreshes, Sanity.io's CMS, and a Shopify to provide a robust shopping experience in React.",
+    keyFeatures: [
+      "Open A.I. GPT-4",
+      "Modern Tech Stack",
+      "Seamless Retail Experience",
+      "Customer Journey Analytics",
+    ],
+  },
+  {
+    name: "BBF Analytics",
+>>>>>>> 2d8a698c4bb487076358c081efbc91d0ecd3a5fa
     technologies: [
       "GPT-4",
       "Node.js",
