@@ -110,7 +110,7 @@ const Hero: React.FC = ({ }) => {
               <LinkedInIcon />
             </IconButton>
           </a>
-          <a
+          {/* <a
             href="https://medium.com/@ahmermalikm"
             target="_blank"
             rel="noopener noreferrer"
@@ -125,7 +125,7 @@ const Hero: React.FC = ({ }) => {
             >
               <DescriptionSharpIconRounded />
             </IconButton>
-          </a>
+          </a> */}
         </span>
       </Grid>
 

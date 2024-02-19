@@ -23,10 +23,10 @@ const experienceData: Experience[] = [
       src: "/images/wavered.svg",
     },
     {
-        techName: "HTML",
-        years: 8,
-        height: "325px",
-        image: "/images/html.svg",
+        techName: "GPT",
+        years: 1,
+        height: "120px",
+        image: "/images/gpt.svg",
         src: "/images/wavered.svg",
       },
     {

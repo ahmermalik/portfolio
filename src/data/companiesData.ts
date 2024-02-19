@@ -9,7 +9,7 @@ const companies: Company[] = [
   {
     name: "Swift Sage",
     role: "Engineer",
-    dates: ["1/2024", "Current"],
+    dates: ["01/2024", "Current"],
     accomplishments: [
       "A.I. Driven Analytics",
       "Architect and Deploy",

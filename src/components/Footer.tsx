@@ -57,7 +57,7 @@ const Footer: React.FC = () => {
               <LinkedInIcon />
             </IconButton>
           </a>
-          <a
+          {/* <a
             href="https://medium.com/@ahmermalikm"
             target="_blank"
             rel="noopener noreferrer"
@@ -68,12 +68,12 @@ const Footer: React.FC = () => {
             <IconButton size="large" color="primary" sx={{ color: "#787878" }}>
               <DescriptionSharpIconRounded />
             </IconButton>
-          </a>
+          </a> */}
         </Grid>
 
         <Grid item md={6} className={styles.footItemsTwo}>
           <Typography className={styles.copyright}>
-            © 2023 AHMER MALIK, ALL RIGHTS RESERVED.
+            © 2024 AHMER MALIK, ALL RIGHTS RESERVED.
           </Typography>
         </Grid>
       </Grid>
