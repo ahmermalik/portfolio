@@ -10,9 +10,31 @@ type Project = {
 
 export const projects: Project[] = [
   {
-<<<<<<< HEAD
     name: "Swift Sage A.I.",
-=======
+    technologies: [
+      "GPT-4",
+      "Node.js",
+      "React v18",
+      "TypeScript",
+      "Mix Panel",
+      "Docker",
+      "Web3.js",
+      "AWS (Lambda, SQL Server, S3, CI/CD)"
+    ],
+    description:
+    "Advanced A.I. driven analytics, where GPT is at the wheel. Continuously monitoring market conditions and selecting the appropriate mixture of algorithms to produce real-time insights allows traders to make predictable outcomes and maintain effective risk management.",
+    image: "/images/projects/swiftsage.png",
+    url: "https://www.swiftsage.ai/",
+    summary:
+      "This project leverages React 18 to curate a seamless user experience, with user activity and performance tracked via Mix Panel integrations.",
+    keyFeatures: [
+      "Tailored Analysis",
+      "Predictive Algorithm",
+      "Modern Tech Stack",
+      "Containerized Deployment",
+      "Comprehensive Metrics",
+    ],
+  },  {
     name: "Almond Cow",
     technologies: [
       "Gatsby.js",
@@ -40,33 +62,6 @@ export const projects: Project[] = [
     ],
   },
   {
-    name: "BBF Analytics",
->>>>>>> 2d8a698c4bb487076358c081efbc91d0ecd3a5fa
-    technologies: [
-      "GPT-4",
-      "Node.js",
-      "React v18",
-      "TypeScript",
-      "Mix Panel",
-      "Docker",
-      "Web3.js",
-      "AWS (Lambda, SQL Server, S3, CI/CD)"
-    ],
-    description:
-    "Advanced A.I. driven analytics, where GPT is at the wheel. Continuously monitoring market conditions and selecting the appropriate mixture of algorithms to produce real-time insights allows traders to make predictable outcomes and maintain effective risk management.",
-    image: "/images/projects/swiftsage.png",
-    url: "https://www.swiftsage.ai/",
-    summary:
-      "This project leverages React 18 to curate a seamless user experience, with user activity and performance tracked via Mix Panel integrations.",
-    keyFeatures: [
-      "Tailored Analysis",
-      "Predictive Algorithm",
-      "Modern Tech Stack",
-      "Containerized Deployment",
-      "Comprehensive Metrics",
-    ],
-  },
-  {
     name: "CAI API Storefront",
     technologies: ["React v16", "Redux", "C#", "NoSQL", "AWS (Lambda, CI/CD, CloudFront, DynamoDB, S3, API Gateway)"],
     description: `A storefront to sell APIs, featuring a user dashboard for API performance analytics, key, and environment management, an "API Try It" functionality for pre-signup testing, and comprehensive Swagger documentation for all available API products.`,
@@ -82,33 +77,33 @@ export const projects: Project[] = [
       "Enhanced State Management",
     ],
   },
-  {
-    name: "Bull Bear Buddies",
-    technologies: [
-      "React v18",
-      "TypeScript",
-      "SQL",
-      "SCSS",
-      "Mix Panel",
-      "Material UI v5",
-      "Midjourney",
-      "Netlify"
-    ],
-    description:
-      "A visually engaging modern web app designed for an NFT and Coin crypto trading group, aiming to convert visitors into club members by effectively presenting presale updates, dApp announcements, and the product roadmap in a sales-oriented format.",
-    image: "/images/projects/bullbearbuddies.png",
-    url: "http://bullbearbuddies.club/",
-    summary:
-      "This project leverages advanced sales driven front-end techniques to deliver an intuitive, visually engaging interface, showcasing roadmaps and proof of gains to entice user participation in the presale and dApp activities. It features high-quality imagery and is seamlessly hosted on Netlify, with data operations handled by Supabase.",
-    keyFeatures: [
-      "Visually Engaging Content",
-      "Mobile-First Design",
-      "Responsive Layout",
-      "Interactive Menu",
-      "Interactive Presale Participation",
-      "Communicates with Human Psychology",
-    ],
-  },
+  // {
+  //   name: "Bull Bear Buddies",
+  //   technologies: [
+  //     "React v18",
+  //     "TypeScript",
+  //     "SQL",
+  //     "SCSS",
+  //     "Mix Panel",
+  //     "Material UI v5",
+  //     "Midjourney",
+  //     "Netlify"
+  //   ],
+  //   description:
+  //     "A visually engaging modern web app designed for an NFT and Coin crypto trading group, aiming to convert visitors into club members by effectively presenting presale updates, dApp announcements, and the product roadmap in a sales-oriented format.",
+  //   image: "/images/projects/bullbearbuddies.png",
+  //   url: "http://bullbearbuddies.club/",
+  //   summary:
+  //     "This project leverages advanced sales driven front-end techniques to deliver an intuitive, visually engaging interface, showcasing roadmaps and proof of gains to entice user participation in the presale and dApp activities. It features high-quality imagery and is seamlessly hosted on Netlify, with data operations handled by Supabase.",
+  //   keyFeatures: [
+  //     "Visually Engaging Content",
+  //     "Mobile-First Design",
+  //     "Responsive Layout",
+  //     "Interactive Menu",
+  //     "Interactive Presale Participation",
+  //     "Communicates with Human Psychology",
+  //   ],
+  // },
   {
     name: "Ahmer Malik",
     technologies: ["Next.js", "Mix Panel", "Three.js", "Vercel"],

@@ -1,0 +1,8 @@
+<svg width="50" height="200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background rectangle -->
+  <rect x="0" y="0" width="50" height="200" fill="lightgrey" />
+
+  <!-- Foreground rectangle (loading progress) -->
+  <!-- Change the height attribute to simulate loading progress -->
+  <rect x="0" y="0" width="50" height="100" fill="blue" />
+</svg>

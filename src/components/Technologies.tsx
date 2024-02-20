@@ -5,7 +5,7 @@ import experienceData from "../data/experienceData";
 import { Grid, Typography, Box, useTheme } from "@mui/material";
 
 
-const WavyRectangle = () => {
+const LoadBar = () => {
   return (
     <Grid className={styles.technames}>
       {experienceData.map((exp) => (
@@ -92,7 +92,7 @@ const Technologies: React.FC = () => {
         </Typography>
       </div>
 
-      <WavyRectangle />
+      <LoadBar />
     </Box>
   );
 };

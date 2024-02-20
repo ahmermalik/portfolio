@@ -29,7 +29,8 @@
     "react-dom": "18.2.0",
     "sass": "^1.66.1",
     "three": "^0.156.1",
-    "typescript": "5.2.2"
+    "typescript": "5.2.2",
+    "vercel": "^33.5.1"
   },
   "devDependencies": {
     "@types/react-scroll": "^1.8.7",
