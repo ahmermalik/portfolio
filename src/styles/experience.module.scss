@@ -1,0 +1,97 @@
+@font-face {
+  font-family: "All-Round-Gothic-Bold";
+  src: url("../../public/fonts/All-Round-Gothic-W01-Bold.ttf")
+    format("truetype");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "All-Round-Gothic-Book";
+  src: url("../../public/fonts/All-Round-Gothic-W01-Book.ttf")
+    format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("../../public/fonts/Poppins-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+.comBox {
+
+
+  .comRole {
+    font-size: 10px;
+    font-family: "All-Round-Gothic-Bold";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+
+  .comName {
+    font-family: "Poppins";
+    color: #ff9b50;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  .comDate {
+    color: #787878;
+    font-family: "Poppins";
+    font-size: 12px;
+  }
+  .comAchievements {
+    font-family: "Poppins";
+    color: #787878;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 36px; 
+  }
+}
+
+
+.work {
+  padding-top: 70px;
+
+  .titlecontainer {
+    text-align: center;
+
+
+    .title {
+      font-family: "All-Round-Gothic-Bold";
+    }
+
+    .subtitle {
+      margin-top: 10px;
+      margin-bottom: 32px;
+    }
+  }
+
+  .astro {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .astromobilecontainer{
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+  }
+
+}

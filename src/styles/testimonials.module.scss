@@ -1,0 +1,88 @@
+@font-face {
+  font-family: "All-Round-Gothic-Bold";
+  src: url("../../public/fonts/All-Round-Gothic-W01-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "All-Round-Gothic-Book";
+  src: url("../../public/fonts/All-Round-Gothic-W01-Book.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("../../public/fonts/Poppins-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+.testimonials {
+  padding-top: 70px;
+  padding-bottom: 70px;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+
+  @media (min-width: 0px) and (max-width: 900px) {
+    padding-top: 0px;
+  }
+
+  .testitle {
+    font-family: "All-Round-Gothic-Book";
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 30px;
+    padding-right: 30px;
+    padding-left: 30px;
+    line-height: normal;
+  }
+
+  .iconLeft {
+    position: absolute;
+    top: 60%;
+    z-index: 1;
+    left: 5vw;
+  }
+
+  .iconRight {
+    position: absolute;
+    top: 60%;
+    z-index: 1;
+    right: 5vw;
+  }
+
+  .testicard {
+    margin: 0 auto;
+    margin-bottom: 50px;
+    display: flex;
+    overflow-x: auto;
+    max-width: 80%;
+  }
+}
+
+.tcard {
+  .cardName {
+    font-family: "Poppins";
+    font-weight: 600;
+    color: #ff9b50;
+    min-width: 700px;
+
+    @media (min-width: 0px) and (max-width: 900px) {
+      min-width: 300px;
+    }
+
+    @media (min-width: 900px) and (max-width: 1300px) {
+      min-width: 400px;
+    }
+  }
+
+  .cardTestimony {
+    font-family: "Poppins";
+  }
+}
