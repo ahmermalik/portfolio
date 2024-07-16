@@ -15,8 +15,6 @@ import {
 
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import DescriptionSharpIconRounded from "@mui/icons-material/DescriptionSharp";
-
 import ArrowButton from "./ArrowButton";
 import Navbar from "./Navbar";
 
@@ -63,10 +61,10 @@ const Hero: React.FC = ({ }) => {
             Ahmer Malik
           </Typography>
           <Typography component="p" className={styles.loc}>
-            I&apos;m an AI specialist in Texas.
+            I&apos;m a Solutions Engineer specializing in AI solutions in Texas.
           </Typography>
           <ArrowButton
-            btnName={"Let's Code!"}
+            btnName={"Let's Explore!"}
             marginRight={"1px"}
             onClick={() => {
               const element = document.getElementById("portfolio");
@@ -157,15 +155,14 @@ const Hero: React.FC = ({ }) => {
         className={styles.gridthree}
       >
         <Typography component="p" className={styles.subhead}>
-          {` "Exploring the cosmos of code." `}
+          {` "Engineering the future with AI-driven solutions." `}
         </Typography>
         <Typography component="p" className={styles.subpar}>
           {" "}
-          A passionate engineer with a futuristic mindset. When I&apos;m not
-          busy coding, you can find me gazing at the stars, diving into the
-          world of cryptocurrencies, or analyzing charts. I love turning ideas
-          into reality through lines of code, and I&apos;m excited to share my
-          journey with you.
+          A passionate Solutions Engineer with a futuristic mindset. Using cutting-edge AI technologies, 
+          I turn complex problems into innovative solutions that drive business success. When not architecting AI systems, 
+          I explore the latest tech trends, dive into cryptocurrencies, or analyze market trends. 
+          I love turning ideas into impactful solutions and am excited to share my journey with you.
         </Typography>
 
         <Button

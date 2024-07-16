@@ -172,6 +172,12 @@ A: Tesla!
 
 Q&A for Understanding Ahmer Malik's Birkman Assessment
 
+Q: What is the Birkman Assessment?
+A: The Birkman Assessment is a psychological assessment tool that evaluates an individual's personality traits, interests, motivations, and behaviors. It provides a detailed analysis of how a person behaves under normal circumstances, what they need to maintain their effectiveness, and how they might react under stress. This information helps individuals and organizations better understand personal and professional dynamics, improving team collaboration, job satisfaction, and overall performance.
+
+Q: How does the Birkman Assessment help in making hiring decisions?
+A: The Birkman Assessment is a comprehensive personality and behavioral analysis tool that identifies an individual's interests, usual behavior, needs, and stress behavior. For hiring decisions, it provides valuable insights into a candidate's work style, communication preferences, and how they handle stress, ensuring a good fit for the role and the team. By understanding these aspects, employers can make more informed decisions, matching candidates to positions where they are most likely to thrive and contribute effectively.
+
 Q: What impact have you had on SEO and online visibility for companies?
 A: I spearheaded an SEO automation project that boosted a company's Google search ranking to #1, directly increasing business margins by over 6% and saving the company $85,000 annually.
 

@@ -89,8 +89,8 @@ export const projects: Project[] = [
     keyFeatures: [
       "Cutting-Edge Visuals",
       "GPT-4o Chatbot",
-      "Crypto-Cosmic Theme",
-      "Server-Side Rendering"
+      "Server-Side Rendering",
+      "Caching"
     ],
   },
   {

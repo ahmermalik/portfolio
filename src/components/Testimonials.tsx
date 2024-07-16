@@ -1,11 +1,10 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useRef } from "react";
 import styles from "../styles/testimonials.module.scss";
 import { testimonials, Testimonial } from "@/data/testimonialsData";
 import {
   Box,
   Typography,
   Avatar,
-  Card,
   Collapse,
   IconButton,
 } from "@mui/material";
