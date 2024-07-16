@@ -12,6 +12,7 @@ import {
 } from "@mui/material";
 import ChatIcon from "@mui/icons-material/Chat";
 import CloseIcon from "@mui/icons-material/Close";
+
 const ahmerai = "../images/ahmerai.png";
 const visitor = "../images/visitor.png";
 
@@ -21,7 +22,9 @@ interface Message {
 }
 
 const ChatBox: React.FC = () => {
-  const [messages, setMessages] = useState<Message[]>([]);
+  const [messages, setMessages] = useState<Message[]>([
+    { sender: "bot", text: "Hi, I am Ahmer! What would you like to know about me?" }
+  ]);
   const [input, setInput] = useState<string>("");
   const [isOpen, setIsOpen] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
@@ -39,7 +42,7 @@ const ChatBox: React.FC = () => {
 
   const clearMessages = () => {
     localStorage.removeItem("chatMessages");
-    setMessages([]);
+    setMessages([{ sender: "bot", text: "Hi, I am Ahmer! What would you like to know about me?" }]);
   };
 
   const handleSendMessage = async () => {
@@ -100,9 +103,7 @@ const ChatBox: React.FC = () => {
   };
 
   return (
-    <Box
-    component={"div"}
-    >
+    <Box component={"div"}>
       {!isOpen && (
         <Fab
           color="primary"
@@ -138,7 +139,7 @@ const ChatBox: React.FC = () => {
               borderBottom: "1px solid #ccc",
             }}
           >
-            <Typography variant="h6">Answer AI</Typography>
+            <Typography variant="h6">Ahmer AI</Typography>
             <IconButton color="inherit" onClick={() => setIsOpen(false)}>
               <CloseIcon />
             </IconButton>
@@ -159,35 +160,59 @@ const ChatBox: React.FC = () => {
                   display: "flex",
                   justifyContent:
                     msg.sender === "user" ? "flex-end" : "flex-start",
+                  alignItems: "center",
                   marginBottom: "10px",
                 }}
               >
-                {msg.sender !== "system" && (
-                  <Avatar
-                    alt={msg.sender === "user" ?"Bot" : "Ahmer"}
-                    src={msg.sender === "user" ? visitor : ahmerai }
-                    sx={{ marginRight: msg.sender === "user" ? 0 : 2, marginLeft: msg.sender === "user" ? 2 : 0 }}
-                  />
+                {msg.sender === "user" && (
+                  <>
+                    <Typography
+                      variant="body1"
+                      sx={{
+                        fontSize: "0.875rem",
+                        marginRight: 2,
+                        backgroundColor: "#e0f7fa",
+                        color: "#00796b",
+                        padding: "10px",
+                        borderRadius: "10px",
+                      }}
+                    >
+                      {msg.text}
+                    </Typography>
+                    <Avatar alt="Visitor" src={visitor} />
+                  </>
                 )}
-                <Paper
-                  sx={{
-                    padding: "10px",
-                    backgroundColor:
-                      msg.sender === "user"
-                        ? "#e0f7fa"
-                        : msg.sender === "bot"
-                        ? "#f1f8e9"
-                        : "#ffcdd2",
-                    color:
-                      msg.sender === "user"
-                        ? "#00796b"
-                        : msg.sender === "bot"
-                        ? "#004d40"
-                        : "#b71c1c",
-                  }}
-                >
-                  <Typography variant="body1">{msg.text}</Typography>
-                </Paper>
+                {msg.sender === "bot" && (
+                  <>
+                    <Avatar alt="Ahmer" src={ahmerai} />
+                    <Typography
+                      variant="body1"
+                      sx={{
+                        fontSize: "0.875rem",
+                        marginLeft: 2,
+                        backgroundColor: "#f1f8e9",
+                        color: "#004d40",
+                        padding: "10px",
+                        borderRadius: "10px",
+                      }}
+                      dangerouslySetInnerHTML={{ __html: msg.text }} // Using dangerouslySetInnerHTML
+                    />
+                  </>
+                )}
+                {msg.sender === "system" && (
+                  <Typography
+                    variant="body1"
+                    sx={{
+                      fontSize: "0.875rem",
+                      backgroundColor: "#ffcdd2",
+                      color: "#b71c1c",
+                      padding: "10px",
+                      borderRadius: "10px",
+                    }}
+                  >
+                    {msg.text}
+                  </Typography>
+                )}
               </Box>
             ))}
           </Paper>
@@ -205,11 +230,7 @@ const ChatBox: React.FC = () => {
             placeholder="Type your message..."
             sx={{ marginBottom: "10px" }}
           />
-          <Button
-            variant="contained"
-            color="primary"
-            onClick={handleSendMessage}
-          >
+          <Button variant="contained" color="primary" onClick={handleSendMessage}>
             Send
           </Button>
         </Box>

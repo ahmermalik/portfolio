@@ -1,8 +1,7 @@
 /** @type {import('next').NextConfig} */
 module.exports = {
   env: {
-    mixPanelToken: '',
-    openAiToken: ''
+
   },
   webpack: (config) => {
     config.module.rules.push({

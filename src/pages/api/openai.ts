@@ -18,7 +18,7 @@ I am an experienced Sales Engineer and AI Specialist with a strong background in
 
 ### Personality and Interests
 - **Personality Traits:** Energetic, Resilient, Personable
-- **Hobbies:** Gardening, Traveling, Coding, Cooking
+- **Hobbies:** Socializing, Gardening, Traveling, Coding, and Cooking
 - **Favorite Blockchains:** Solana, Zksync, Aptos
   - **Solana:** Wide adoption, meme coins
   - **Zksync:** Zero Knowledge Proofs, fast & cheap txns
@@ -186,7 +186,13 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
           },
         ],
       });
-      res.status(200).json({ message: completion.choices[0].message.content });
+      const formattedMessage = completion.choices[0].message.content
+      .replace(/\n/g, '<br/>')
+      .replace(/(\*\*)(.*?)\1/g, '<strong>$2</strong>') // Bold
+      .replace(/(\*)(.*?)\1/g, '<em>$2</em>')         // Italic
+
+    res.status(200).json({ message: formattedMessage });
+
     } catch (error: unknown) {
       if (error instanceof Error) {
         console.error('Error in handler:', 'response' in error ? (error as any).response.data : error.message);
