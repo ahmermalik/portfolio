@@ -8,7 +8,7 @@ import {
   Typography,
   IconButton,
   Fab,
-  Avatar
+  Avatar,
 } from "@mui/material";
 import ChatIcon from "@mui/icons-material/Chat";
 import CloseIcon from "@mui/icons-material/Close";
@@ -21,28 +21,58 @@ interface Message {
   text: string;
 }
 
+const CACHE_KEY = "chatMessages";
+const CACHE_TIMESTAMP_KEY = "chatMessagesTimestamp";
+const CACHE_EXPIRATION_DAYS = 7;
+
 const ChatBox: React.FC = () => {
   const [messages, setMessages] = useState<Message[]>([
-    { sender: "bot", text: "Hi, I am Ahmer! What would you like to know about me?" }
+    {
+      sender: "bot",
+      text: "Hi, I am Ahmer! What would you like to know about me?",
+    },
+    {
+      sender: "bot",
+      text: "You can ask questions about my work history, interests, hobbies, and goals.",
+    },
   ]);
   const [input, setInput] = useState<string>("");
   const [isOpen, setIsOpen] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    const savedMessages = localStorage.getItem("chatMessages");
-    if (savedMessages) {
-      setMessages(JSON.parse(savedMessages));
+    const savedMessages = localStorage.getItem(CACHE_KEY);
+    const savedTimestamp = localStorage.getItem(CACHE_TIMESTAMP_KEY);
+    if (savedMessages && savedTimestamp) {
+      const currentTime = new Date().getTime();
+      const cacheTime = new Date(savedTimestamp).getTime();
+      const timeDiff = (currentTime - cacheTime) / (1000 * 60 * 60 * 24);
+      if (timeDiff < CACHE_EXPIRATION_DAYS) {
+        setMessages(JSON.parse(savedMessages));
+      } else {
+        clearMessages();
+      }
     }
   }, []);
 
   const saveMessagesToLocalStorage = (messages: Message[]) => {
-    localStorage.setItem("chatMessages", JSON.stringify(messages));
+    localStorage.setItem(CACHE_KEY, JSON.stringify(messages));
+    localStorage.setItem(CACHE_TIMESTAMP_KEY, new Date().toISOString());
   };
 
   const clearMessages = () => {
-    localStorage.removeItem("chatMessages");
-    setMessages([{ sender: "bot", text: "Hi, I am Ahmer! What would you like to know about me?" }]);
+    localStorage.removeItem(CACHE_KEY);
+    localStorage.removeItem(CACHE_TIMESTAMP_KEY);
+    setMessages([
+      {
+        sender: "bot",
+        text: "Hi, I am Ahmer! What would you like to know about me?",
+      },
+      {
+        sender: "bot",
+        text: "You can ask questions about my work history, interests, hobbies, and goals.",
+      },
+    ]);
   };
 
   const handleSendMessage = async () => {
@@ -80,7 +110,7 @@ const ChatBox: React.FC = () => {
       console.error("Error sending message:", error);
       const errorMessage: Message = {
         sender: "system",
-        text: "System error, please try again",
+        text: "System error, please try again.",
       };
 
       setMessages((prevMessages) => {
@@ -171,10 +201,11 @@ const ChatBox: React.FC = () => {
                       sx={{
                         fontSize: "0.875rem",
                         marginRight: 2,
-                        backgroundColor: "#e0f7fa",
+                        backgroundColor: "#d1edff",
                         color: "#00796b",
                         padding: "10px",
                         borderRadius: "10px",
+                        lineHeight: "1.5",
                       }}
                     >
                       {msg.text}
@@ -190,10 +221,11 @@ const ChatBox: React.FC = () => {
                       sx={{
                         fontSize: "0.875rem",
                         marginLeft: 2,
-                        backgroundColor: "#f1f8e9",
+                        backgroundColor: "#f1f0f0",
                         color: "#004d40",
                         padding: "10px",
                         borderRadius: "10px",
+                        lineHeight: "1.5",
                       }}
                       dangerouslySetInnerHTML={{ __html: msg.text }} // Using dangerouslySetInnerHTML
                     />
@@ -208,6 +240,7 @@ const ChatBox: React.FC = () => {
                       color: "#b71c1c",
                       padding: "10px",
                       borderRadius: "10px",
+                      lineHeight: "1.5",
                     }}
                   >
                     {msg.text}
@@ -217,7 +250,11 @@ const ChatBox: React.FC = () => {
             ))}
           </Paper>
           {error && (
-            <Typography variant="body2" color="error" sx={{ padding: "10px" }}>
+            <Typography
+              variant="body2"
+              color="error"
+              sx={{ fontSize: "0.875rem", padding: "10px", lineHeight: "1.5" }}
+            >
               {error}
             </Typography>
           )}
@@ -228,7 +265,11 @@ const ChatBox: React.FC = () => {
             onChange={handleInputChange}
             onKeyDown={handleKeyDown}
             placeholder="Type your message..."
-            sx={{ marginBottom: "10px" }}
+            sx={{
+              fontSize: "0.875rem",
+              marginBottom: "10px",
+              backgroundColor: "#fff",
+            }}
           />
           <Button variant="contained" color="primary" onClick={handleSendMessage}>
             Send

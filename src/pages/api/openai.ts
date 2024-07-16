@@ -11,7 +11,7 @@ const openai = new OpenAI({
 
 
 const knowledgeBase = `
-## Ahmer Malik's Profile
+## Ahmer Malik's Profile and Resume Details
 
 ### Summary
 I am an experienced Sales Engineer and AI Specialist with a strong background in software development, sales, project management, and strategic business development. I have a proven track record of leading successful sales campaigns and implementing AI-driven solutions. I am skilled in bridging technical solutions with customer needs, value selling, and providing detailed, customized product demonstrations. I am adept at developing and executing comprehensive AI strategies, enhancing user engagement, and driving operational efficiency. I am committed to ethical AI practices, privacy, and data security.
@@ -63,7 +63,7 @@ My ideal job is one where I can effectively utilize both my soft skills and tech
 - Curated leads and automated outreach processes, for the sale of over 800,000 plastic bottles totaling $320,000.
 
 #### Solutions Engineer (contract) at Swift Sage
-- Designed and developed an AI chatbot using Retrieval-Augmented Generation (RAG) to help users discover trades and view PnL stats on mobile devices.
+- Designed and developed an AI driven analytics platform & chatbot to help users discover trades and view PnL stats on mobile devices.
 - Built Web3 community of over 2,700 users in 2 months on Twitter/X.
 - Directed a team of 6 in implementing AI-driven crypto analytics using GPT-4 and AWS, maintaining user confidence and securing future engagements.
 - Effectively communicated complex project details in 6 keynotes to over 1,500 potential users and venture capitalists, significantly increasing project visibility and investor interest.
@@ -107,6 +107,9 @@ My ideal job is one where I can effectively utilize both my soft skills and tech
 - Created and executed successful product demonstrations and sales pitches, effectively communicating technical concepts to non-technical stakeholders.
 
 ### FAQs
+
+**Q: How can I contact you?**
+A: I can be reached by email at ahmer.malik.m@gmail.com
 
 **Q: Are you a U.S. Citizen?**
 A: I am a citizen of the United States, have full authorization to work, and do not require any visa sponsorship.
@@ -186,13 +189,18 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
           },
         ],
       });
-      const formattedMessage = completion.choices[0].message.content
-      .replace(/\n/g, '<br/>')
-      .replace(/(\*\*)(.*?)\1/g, '<strong>$2</strong>') // Bold
-      .replace(/(\*)(.*?)\1/g, '<em>$2</em>')         // Italic
+      const messageContent = completion.choices[0]?.message?.content;
 
-    res.status(200).json({ message: formattedMessage });
-
+      if (messageContent) {
+        const formattedMessage = messageContent
+          .replace(/\n/g, '<br/>')
+          .replace(/(\*\*)(.*?)\1/g, '<strong>$2</strong>') // Bold
+          .replace(/(\*)(.*?)\1/g, '<em>$2</em>');         // Italic
+  
+        res.status(200).json({ message: formattedMessage });
+      } else {
+        res.status(500).json({ error: 'Received empty response from the AI' });
+      }
     } catch (error: unknown) {
       if (error instanceof Error) {
         console.error('Error in handler:', 'response' in error ? (error as any).response.data : error.message);

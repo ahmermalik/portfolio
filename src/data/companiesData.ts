@@ -7,7 +7,7 @@ export type Company = {
 
 const companies: Company[] = [
   {
-    name: "Swift Sage",
+    name: "Swift Sage AI",
     role: "Engineer",
     dates: ["01/2024", "Current"],
     accomplishments: [
@@ -18,17 +18,17 @@ const companies: Company[] = [
   },  {
     name: "Almond Cow",
     role: "Engineer",
-    dates: ["10/2023", "12/2023"],
+    dates: ["10/2023", "01/2024"],
     accomplishments: [
       "GPT-4 Implementation",
-      "Backend Automation",
-      "Tech debt reduction",
+      "Boost Margins By 6%",
+      "Increase Web Traffic by 8.58%",
     ],
   },
   {
     name: "Buffalo Bayou Funds",
     role: "Engineer",
-    dates: ["02/2021", "10/2023"],
+    dates: ["02/2021", "09/2023"],
     accomplishments: [
       "18% subscription increase",
       "Tech upgrade",

@@ -24,7 +24,7 @@ const experienceData: Experience[] = [
     },
     {
         techName: "GPT",
-        years: 1,
+        years: 2,
         height: "120px",
         image: "/images/gpt.svg",
         src: "/images/wavered.svg",
