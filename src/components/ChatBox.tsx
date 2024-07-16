@@ -131,17 +131,25 @@ const ChatBox: React.FC = () => {
       handleSendMessage();
     }
   };
-
+  color: "";
   return (
     <Box component={"div"}>
       {!isOpen && (
         <Fab
-          color="primary"
           aria-label="open chat"
           onClick={() => setIsOpen(true)}
-          sx={{ position: "fixed", bottom: 16, right: 16 }}
+          sx={{
+            position: "fixed",
+            bottom: 16,
+            right: 16,
+            backgroundColor: "#000", // Change background color to black
+            boxShadow: "0px 4px 20px rgba(0, 0, 0, 0.53)", // Add shadow
+            "&:hover": {
+              backgroundColor: "#000", // Maintain black color on hover
+            },
+          }}
         >
-          <ChatIcon />
+          <ChatIcon sx={{ color: "#fff" }} />
         </Fab>
       )}
       {isOpen && (
@@ -155,6 +163,7 @@ const ChatBox: React.FC = () => {
             height: "500px",
             display: "flex",
             flexDirection: "column",
+            color: "#FF9B50",
           }}
         >
           <Paper
@@ -164,12 +173,12 @@ const ChatBox: React.FC = () => {
               justifyContent: "space-between",
               alignItems: "center",
               padding: "8px",
-              backgroundColor: "#1976d2",
+              backgroundColor: "#000",
               color: "#fff",
               borderBottom: "1px solid #ccc",
             }}
           >
-            <Typography variant="h6">Ahmer AI</Typography>
+            <Typography variant="h6" >Ahmer AI</Typography>
             <IconButton color="inherit" onClick={() => setIsOpen(false)}>
               <CloseIcon />
             </IconButton>
@@ -266,12 +275,27 @@ const ChatBox: React.FC = () => {
             onKeyDown={handleKeyDown}
             placeholder="Type your message..."
             sx={{
-              fontSize: "0.875rem",
               marginBottom: "10px",
               backgroundColor: "#fff",
             }}
+            InputProps={{
+              style: {
+                fontSize: "0.875rem",
+              },
+            }}
+            InputLabelProps={{
+              style: {
+                fontSize: "0.875rem",
+              },
+            }}
           />
-          <Button variant="contained" color="primary" onClick={handleSendMessage}>
+
+          <Button
+            variant="contained"
+            color="primary"
+            onClick={handleSendMessage}
+            sx={{ backgroundColor: "#000", color: "#fff" }}
+          >
             Send
           </Button>
         </Box>

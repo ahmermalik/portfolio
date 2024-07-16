@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import mixpanel from 'mixpanel-browser';
+import mixpanel from "mixpanel-browser";
 
 import Hero from "@/components/Hero";
 import Techonologies from "@/components/Technologies";
@@ -15,14 +15,13 @@ import { CssBaseline } from "@mui/material";
 mixpanel.init(process.env.mixPanelToken as string, { ignore_dnt: true });
 
 export default function Home() {
-
-
   useEffect(() => {
-    document.title = "Top Houston JavaScript Engineer: Expert in Full-Stack Development, SEO, and Sales-Driven Applications | Ahmer Malik";
+    document.title =
+      "Top Houston JavaScript Engineer: Expert in Full-Stack Development, SEO, and Sales-Driven Applications | Ahmer Malik";
 
     if ((window as any).mixpanel) {
       mixpanel.track("Page Visited", {
-        "Home": "Landed on ahmermalik.com"
+        Home: "Landed on ahmermalik.com",
       });
     }
   }, []);
@@ -31,7 +30,6 @@ export default function Home() {
     <>
       <CssBaseline />
       <main>
-       
         <section id="home">
           <Hero />
         </section>
@@ -53,7 +51,7 @@ export default function Home() {
         <section id="contact"></section>
         <Footer />
         {/* <ScrollToTopBtn /> */}
-        <ChatBox/>
+        <ChatBox />
       </main>
     </>
   );

@@ -63,7 +63,7 @@ const Hero: React.FC = ({ }) => {
             Ahmer Malik
           </Typography>
           <Typography component="p" className={styles.loc}>
-            I&apos;m a fullstack engineer in Texas.
+            I&apos;m an AI specialist in Texas.
           </Typography>
           <ArrowButton
             btnName={"Let's Code!"}
@@ -198,7 +198,7 @@ const Hero: React.FC = ({ }) => {
               fontWeight: "400",
               lineHeight: "35px",
               borderBottom: "1px solid #FF9B50",
-              paddingBottom: "1px", // Adjusting space between text and underline
+              paddingBottom: "1px",
             }}
           >
             Download Resume
