@@ -4,11 +4,9 @@ import { Grid, Typography, Button, Box, useTheme } from "@mui/material";
 import ArrowButton from "./ArrowButton";
 import styles from "../styles/portfolio.module.scss";
 import { projects, nonprofitProjects } from "../data/projectsData";
-import mixpanel from 'mixpanel-browser';
+import mixpanel from "mixpanel-browser";
 
 mixpanel.init(process.env.mixPanelToken as string, { ignore_dnt: true });
-
-
 
 const Portfolio: React.FC = () => {
   const detailsRef = useRef<HTMLDivElement>(null);
@@ -88,9 +86,9 @@ const Portfolio: React.FC = () => {
                   setActiveProject(project);
                   if (window.innerWidth <= 900) {
                     detailsRef.current?.scrollIntoView({ behavior: "smooth" });
-                  };
-                  mixpanel.track('Project Button', {
-                    'Type': project.name,
+                  }
+                  mixpanel.track("Project Button", {
+                    Type: project.name,
                   });
                 }}
                 sx={{
@@ -199,12 +197,15 @@ const Portfolio: React.FC = () => {
                 rel="noopener noreferrer"
                 style={{ textDecoration: "none" }}
               >
-                <ArrowButton btnName={"View Project"} marginRight={"10px"} onClick={() => {
-
-                  mixpanel.track('View Project Button', {
-                    'Type': activeProject.name,
-                  });
-                }} />
+                <ArrowButton
+                  btnName={"View Project"}
+                  marginRight={"10px"}
+                  onClick={() => {
+                    mixpanel.track("View Project Button", {
+                      Type: activeProject.name,
+                    });
+                  }}
+                />
               </a>
             </Box>
           </Box>
@@ -292,7 +293,6 @@ const Portfolio: React.FC = () => {
                     theme.palette.mode === "light"
                       ? "#000000"
                       : theme.palette.background.default,
-
                 }}
               >
                 {feature}

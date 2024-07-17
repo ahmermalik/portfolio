@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import mixpanel from 'mixpanel-browser';
+import mixpanel from "mixpanel-browser";
 import styles from "../styles/hero.module.scss";
 import success from "../images/successfulahmer.png";
 
@@ -10,7 +10,7 @@ import {
   Button,
   IconButton,
   Box,
-  useTheme
+  useTheme,
 } from "@mui/material";
 
 import GitHubIcon from "@mui/icons-material/GitHub";
@@ -18,10 +18,9 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import ArrowButton from "./ArrowButton";
 import Navbar from "./Navbar";
 
-
 mixpanel.init(process.env.mixPanelToken as string, { ignore_dnt: true });
 
-const Hero: React.FC = ({ }) => {
+const Hero: React.FC = ({}) => {
   const theme = useTheme();
   return (
     <Grid container spacing={3} className={styles.mainGrid}>
@@ -61,7 +60,8 @@ const Hero: React.FC = ({ }) => {
             Ahmer Malik
           </Typography>
           <Typography component="p" className={styles.loc}>
-            I&apos;m a Solutions Engineer specializing in AI solutions in Texas.
+            I&apos;m a Texas-based Software Engineer specializing in
+            cutting-edge AI technologies.
           </Typography>
           <ArrowButton
             btnName={"Let's Explore!"}
@@ -69,8 +69,8 @@ const Hero: React.FC = ({ }) => {
             onClick={() => {
               const element = document.getElementById("portfolio");
               element?.scrollIntoView({ behavior: "smooth" });
-              mixpanel.track('Lets Code Button', {
-                'Type': "Lets Code  Button",
+              mixpanel.track("Lets Code Button", {
+                Type: "Lets Code  Button",
               });
             }}
           />
@@ -80,9 +80,11 @@ const Hero: React.FC = ({ }) => {
             href="https://github.com/ahmermalik/"
             target="_blank"
             rel="noopener noreferrer"
-            onClick={() => mixpanel.track('Github Button', {
-              'Type': "Github Button",
-            })}
+            onClick={() =>
+              mixpanel.track("Github Button", {
+                Type: "Github Button",
+              })
+            }
           >
             <IconButton
               color="primary"
@@ -96,9 +98,11 @@ const Hero: React.FC = ({ }) => {
             href="https://www.linkedin.com/in/ahmermalikm/"
             target="_blank"
             rel="noopener noreferrer"
-            onClick={() => mixpanel.track('Linkedin Button', {
-              'Type': "Linkedin Button",
-            })}
+            onClick={() =>
+              mixpanel.track("Linkedin Button", {
+                Type: "Linkedin Button",
+              })
+            }
           >
             <IconButton
               size="large"
@@ -159,17 +163,19 @@ const Hero: React.FC = ({ }) => {
         </Typography>
         <Typography component="p" className={styles.subpar}>
           {" "}
-          A passionate Solutions Engineer with a futuristic mindset. Using cutting-edge AI technologies, 
-          I turn complex problems into innovative solutions that drive business success. When not architecting AI systems, 
-          I explore the latest tech trends, dive into cryptocurrencies, or analyze market trends. 
-          I love turning ideas into impactful solutions and am excited to share my journey with you.
+          A passionate Engineer with a futuristic mindset. Using cutting-edge AI
+          technologies, I turn complex problems into innovative solutions that
+          drive business success. When not architecting AI systems, I explore
+          the latest tech trends, dive into cryptocurrencies, or analyze market
+          trends. I love turning ideas into impactful solutions and am excited
+          to share my journey with you.
         </Typography>
 
         <Button
           onClick={() => {
             window.open("/resume/Resume.pdf", "_blank");
-            mixpanel.track('Resume Button', {
-              'Type': "Resume Button",
+            mixpanel.track("Resume Button", {
+              Type: "Resume Button",
             });
           }}
           className={styles.resContainer}

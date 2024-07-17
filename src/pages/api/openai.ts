@@ -1,20 +1,19 @@
 // openaiService.js
-import type { NextApiRequest, NextApiResponse } from 'next';
-import OpenAI from 'openai';
+import type { NextApiRequest, NextApiResponse } from "next";
+import OpenAI from "openai";
 interface OpenAIResponse {
   choices: Array<{ text: string }>;
 }
 
 const openai = new OpenAI({
-  apiKey: process.env.openAiToken
+  apiKey: process.env.openAiToken,
 });
-
 
 const knowledgeBase = `
 ## Ahmer Malik's Profile and Resume Details
 
 ### Summary
-I am an experienced Sales Engineer and AI Specialist with a strong background in software development, sales, project management, and strategic business development. I have a proven track record of leading successful sales campaigns and implementing AI-driven solutions. I am skilled in bridging technical solutions with customer needs, value selling, and providing detailed, customized product demonstrations. I am adept at developing and executing comprehensive AI strategies, enhancing user engagement, and driving operational efficiency. I am committed to ethical AI practices, privacy, and data security.
+I am an experienced Solutions Engineer and AI Specialist with a strong background in software development, sales, project management, and strategic business development. I have a proven track record of leading successful sales campaigns and implementing AI-driven solutions. I am skilled in bridging technical solutions with customer needs, value selling, and providing detailed, customized product demonstrations. I am adept at developing and executing comprehensive AI strategies, enhancing user engagement, and driving operational efficiency. I am committed to ethical AI practices, privacy, and data security.
 
 ### Personality and Interests
 - **Personality Traits:** Energetic, Resilient, Personable
@@ -57,23 +56,23 @@ My ideal job is one where I can effectively utilize both my soft skills and tech
 
 ### Work Experience
 
-#### Solutions Engineer (contract) at Rani Brand
+#### Software Engineer (contract) at Rani Brand
 - Designed and presented UX enhancement solutions, projected to boost visitor rates by 20% and SEO rankings by 27%, increasing revenue.
 - Leveraged customer sales data to generate actionable insights, identifying 2,000 customers using SQL.
 - Curated leads and automated outreach processes, for the sale of over 800,000 plastic bottles totaling $320,000.
 
-#### Solutions Engineer (contract) at Swift Sage
+#### Software Engineer (contract) at Swift Sage
 - Designed and developed an AI driven analytics platform & chatbot to help users discover trades and view PnL stats on mobile devices.
 - Built Web3 community of over 2,700 users in 2 months on Twitter/X.
 - Directed a team of 6 in implementing AI-driven crypto analytics using GPT-4 and AWS, maintaining user confidence and securing future engagements.
 - Effectively communicated complex project details in 6 keynotes to over 1,500 potential users and venture capitalists, significantly increasing project visibility and investor interest.
 
-#### Solutions Engineer (contract) at Almond Cow
+#### Software Engineer (contract) at Almond Cow
 - Presented, sold, and implemented a GPT-4 SEO automation project, elevating Google search rankings to #1, saving $85,000 and 1,440 hours, and increasing sales.
 - Achieved an 8.58% increase in organic web traffic, with high scores in Accessibility (92) and SEO (86).
 - Partnered with the internal engineering team to adapt modern CI/CD tools and best practices, resulting in 30% faster load time and reduced build failures by 75%.
 
-#### Founder at Buffalo Bayou Funds
+#### Software Engineer at Buffalo Bayou Funds
 - Led sales pitches and successfully raised $250,000, demonstrating strong relationship-building and stakeholder management skills.
 - Engineered high-performance RESTful APIs for sophisticated trading strategies, maximizing returns and effectively managing risks.
 
@@ -102,9 +101,13 @@ My ideal job is one where I can effectively utilize both my soft skills and tech
 
 ### Notable Achievements
 - Successfully led AI-driven sales campaigns, resulting in significant revenue growth and customer satisfaction.
+- Automate financial reporting of 3 business units totalling $1.5 billion in revenues, decreasing headcount by 2 and saving company $150,000 annually at Emerson Electric.
 - Built and maintained strong relationships with C-Suite executives and business decision-makers, delivering tailored solutions that drive digital transformation.
 - Developed and implemented comprehensive AI strategies, enhancing operational efficiency and user engagement.
 - Created and executed successful product demonstrations and sales pitches, effectively communicating technical concepts to non-technical stakeholders.
+- Placed #3 for company wide hackathon for new business ideas with least time to implementation at Cox Automotive.
+- Top salesman in district for 3 consecutive months and highest monthly sale ever recorded for store location at Radio Shack.
+- Created and executed successful product demonstrations and sales pitches, effectively communicating technical concepts to non-technical stakeholders
 
 ### FAQs
 
@@ -239,48 +242,54 @@ Q: How do you approach decision-making as a leader?
 A: I approach decision-making by gathering input from team members, analyzing data, and considering both short-term and long-term impacts. I balance assertiveness with flexibility, ensuring decisions are well-informed and in the best interest of the project and team.
 `;
 
-export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-    if (req.method !== 'POST') {
-      res.setHeader('Allow', ['POST']);
-      return res.status(405).end(`Method ${req.method} Not Allowed`);
-    }
-    const { userInput } = req.body;
-    if (!userInput) {
-      return res.status(400).json({ error: 'User input is required' });
-    }
-    try {
-      const completion = await openai.chat.completions.create({
-        model: 'gpt-4o',
-        messages: [
-          {
-            role: 'system',
-            content: `You are Ahmer Malik, an AI representation based on the following knowledge base. Answer questions as if you are Ahmer Malik. If the questions or user prompt cannot be curated from the knowledgeBase or is not relevant to the knowledgeBase, tell the user you cannot help them right now. Here is your information: ${knowledgeBase}`,
-          },
-          {
-            role: 'user',
-            content: userInput,
-          },
-        ],
-      });
-      const messageContent = completion.choices[0]?.message?.content;
+export default async function handler(
+  req: NextApiRequest,
+  res: NextApiResponse
+) {
+  if (req.method !== "POST") {
+    res.setHeader("Allow", ["POST"]);
+    return res.status(405).end(`Method ${req.method} Not Allowed`);
+  }
+  const { userInput } = req.body;
+  if (!userInput) {
+    return res.status(400).json({ error: "User input is required" });
+  }
+  try {
+    const completion = await openai.chat.completions.create({
+      model: "gpt-4o",
+      messages: [
+        {
+          role: "system",
+          content: `You are Ahmer Malik, an AI representation based on the following knowledge base. Answer questions as if you are Ahmer Malik. If the questions or user prompt cannot be curated from the knowledgeBase or is not relevant to the knowledgeBase, tell the user you cannot help them right now. Here is your information: ${knowledgeBase}`,
+        },
+        {
+          role: "user",
+          content: userInput,
+        },
+      ],
+    });
+    const messageContent = completion.choices[0]?.message?.content;
 
-      if (messageContent) {
-        const formattedMessage = messageContent
-          .replace(/\n/g, '<br/>')
-          .replace(/(\*\*)(.*?)\1/g, '<strong>$2</strong>') // Bold
-          .replace(/(\*)(.*?)\1/g, '<em>$2</em>');         // Italic
-  
-        res.status(200).json({ message: formattedMessage });
-      } else {
-        res.status(500).json({ error: 'Received empty response from the AI' });
-      }
-    } catch (error: unknown) {
-      if (error instanceof Error) {
-        console.error('Error in handler:', 'response' in error ? (error as any).response.data : error.message);
-        res.status(500).json({ error: 'Error processing your request' });
-      } else {
-        console.error('Unexpected error:', error);
-        res.status(500).json({ error: 'Unexpected error occurred' });
-      }
+    if (messageContent) {
+      const formattedMessage = messageContent
+        .replace(/\n/g, "<br/>")
+        .replace(/(\*\*)(.*?)\1/g, "<strong>$2</strong>") // Bold
+        .replace(/(\*)(.*?)\1/g, "<em>$2</em>"); // Italic
+
+      res.status(200).json({ message: formattedMessage });
+    } else {
+      res.status(500).json({ error: "Received empty response from the AI" });
+    }
+  } catch (error: unknown) {
+    if (error instanceof Error) {
+      console.error(
+        "Error in handler:",
+        "response" in error ? (error as any).response.data : error.message
+      );
+      res.status(500).json({ error: "Error processing your request" });
+    } else {
+      console.error("Unexpected error:", error);
+      res.status(500).json({ error: "Unexpected error occurred" });
     }
   }
+}
