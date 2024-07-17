@@ -1,5 +1,6 @@
 import React, { useState, useEffect, ChangeEvent, KeyboardEvent, useRef } from "react";
 import axios from "axios";
+import mixpanel from 'mixpanel-browser';
 import {
   Box,
   Button,
@@ -13,7 +14,7 @@ import {
 } from "@mui/material";
 import ChatIcon from "@mui/icons-material/Chat";
 import CloseIcon from "@mui/icons-material/Close";
-
+mixpanel.init(process.env.mixPanelToken as string, { ignore_dnt: true });
 const ahmerai = "../images/ahmerai.png";
 const visitor = "../images/visitor.png";
 
@@ -127,6 +128,10 @@ const ChatBox: React.FC = () => {
       setMessages((prevMessages) => {
         const updatedMessages = [...prevMessages, errorMessage];
         saveMessagesToLocalStorage(updatedMessages);
+
+        mixpanel.track('Chatbot', {
+          'Type': updatedMessages,
+        });
         return updatedMessages;
       });
       setError("Error sending message, please try again.");

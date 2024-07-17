@@ -61,7 +61,7 @@ const Hero: React.FC = ({ }) => {
             Ahmer Malik
           </Typography>
           <Typography component="p" className={styles.loc}>
-            I&apos;m a Solutions Engineer specializing in AI solutions in Texas.
+             I&apos;m a Texas-based Solutions Engineer specializing in cutting-edge AI technologies.
           </Typography>
           <ArrowButton
             btnName={"Let's Explore!"}
