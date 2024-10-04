@@ -47,6 +47,7 @@ const ChatBox: React.FC = () => {
   const [input, setInput] = useState<string>("");
   const [isOpen, setIsOpen] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
+  const [retryInput, setRetryInput] = useState<string | null>(null);
   const [loading, setLoading] = useState<boolean>(false);
 
   const chatContainerRef = useRef<HTMLDivElement>(null);
@@ -93,16 +94,23 @@ const ChatBox: React.FC = () => {
     ]);
   };
 
-  const handleSendMessage = async () => {
-    if (input.trim() === "") return;
+  const handleSendMessage = async (messageInput?: string) => {
+    const currentInput =
+      typeof messageInput === "string" && messageInput.trim() !== ""
+        ? messageInput.trim()
+        : typeof input === "string" && input.trim() !== ""
+        ? input.trim()
+        : "";
 
-    if (input.trim().toLowerCase() === "clear") {
+    if (currentInput === "") return;
+
+    if (currentInput.toLowerCase() === "clear") {
       clearMessages();
       setInput("");
       return;
     }
 
-    const userMessage: Message = { sender: "user", text: input };
+    const userMessage: Message = { sender: "user", text: currentInput };
     setMessages((prevMessages) => {
       const updatedMessages = [...prevMessages, userMessage];
       saveMessagesToLocalStorage(updatedMessages);
@@ -113,7 +121,9 @@ const ChatBox: React.FC = () => {
     setLoading(true);
 
     try {
-      const response = await axios.post("/api/openai", { userInput: input });
+      const response = await axios.post("/api/openai", {
+        userInput: currentInput,
+      });
       const botMessage: Message = {
         sender: "bot",
         text: response.data.message,
@@ -125,6 +135,7 @@ const ChatBox: React.FC = () => {
         return updatedMessages;
       });
       setError(null);
+      setRetryInput(null); // Reset retry input on success
     } catch (error) {
       console.error("Error sending message:", error);
       const errorMessage: Message = {
@@ -142,6 +153,7 @@ const ChatBox: React.FC = () => {
         return updatedMessages;
       });
       setError("Error sending message, please try again.");
+      setRetryInput(currentInput); // Save input to retry
     } finally {
       setLoading(false);
     }
@@ -313,15 +325,7 @@ const ChatBox: React.FC = () => {
               </Box>
             )}
           </Paper>
-          {error && (
-            <Typography
-              variant="body2"
-              color="error"
-              sx={{ fontSize: "0.875rem", padding: "10px", lineHeight: "1.5" }}
-            >
-              {error}
-            </Typography>
-          )}
+
           <TextField
             variant="outlined"
             fullWidth
@@ -345,14 +349,25 @@ const ChatBox: React.FC = () => {
             }}
           />
 
-          <Button
-            variant="contained"
-            color="primary"
-            onClick={handleSendMessage}
-            sx={{ backgroundColor: "#000", color: "#fff" }}
-          >
-            Send
-          </Button>
+          {error ? (
+            <Button
+              variant="contained"
+              color="primary"
+              onClick={() => handleSendMessage(retryInput || input)}
+              sx={{ backgroundColor: "#ff5252", color: "#fff" }}
+            >
+              Retry
+            </Button>
+          ) : (
+            <Button
+              variant="contained"
+              color="primary"
+              onClick={() => handleSendMessage()}
+              sx={{ backgroundColor: "#000", color: "#fff" }}
+            >
+              Send
+            </Button>
+          )}
         </Box>
       )}
     </Box>
